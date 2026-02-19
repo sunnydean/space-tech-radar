@@ -1,0 +1,17 @@
+{
+  "title": "Space Tech Radar",
+  "subtitle": "Space Tech Radar for Earth Observation and Geospatial Technologies",
+  "textFile": "content/radar-text.md",
+  "rings": [
+    { "name": "Adopt", "color": "#1e9f5b" },
+    { "name": "Trial", "color": "#1f83c2" },
+    { "name": "Assess", "color": "#d79a00" },
+    { "name": "Hold", "color": "#c8553d" }
+  ],
+  "quadrantFiles": [
+    "data/quadrants/tools.json",
+    "data/quadrants/techniques.json",
+    "data/quadrants/data.json",
+    "data/quadrants/standards.json"
+  ]
+}

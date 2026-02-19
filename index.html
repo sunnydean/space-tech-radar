@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Simple Tech Radar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <h1 id="radar-title">
+        <span class="mode-switch">
+          <button
+            id="mode-visual"
+            class="mode-visual"
+            type="button"
+            aria-label="Switch to Space Observation Tech Radar"
+            aria-pressed="false"
+          >
+            <span class="sat-frame">
+              <svg viewBox="0 0 28 28" aria-hidden="true" class="sat-svg">
+                <polygon class="sat-panel" points="2.8,10.8 8.8,11.8 8.8,16.2 2.8,15.2"></polygon>
+                <polygon class="sat-panel" points="19.2,11.8 25.2,10.8 25.2,15.2 19.2,16.2"></polygon>
+                <polygon class="sat-core" points="9.2,10.2 15.8,8.8 18.8,11.8 17.2,17.8 10.8,19.2 8.2,16.2"></polygon>
+                <polygon class="sat-core-light" points="9.2,10.2 15.8,8.8 13.8,13.2 8.2,16.2"></polygon>
+                <polygon class="sat-core-shadow" points="13.8,13.2 18.8,11.8 17.2,17.8 12.2,17.6"></polygon>
+                <polygon class="sat-dish" points="18.9,12.7 22.2,11.9 21.6,16.4 18.5,17.1"></polygon>
+                <line class="sat-antenna" x1="13.9" y1="7.1" x2="14" y2="9.4"></line>
+                <circle class="sat-antenna-dot" cx="13.9" cy="6.1" r="1.1"></circle>
+              </svg>
+            </span>
+            <span class="beam-track">
+              <span class="beam"></span>
+              <span class="beam-stars"></span>
+            </span>
+          </button>
+          <button
+            id="mode-toggle"
+            class="mode-word-toggle"
+            type="button"
+            aria-label="Switch to Space Observation Tech Radar"
+            aria-pressed="false"
+          >
+            <span id="radar-mode-word">Earth</span>
+          </button>
+        </span>
+        <span>Observation Open-Source Tech Radar</span>
+      </h1>
+      <p id="radar-subtitle">Space Tech Radar for Earth Observation and Geospatial Technologies</p>
+    </header>
+
+    <section class="stage">
+      <svg id="radar" aria-label="Tech radar"></svg>
+
+      <section class="quad-list corner-tl" data-q="1">
+        <h2 class="quad-title"></h2>
+        <div class="quad-entries"></div>
+      </section>
+
+      <section class="quad-list corner-tr" data-q="0">
+        <h2 class="quad-title"></h2>
+        <div class="quad-entries"></div>
+      </section>
+
+      <section class="quad-list corner-bl" data-q="2">
+        <h2 class="quad-title"></h2>
+        <div class="quad-entries"></div>
+      </section>
+
+      <section class="quad-list corner-br" data-q="3">
+        <h2 class="quad-title"></h2>
+        <div class="quad-entries"></div>
+      </section>
+    </section>
+
+    <section id="story-section" class="story" hidden>
+      <div id="story-body"></div>
+    </section>
+  </main>
+
+  <article id="popup" class="popup" hidden>
+    <h2 id="popup-title"></h2>
+    <p id="popup-meta" class="meta"></p>
+    <p id="popup-body"></p>
+    <a id="popup-link" class="popup-link" href="#" target="_blank" rel="noopener noreferrer"></a>
+  </article>
+</body>
+</html>

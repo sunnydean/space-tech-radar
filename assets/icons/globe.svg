@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <clipPath id="globeClip">
+      <circle cx="32" cy="32" r="25"/>
+    </clipPath>
+  </defs>
+  <circle cx="32" cy="32" r="25" fill="#1d9bf0"/>
+  <g clip-path="url(#globeClip)">
+    <polygon points="7 31 26 11 47 18 39 38 18 46" fill="#38bdf8"/>
+    <polygon points="19 47 39 38 57 45 40 60 18 55" fill="#0284c7"/>
+    <polygon points="9 13 25 8 39 14 24 24 8 24" fill="#7dd3fc" fill-opacity="0.85"/>
+    <polygon points="34 16 41 18 47 24 44 28 47 32 42 35 38 32 35 33 31 29 33 25" fill="#22c55e"/>
+    <polygon points="31 29 35 33 33 36 29 35 28 31" fill="#16a34a"/>
+  </g>
+  <circle cx="32" cy="32" r="25" stroke="#0f172a" stroke-opacity="0.12" stroke-width="1.6"/>
+</svg>

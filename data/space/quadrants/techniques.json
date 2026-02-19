@@ -1,0 +1,44 @@
+{
+  "quadrant": {
+    "index": 1,
+    "name": "Techniques",
+    "color": "#14b8a6"
+  },
+  "entries": [
+    {
+      "name": "Constellation Revisit Optimization",
+      "ring": 0,
+      "moved": 1,
+      "link": "https://en.wikipedia.org/wiki/Satellite_constellation",
+      "description": "Optimize orbital planes and tasking windows for target revisit goals."
+    },
+    {
+      "name": "SAR Interferometry (InSAR)",
+      "ring": 1,
+      "moved": 1,
+      "link": "https://earth.esa.int/eogateway/activities/insar",
+      "description": "High-value deformation monitoring technique across large regions."
+    },
+    {
+      "name": "Onboard Edge AI Inference",
+      "ring": 1,
+      "moved": 2,
+      "link": "https://www.nasa.gov/smallsat-institute/sst-soa/small-spacecraft-avionics/",
+      "description": "Run inference near the sensor to reduce downlink pressure and latency."
+    },
+    {
+      "name": "Cross-Sensor Fusion Pipelines",
+      "ring": 2,
+      "moved": 1,
+      "link": "https://en.wikipedia.org/wiki/Sensor_fusion",
+      "description": "Fuse optical, SAR, and thermal feeds into unified analytic products."
+    },
+    {
+      "name": "Manual-Only Mission Planning",
+      "ring": 3,
+      "moved": -1,
+      "link": "https://en.wikipedia.org/wiki/Mission_planning",
+      "description": "Avoid for modern constellations where scale requires automation."
+    }
+  ]
+}

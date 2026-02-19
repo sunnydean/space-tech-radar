@@ -1,0 +1,44 @@
+{
+  "quadrant": {
+    "index": 0,
+    "name": "Tools",
+    "color": "#3b82f6"
+  },
+  "entries": [
+    {
+      "name": "CesiumJS",
+      "ring": 0,
+      "moved": 1,
+      "link": "https://cesium.com/platform/cesiumjs/",
+      "description": "Core web engine for interactive 3D space and geospatial visualization."
+    },
+    {
+      "name": "Orekit",
+      "ring": 1,
+      "moved": 1,
+      "link": "https://www.orekit.org/",
+      "description": "Robust orbital mechanics library for mission analysis and tracking."
+    },
+    {
+      "name": "GMAT",
+      "ring": 1,
+      "moved": 0,
+      "link": "https://gmatcentral.org/",
+      "description": "Open-source mission design and trajectory optimization toolkit."
+    },
+    {
+      "name": "Open MCT",
+      "ring": 2,
+      "moved": 1,
+      "link": "https://github.com/nasa/openmct",
+      "description": "Telemetry visualization platform for mission operations consoles."
+    },
+    {
+      "name": "Legacy Desktop Flight Tools",
+      "ring": 3,
+      "moved": -1,
+      "link": "https://en.wikipedia.org/wiki/Flight_dynamics_(spacecraft)",
+      "description": "Retain only when migration risk outweighs modernization benefits."
+    }
+  ]
+}
