@@ -1,36 +1,40 @@
 # Simple Tech Radar
 
-Minimal D3 tech radar with clickable dots and a small pop-up description.
+Minimal D3 radar with Earth/Space mode switching, clickable blips, quadrant entry panels, and Markdown narrative rendering.
 
-## What this includes
-- Editable data in JSON files per quadrant (`data/quadrants/*.json`)
-- Editable copy in Markdown (`content/radar-text.md`)
+## Run locally
 
-## Run it
-Open `index.html` directly in a browser, or serve the folder locally:
+Serve the repository root:
 
 ```bash
 python3 -m http.server 8080
 ```
 
-Then open `http://localhost:8080`.
+Open `http://localhost:8080`.
 
-## Customize
-- Global config lives in `data/radar.config.json` (`rings`, `quadrantFiles`, `textFile`).
-- Each quadrant file in `data/quadrants/*.json` contains:
-  - `quadrant` config (`index`, `name`)
-  - `entries` list
-- Each entry supports:
-  - `name`
-  - `link` (href URL)
-  - `ring` (`0..3`)
-- Editable text lives in `content/radar-text.md`:
-  - top-level `title:` and `subtitle:`
-  - narrative content under `# Section` (rendered below the radar)
-  - section per entry (`## Entry Name`)
-  - optional `linkName:` inside a section
-  - section body becomes popup description
-- Update ring names/colors in `data/radar.config.json`.
-- Adjust styling in `styles.css`.
+## Project structure
 
+- `index.html`: static shell.
+- `styles.css`: all styling and responsive rules.
+- `main.js`: app logic (data loading, layout, rendering, popup, mode switching).
+- `data/earth/*` and `data/space/*`: mode-specific config, quadrants, and narrative text.
 
+## Data format
+
+Each mode folder has:
+
+- `radar.config.json`
+  - `rings`: ordered ring names.
+  - `quadrantFiles`: list of quadrant JSON files.
+  - `textFile`: markdown file rendered below radar.
+- `quadrants/*.json`
+  - `quadrant`: `{ index, name, color }`
+  - `entries`: `{ name, ring, link, description }[]`
+
+Optional per-entry markdown overrides are supported in `radar-text.md` before `# Section`:
+
+```md
+## Entry Name
+linkName: docs.example.com
+Custom popup description...
+```
