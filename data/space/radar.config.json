@@ -27,7 +27,7 @@
   "core": {
     "entries": [
       {
-        "Name": "Python",
+        "Name": "Pyyython",
         "Quadrant": "CORE",
         "Ring": "Core",
         "Link": "https://www.python.org/",
