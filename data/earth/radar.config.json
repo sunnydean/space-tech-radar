@@ -27,6 +27,24 @@
   "core": {
     "entries": [
       {
+        "Name": "Python",
+        "Quadrant": "CORE",
+        "Ring": "Core",
+        "Link": "https://www.python.org/",
+        "Moved": 0,
+        "Description": "Primary language across EO ingestion, analytics, and production model workflows.",
+        "Tags": [
+          "Core Library",
+          "Server-Side"
+        ],
+        "Downloads": 0.0,
+        "Forks": 0.0,
+        "Activity Metric": 0.0,
+        "Languages": {
+          "Python": 1
+        }
+      },
+      {
         "Name": "GDAL + PROJ",
         "Quadrant": "CORE",
         "Ring": "Core",

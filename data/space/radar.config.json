@@ -37,9 +37,9 @@
           "Core Library",
           "Server-Side"
         ],
-        "Downloads": 0,
-        "Forks": 0,
-        "Activity Metric": 0,
+        "Downloads": 0.0,
+        "Forks": 0.0,
+        "Activity Metric": 0.0,
         "Languages": {
           "Python": 1
         }
@@ -56,9 +56,9 @@
           "Pangeo",
           "Spatial analysis"
         ],
-        "Downloads": 0,
-        "Forks": 0,
-        "Activity Metric": 0,
+        "Downloads": 0.0,
+        "Forks": 0.0,
+        "Activity Metric": 0.0,
         "Languages": {
           "Python": 1
         }
@@ -75,9 +75,9 @@
           "Server-Side",
           "Data management"
         ],
-        "Downloads": 0,
-        "Forks": 0,
-        "Activity Metric": 0,
+        "Downloads": 0.0,
+        "Forks": 0.0,
+        "Activity Metric": 0.0,
         "Languages": {
           "C": 1
         }
@@ -93,9 +93,9 @@
           "Platform",
           "Server-Side"
         ],
-        "Downloads": 0,
-        "Forks": 0,
-        "Activity Metric": 0,
+        "Downloads": 0.0,
+        "Forks": 0.0,
+        "Activity Metric": 0.0,
         "Languages": {
           "YAML": 1
         }
@@ -112,9 +112,9 @@
           "Techniques",
           "Server-Side"
         ],
-        "Downloads": 0,
-        "Forks": 0,
-        "Activity Metric": 0,
+        "Downloads": 0.0,
+        "Forks": 0.0,
+        "Activity Metric": 0.0,
         "Languages": {}
       },
       {
@@ -128,9 +128,9 @@
           "Platform",
           "Data management"
         ],
-        "Downloads": 0,
-        "Forks": 0,
-        "Activity Metric": 0,
+        "Downloads": 0.0,
+        "Forks": 0.0,
+        "Activity Metric": 0.0,
         "Languages": {}
       },
       {
@@ -145,9 +145,9 @@
           "Data management",
           "Server-Side"
         ],
-        "Downloads": 0,
-        "Forks": 0,
-        "Activity Metric": 0,
+        "Downloads": 0.0,
+        "Forks": 0.0,
+        "Activity Metric": 0.0,
         "Languages": {}
       },
       {
@@ -162,9 +162,9 @@
           "Data management",
           "Core Library"
         ],
-        "Downloads": 0,
-        "Forks": 0,
-        "Activity Metric": 0,
+        "Downloads": 0.0,
+        "Forks": 0.0,
+        "Activity Metric": 0.0,
         "Languages": {}
       },
       {
@@ -179,9 +179,9 @@
           "Desktop",
           "Pangeo"
         ],
-        "Downloads": 0,
-        "Forks": 0,
-        "Activity Metric": 0,
+        "Downloads": 0.0,
+        "Forks": 0.0,
+        "Activity Metric": 0.0,
         "Languages": {}
       },
       {
@@ -195,9 +195,9 @@
           "Platform",
           "Server-Side"
         ],
-        "Downloads": 0,
-        "Forks": 0,
-        "Activity Metric": 0,
+        "Downloads": 0.0,
+        "Forks": 0.0,
+        "Activity Metric": 0.0,
         "Languages": {
           "YAML": 1
         }
@@ -213,9 +213,9 @@
           "Platform",
           "Server-Side"
         ],
-        "Downloads": 0,
-        "Forks": 0,
-        "Activity Metric": 0,
+        "Downloads": 0.0,
+        "Forks": 0.0,
+        "Activity Metric": 0.0,
         "Languages": {}
       },
       {
@@ -230,9 +230,9 @@
           "Server-Side",
           "Web-Tools"
         ],
-        "Downloads": 0,
-        "Forks": 0,
-        "Activity Metric": 0,
+        "Downloads": 0.0,
+        "Forks": 0.0,
+        "Activity Metric": 0.0,
         "Languages": {}
       },
       {
@@ -246,9 +246,9 @@
           "Data management",
           "Platform"
         ],
-        "Downloads": 0,
-        "Forks": 0,
-        "Activity Metric": 0,
+        "Downloads": 0.0,
+        "Forks": 0.0,
+        "Activity Metric": 0.0,
         "Languages": {}
       },
       {
@@ -262,9 +262,9 @@
           "Platform",
           "Server-Side"
         ],
-        "Downloads": 0,
-        "Forks": 0,
-        "Activity Metric": 0,
+        "Downloads": 0.0,
+        "Forks": 0.0,
+        "Activity Metric": 0.0,
         "Languages": {
           "YAML": 1
         }
@@ -281,9 +281,9 @@
           "Server-Side",
           "Data management"
         ],
-        "Downloads": 0,
-        "Forks": 0,
-        "Activity Metric": 0,
+        "Downloads": 0.0,
+        "Forks": 0.0,
+        "Activity Metric": 0.0,
         "Languages": {
           "HCL": 1
         }
@@ -310,9 +310,9 @@
             "3D modeling",
             "Cartography and visualisation"
           ],
-          "Downloads": 0,
-          "Forks": 0,
-          "Activity Metric": 0,
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
           "Languages": {
             "JavaScript": 1
           }
@@ -329,9 +329,9 @@
             "Techniques",
             "Platform"
           ],
-          "Downloads": 0,
-          "Forks": 0,
-          "Activity Metric": 0,
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
           "Languages": {}
         },
         {
@@ -346,9 +346,9 @@
             "3D modeling",
             "Techniques"
           ],
-          "Downloads": 0,
-          "Forks": 0,
-          "Activity Metric": 0,
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
           "Languages": {}
         },
         {
@@ -363,9 +363,9 @@
             "Platform",
             "Server-Side"
           ],
-          "Downloads": 0,
-          "Forks": 0,
-          "Activity Metric": 0,
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
           "Languages": {
             "JavaScript": 1
           }
@@ -381,9 +381,9 @@
             "Desktop",
             "Techniques"
           ],
-          "Downloads": 0,
-          "Forks": 0,
-          "Activity Metric": 0,
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
           "Languages": {}
         }
       ]
@@ -407,9 +407,9 @@
             "Spatial analysis",
             "Remote sensing analysis"
           ],
-          "Downloads": 0,
-          "Forks": 0,
-          "Activity Metric": 0,
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
           "Languages": {}
         },
         {
@@ -424,9 +424,9 @@
             "Remote sensing analysis",
             "Spatial analysis"
           ],
-          "Downloads": 0,
-          "Forks": 0,
-          "Activity Metric": 0,
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
           "Languages": {}
         },
         {
@@ -441,9 +441,9 @@
             "Mobile",
             "Remote sensing analysis"
           ],
-          "Downloads": 0,
-          "Forks": 0,
-          "Activity Metric": 0,
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
           "Languages": {}
         },
         {
@@ -458,9 +458,9 @@
             "Data management",
             "Remote sensing analysis"
           ],
-          "Downloads": 0,
-          "Forks": 0,
-          "Activity Metric": 0,
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
           "Languages": {}
         },
         {
@@ -474,9 +474,9 @@
             "Techniques",
             "Data management"
           ],
-          "Downloads": 0,
-          "Forks": 0,
-          "Activity Metric": 0,
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
           "Languages": {}
         }
       ]
@@ -499,9 +499,9 @@
             "Data Repository",
             "Remote sensing analysis"
           ],
-          "Downloads": 0,
-          "Forks": 0,
-          "Activity Metric": 0,
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
           "Languages": {}
         },
         {
@@ -515,9 +515,9 @@
             "Data Repository",
             "Remote sensing analysis"
           ],
-          "Downloads": 0,
-          "Forks": 0,
-          "Activity Metric": 0,
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
           "Languages": {}
         },
         {
@@ -531,9 +531,9 @@
             "Data Repository",
             "Remote sensing analysis"
           ],
-          "Downloads": 0,
-          "Forks": 0,
-          "Activity Metric": 0,
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
           "Languages": {}
         },
         {
@@ -548,9 +548,9 @@
             "Remote sensing analysis",
             "Spatial analysis"
           ],
-          "Downloads": 0,
-          "Forks": 0,
-          "Activity Metric": 0,
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
           "Languages": {}
         },
         {
@@ -564,9 +564,9 @@
             "Data Repository",
             "Data management"
           ],
-          "Downloads": 0,
-          "Forks": 0,
-          "Activity Metric": 0,
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
           "Languages": {}
         }
       ]
@@ -589,9 +589,9 @@
             "Platform",
             "Data management"
           ],
-          "Downloads": 0,
-          "Forks": 0,
-          "Activity Metric": 0,
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
           "Languages": {}
         },
         {
@@ -606,9 +606,9 @@
             "Data management",
             "Platform"
           ],
-          "Downloads": 0,
-          "Forks": 0,
-          "Activity Metric": 0,
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
           "Languages": {}
         },
         {
@@ -623,9 +623,9 @@
             "Server-Side",
             "Data management"
           ],
-          "Downloads": 0,
-          "Forks": 0,
-          "Activity Metric": 0,
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
           "Languages": {
             "JavaScript": 1
           }
@@ -642,9 +642,9 @@
             "Data Repository",
             "Platform"
           ],
-          "Downloads": 0,
-          "Forks": 0,
-          "Activity Metric": 0,
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
           "Languages": {}
         },
         {
@@ -658,9 +658,9 @@
             "Data management",
             "Platform"
           ],
-          "Downloads": 0,
-          "Forks": 0,
-          "Activity Metric": 0,
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
           "Languages": {}
         }
       ]
