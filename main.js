@@ -2,6 +2,7 @@ const RADAR = {
   size: 980,
   outer: 485,
   dotRadius: 12.5,
+  coreLabelSafeRadius: 46,
   quadrantAngles: [
     [-Math.PI / 2, 0],
     [-Math.PI, -Math.PI / 2],
@@ -10,7 +11,8 @@ const RADAR = {
   ],
   axisPadding: 0.29,
   topLabelGap: 0.44,
-  ringInset: 22
+  ringInset: 22,
+  ringEdgePadding: 6
 };
 
 const MODES = {
@@ -19,18 +21,15 @@ const MODES = {
 };
 
 const FALLBACK_QUADRANT_COLORS = ["#3b82f6", "#14b8a6", "#a855f7", "#f97316"];
+const CORE = {
+  label: "CORE",
+  fallbackColor: "#0f766e"
+};
 
 const $ = (id) => document.getElementById(id);
 const clamp = (value, min, max) => Math.max(min, Math.min(max, value));
 const normalizeNewlines = (text) => (text || "").replace(/\r\n?/g, "\n");
 const joinPath = (base, part) => `${base.replace(/\/+$/, "")}/${part.replace(/^\/+/, "")}`;
-
-function resolvePath(base, path) {
-  if (!path) return path;
-  if (/^(?:https?:)?\/\//i.test(path) || path.startsWith("/")) return path;
-  if (/^(?:data|content)\//.test(path)) return path;
-  return joinPath(base, path);
-}
 
 async function fetchJson(path) {
   const response = await fetch(path);
@@ -77,19 +76,35 @@ function parseEntryTextOverrides(markdown) {
 }
 
 async function loadRadarData(mode) {
-  const config = await fetchJson(joinPath(mode.root, "radar.config.json"));
-  const textPath = config.textFile ? resolvePath(mode.root, config.textFile) : null;
-  const quadrantPaths = (config.quadrantFiles || []).map((file) => resolvePath(mode.root, file));
+  const configPath = joinPath(mode.root, "radar.config.json");
+  const config = await fetchJson(configPath);
+  const rings = Array.isArray(config.rings) ? config.rings : [];
+  const hasCoreRing = String(rings[0]?.name || "").trim().toLowerCase() === "core";
+  if (!hasCoreRing) throw new Error(`Invalid ${configPath}: first ring must be "Core".`);
 
-  const [storyMarkdown, quadrantDocs] = await Promise.all([
-    textPath ? fetchText(textPath) : Promise.resolve(""),
-    Promise.all(quadrantPaths.map(fetchJson))
-  ]);
+  const textPath = config.textFile ? joinPath(mode.root, config.textFile) : null;
+  const coreEntries = Array.isArray(config?.core?.entries) ? config.core.entries : [];
+  const quadrantDocs = Array.isArray(config?.quadrants) ? config.quadrants : [];
+
+  const storyMarkdown = textPath ? await fetchText(textPath) : "";
 
   const textOverrides = parseEntryTextOverrides(storyMarkdown);
   const quadrants = [];
   const quadrantColors = [];
   const entries = [];
+  const maxRing = rings.length - 1;
+
+  coreEntries.forEach((entry) => {
+    const override = textOverrides.get(entry.name) || {};
+    entries.push({
+      ...entry,
+      ring: 0,
+      quadrant: null,
+      isCore: true,
+      description: override.description || entry.description || "",
+      linkName: override.linkName || entry.linkName || hostname(entry.link)
+    });
+  });
 
   quadrantDocs.forEach((doc) => {
     const q = doc.quadrant;
@@ -101,10 +116,17 @@ async function loadRadarData(mode) {
     quadrantColors[q.index] = q.color || FALLBACK_QUADRANT_COLORS[q.index % FALLBACK_QUADRANT_COLORS.length];
 
     (doc.entries || []).forEach((entry) => {
+      const ring = Number(entry.ring) + 1;
+      if (!Number.isInteger(ring) || ring < 1 || ring > maxRing) {
+        throw new Error(`Invalid ring index for entry "${entry.name}".`);
+      }
+
       const override = textOverrides.get(entry.name) || {};
       entries.push({
         ...entry,
+        ring,
         quadrant: q.index,
+        isCore: false,
         description: override.description || entry.description || "",
         linkName: override.linkName || entry.linkName || hostname(entry.link)
       });
@@ -112,7 +134,7 @@ async function loadRadarData(mode) {
   });
 
   return {
-    rings: config.rings || [],
+    rings,
     quadrants,
     quadrantColors,
     entries,
@@ -143,14 +165,31 @@ function createPopupController() {
   const link = $("popup-link");
 
   let onHide = () => {};
+  let onLeave = () => {};
+  let pointerInside = false;
+
+  if (popup) {
+    popup.addEventListener("mouseenter", () => {
+      pointerInside = true;
+    });
+    popup.addEventListener("mouseleave", () => {
+      pointerInside = false;
+      onLeave();
+    });
+  }
 
   function setOnHide(handler) {
     onHide = typeof handler === "function" ? handler : () => {};
   }
 
+  function setOnLeave(handler) {
+    onLeave = typeof handler === "function" ? handler : () => {};
+  }
+
   function hide() {
     if (!popup || popup.hidden) return;
     popup.hidden = true;
+    pointerInside = false;
     onHide();
   }
 
@@ -184,8 +223,10 @@ function createPopupController() {
     open,
     hide,
     setOnHide,
+    setOnLeave,
     isVisible: () => Boolean(popup && !popup.hidden),
-    contains: (target) => Boolean(popup && target && popup.contains(target))
+    contains: (target) => Boolean(popup && target && popup.contains(target)),
+    isPointerInside: () => pointerInside
   };
 }
 
@@ -206,26 +247,30 @@ function distribute(total, capacities) {
   return counts;
 }
 
-function buildRows(minRadius, maxRadius, rowCount) {
-  if (rowCount <= 1) return [(minRadius + maxRadius) * 0.5];
+function buildRows(minRadius, maxRadius, rowCount, singlePlacement = "mid") {
+  if (rowCount <= 1) {
+    return [singlePlacement === "outer" ? maxRadius : (minRadius + maxRadius) * 0.5];
+  }
   return Array.from({ length: rowCount }, (_, index) =>
     minRadius + ((maxRadius - minRadius) * index) / (rowCount - 1)
   );
 }
 
-function chooseRows(count, minRadius, maxRadius, angleSpan) {
+function chooseRows(count, minRadius, maxRadius, angleSpan, options = {}) {
+  const { minRows = 1, singlePlacement = "mid" } = options;
   const gap = RADAR.dotRadius * 2 + 8;
   const maxRows = Math.max(1, Math.floor((maxRadius - minRadius) / gap) + 1);
   const capacityAt = (radius) => Math.max(1, Math.floor((angleSpan * radius) / gap));
 
   for (let rowCount = 1; rowCount <= maxRows; rowCount += 1) {
-    const radii = buildRows(minRadius, maxRadius, rowCount);
+    const radii = buildRows(minRadius, maxRadius, rowCount, singlePlacement);
     const capacities = radii.map(capacityAt);
     const total = capacities.reduce((sum, value) => sum + value, 0);
-    if (total >= count) return { radii, capacities };
+    if (total >= count && rowCount >= minRows) return { radii, capacities };
   }
 
-  const radii = buildRows(minRadius, maxRadius, maxRows);
+  const fallbackRows = Math.max(maxRows, minRows);
+  const radii = buildRows(minRadius, maxRadius, fallbackRows, singlePlacement);
   const capacities = radii.map(capacityAt);
   const total = capacities.reduce((sum, value) => sum + value, 0);
   if (total < count) capacities[capacities.length - 1] += count - total;
@@ -249,7 +294,17 @@ function boundsForQuadrant(quadrant) {
   return [minAngle, maxAngle];
 }
 
-function layoutNodes(entries, center, ringStep) {
+function ringRadiusBounds(ring, ringStep) {
+  const coreInset = RADAR.dotRadius + 4 + RADAR.ringEdgePadding;
+  const ringInset = RADAR.ringInset + RADAR.ringEdgePadding;
+  const innerInset = ring === 0 ? coreInset : ringInset;
+  const outerInset = ring === 0 ? coreInset : ringInset;
+  const minRadius = ring * ringStep + innerInset;
+  const maxRadius = (ring + 1) * ringStep - outerInset;
+  return [Math.min(minRadius, maxRadius), Math.max(minRadius, maxRadius)];
+}
+
+function layoutQuadrantNodes(entries, center, ringStep) {
   const groups = [...d3.group(entries, (entry) => `${entry.quadrant}-${entry.ring}`).entries()]
     .sort(([left], [right]) => {
       const [leftQuadrant, leftRing] = left.split("-").map(Number);
@@ -258,17 +313,12 @@ function layoutNodes(entries, center, ringStep) {
     });
 
   const nodes = [];
-  let id = 0;
 
   for (const [key, group] of groups) {
     const [quadrant, ring] = key.split("-").map(Number);
     const [minAngle, maxAngle] = boundsForQuadrant(quadrant);
     const angleSpan = maxAngle - minAngle;
-
-    const minRadius = ring * ringStep + RADAR.ringInset;
-    const maxRadius = (ring + 1) * ringStep - RADAR.ringInset;
-    const safeMin = Math.min(minRadius, maxRadius);
-    const safeMax = Math.max(minRadius, maxRadius);
+    const [safeMin, safeMax] = ringRadiusBounds(ring, ringStep);
 
     const rowPlan = chooseRows(group.length, safeMin, safeMax, angleSpan);
     const perRow = distribute(group.length, rowPlan.capacities);
@@ -284,7 +334,6 @@ function layoutNodes(entries, center, ringStep) {
 
         nodes.push({
           ...entry,
-          id: id++,
           x: center + Math.cos(angle) * radius,
           y: center + Math.sin(angle) * radius
         });
@@ -293,6 +342,59 @@ function layoutNodes(entries, center, ringStep) {
   }
 
   return nodes;
+}
+
+function layoutCoreNodes(entries, center, ringStep) {
+  const groups = [...d3.group(entries, (entry) => entry.ring).entries()]
+    .sort(([leftRing], [rightRing]) => leftRing - rightRing);
+  const nodes = [];
+  const fullCircle = Math.PI * 2;
+
+  for (const [ring, group] of groups) {
+    const ordered = group.slice().sort((a, b) => a.name.localeCompare(b.name));
+    if (!ordered.length) continue;
+
+    const [baseMin, safeMax] = ringRadiusBounds(ring, ringStep);
+    const safeMin = Math.min(safeMax, Math.max(baseMin, RADAR.coreLabelSafeRadius));
+    const preferredRows = ordered.length > 8 ? 2 : 1;
+    const rowPlan = chooseRows(ordered.length, safeMin, safeMax, fullCircle, {
+      minRows: preferredRows,
+      singlePlacement: "outer"
+    });
+    const counts = distribute(ordered.length, rowPlan.capacities);
+
+    let cursor = 0;
+    rowPlan.radii.forEach((radius, rowIndex) => {
+      const count = counts[rowIndex] || 0;
+      if (!count) return;
+      const row = ordered.slice(cursor, cursor + count);
+      cursor += count;
+
+      const step = fullCircle / count;
+      for (let column = 0; column < count; column += 1) {
+        const entry = row[column];
+        const rowOffset = rowIndex % 2 ? 0.5 : 0;
+        const angle = count === 1 ? -Math.PI / 2 : -Math.PI / 2 + step * (column + rowOffset);
+
+        nodes.push({
+          ...entry,
+          x: center + Math.cos(angle) * radius,
+          y: center + Math.sin(angle) * radius
+        });
+      }
+    });
+  }
+
+  return nodes;
+}
+
+function layoutNodes(entries, center, ringStep) {
+  const coreNodes = layoutCoreNodes(entries.filter((entry) => entry.isCore), center, ringStep);
+  const quadrantNodes = layoutQuadrantNodes(entries.filter((entry) => !entry.isCore), center, ringStep);
+  return [...coreNodes, ...quadrantNodes].map((entry, id) => ({
+    ...entry,
+    id
+  }));
 }
 
 function ringOpacity(ringIndex, ringCount) {
@@ -324,6 +426,56 @@ function clearQuadrantLists() {
   return sections;
 }
 
+function clearCoreList() {
+  const section = $("core-list");
+  const entries = $("core-entries");
+  if (!section || !entries) return null;
+  entries.replaceChildren();
+  section.hidden = true;
+  section.style.removeProperty("--core-list-color");
+  return { section, entries };
+}
+
+function createEntryButton(entry, color, openEntryPopup, setHover) {
+  const button = document.createElement("button");
+  button.type = "button";
+  button.className = "entry-btn";
+  button.dataset.id = String(entry.id);
+
+  const dot = document.createElement("span");
+  dot.className = "entry-dot";
+  dot.style.background = color;
+
+  const text = document.createElement("span");
+  text.textContent = entry.name;
+
+  button.append(dot, text);
+
+  button.addEventListener("click", (event) => {
+    event.stopPropagation();
+    openEntryPopup(entry, { x: event.clientX, y: event.clientY });
+  });
+  button.addEventListener("mouseenter", () => setHover(entry.id));
+  button.addEventListener("mouseleave", () => setHover(null));
+  button.addEventListener("focus", () => setHover(entry.id));
+  button.addEventListener("blur", () => setHover(null));
+
+  return button;
+}
+
+function appendEntryButtons(entries, container, color, openEntryPopup, setHover, entryButtons) {
+  const colorFor = typeof color === "function" ? color : () => color;
+
+  entries
+    .slice()
+    .sort((left, right) => left.name.localeCompare(right.name))
+    .forEach((entry) => {
+      const button = createEntryButton(entry, colorFor(entry), openEntryPopup, setHover);
+      entryButtons.set(entry.id, button);
+      container.appendChild(button);
+    });
+}
+
 function renderRadar(data, popupController) {
   popupController.hide();
   renderStory(data.storyMarkdown);
@@ -333,11 +485,21 @@ function renderRadar(data, popupController) {
   const ringStep = RADAR.outer / ringCount;
   const colorByQuadrant = (index) => data.quadrantColors[index] || "#0f5e96";
   const quadrantName = (index) => data.quadrants[index] || `Quadrant ${index + 1}`;
+  const coreColor = data.rings[0]?.color || CORE.fallbackColor;
+  const colorForEntry = (entry) => (entry.isCore ? coreColor : colorByQuadrant(entry.quadrant));
 
   const svg = d3.select("#radar").attr("viewBox", `0 0 ${RADAR.size} ${RADAR.size}`);
   svg.selectAll("*").remove();
   const layer = svg.append("g");
   const cornerSections = clearQuadrantLists();
+  const coreList = clearCoreList();
+
+  layer.append("circle")
+    .attr("class", "core-area")
+    .attr("cx", center)
+    .attr("cy", center)
+    .attr("r", ringStep)
+    .attr("fill", coreColor);
 
   data.rings.forEach((ring, index) => {
     layer.append("circle")
@@ -346,7 +508,7 @@ function renderRadar(data, popupController) {
       .attr("cy", center)
       .attr("r", ringStep * (index + 1));
 
-    const ringCenter = index * ringStep + ringStep * 0.5;
+    const ringCenter = index === 0 ? 0 : index * ringStep + ringStep * 0.5;
     layer.append("text")
       .attr("class", "ring-label")
       .attr("x", center)
@@ -356,21 +518,28 @@ function renderRadar(data, popupController) {
       .text((ring.name || "").toUpperCase());
   });
 
-  layer.append("line")
-    .attr("class", "axis")
-    .attr("x1", center - RADAR.outer)
-    .attr("y1", center)
-    .attr("x2", center + RADAR.outer)
-    .attr("y2", center);
-  layer.append("line")
-    .attr("class", "axis")
-    .attr("x1", center)
-    .attr("y1", center - RADAR.outer)
-    .attr("x2", center)
-    .attr("y2", center + RADAR.outer);
+  const coreBoundary = ringStep;
+  const axisSegments = [
+    [center - RADAR.outer, center, center - coreBoundary, center],
+    [center + coreBoundary, center, center + RADAR.outer, center],
+    [center, center - RADAR.outer, center, center - coreBoundary],
+    [center, center + coreBoundary, center, center + RADAR.outer]
+  ];
+  axisSegments.forEach(([x1, y1, x2, y2]) => {
+    layer.append("line")
+      .attr("class", "axis")
+      .attr("x1", x1)
+      .attr("y1", y1)
+      .attr("x2", x2)
+      .attr("y2", y2);
+  });
 
   const nodes = layoutNodes(data.entries, center, ringStep);
-  const byQuadrant = d3.group(nodes, (entry) => entry.quadrant);
+  const coreNodes = nodes.filter((entry) => entry.isCore);
+  const byQuadrant = d3.group(
+    nodes.filter((entry) => !entry.isCore),
+    (entry) => entry.quadrant
+  );
 
   const blips = layer.selectAll(".blip")
     .data(nodes)
@@ -380,7 +549,7 @@ function renderRadar(data, popupController) {
     .attr("cx", (entry) => entry.x)
     .attr("cy", (entry) => entry.y)
     .attr("r", RADAR.dotRadius)
-    .attr("fill", (entry) => colorByQuadrant(entry.quadrant))
+    .attr("fill", (entry) => colorForEntry(entry))
     .attr("fill-opacity", (entry) => ringOpacity(entry.ring, ringCount))
     .attr("tabindex", 0)
     .attr("role", "button")
@@ -391,6 +560,23 @@ function renderRadar(data, popupController) {
   let activeId = null;
   let hoverId = null;
   const entryButtons = new Map();
+  let hideTimer = null;
+
+  const clearHideTimer = () => {
+    if (hideTimer !== null) {
+      window.clearTimeout(hideTimer);
+      hideTimer = null;
+    }
+  };
+
+  const schedulePopupHide = () => {
+    clearHideTimer();
+    hideTimer = window.setTimeout(() => {
+      hideTimer = null;
+      if (hoverId !== null || popupController.isPointerInside()) return;
+      popupController.hide();
+    }, 90);
+  };
 
   const syncHighlight = () => {
     blips
@@ -405,13 +591,15 @@ function renderRadar(data, popupController) {
 
   const setHover = (id) => {
     hoverId = id;
+    if (id !== null) clearHideTimer();
     syncHighlight();
   };
 
   const openEntryPopup = (entry, point) => {
+    clearHideTimer();
     popupController.open({
       entry,
-      quadrantName: quadrantName(entry.quadrant),
+      quadrantName: entry.isCore ? CORE.label : quadrantName(entry.quadrant),
       ringName: data.rings[entry.ring]?.name || "",
       point
     });
@@ -420,20 +608,31 @@ function renderRadar(data, popupController) {
   };
 
   popupController.setOnHide(() => {
+    clearHideTimer();
     activeId = null;
     hoverId = null;
     syncHighlight();
   });
-
-  blips.on("click", (event, entry) => {
-    event.stopPropagation();
-    openEntryPopup(entry, { x: event.clientX, y: event.clientY });
+  popupController.setOnLeave(() => {
+    if (hoverId === null) schedulePopupHide();
   });
 
-  blips.on("mouseenter", (_event, entry) => setHover(entry.id));
-  blips.on("mouseleave", () => setHover(null));
-  blips.on("focus", (_event, entry) => setHover(entry.id));
-  blips.on("blur", () => setHover(null));
+  blips.on("mouseenter", (_event, entry) => {
+    setHover(entry.id);
+    openEntryPopup(entry, nodePoint(svg, entry));
+  });
+  blips.on("mouseleave", (_event, entry) => {
+    setHover(null);
+    if (activeId === entry.id) schedulePopupHide();
+  });
+  blips.on("focus", (_event, entry) => {
+    setHover(entry.id);
+    openEntryPopup(entry, nodePoint(svg, entry));
+  });
+  blips.on("blur", (_event, entry) => {
+    setHover(null);
+    if (activeId === entry.id) schedulePopupHide();
+  });
 
   blips.on("keydown", (event, entry) => {
     if (event.key === "Enter" || event.key === " ") {
@@ -441,6 +640,12 @@ function renderRadar(data, popupController) {
       openEntryPopup(entry, nodePoint(svg, entry));
     }
   });
+
+  if (coreList) {
+    coreList.section.style.setProperty("--core-list-color", coreColor);
+    coreList.section.hidden = !coreNodes.length;
+    appendEntryButtons(coreNodes, coreList.entries, coreColor, openEntryPopup, setHover, entryButtons);
+  }
 
   cornerSections.forEach((section) => {
     const q = Number(section.dataset.q);
@@ -451,36 +656,14 @@ function renderRadar(data, popupController) {
     title.textContent = quadrantName(q).toUpperCase();
     title.style.color = colorByQuadrant(q);
 
-    (byQuadrant.get(q) || [])
-      .slice()
-      .sort((left, right) => left.name.localeCompare(right.name))
-      .forEach((entry) => {
-        const button = document.createElement("button");
-        button.type = "button";
-        button.className = "entry-btn";
-        button.dataset.id = String(entry.id);
-
-        const dot = document.createElement("span");
-        dot.className = "entry-dot";
-        dot.style.background = colorByQuadrant(entry.quadrant);
-
-        const text = document.createElement("span");
-        text.textContent = entry.name;
-
-        button.append(dot, text);
-
-        button.addEventListener("click", (event) => {
-          event.stopPropagation();
-          openEntryPopup(entry, { x: event.clientX, y: event.clientY });
-        });
-        button.addEventListener("mouseenter", () => setHover(entry.id));
-        button.addEventListener("mouseleave", () => setHover(null));
-        button.addEventListener("focus", () => setHover(entry.id));
-        button.addEventListener("blur", () => setHover(null));
-
-        entryButtons.set(entry.id, button);
-        wrap.appendChild(button);
-      });
+    appendEntryButtons(
+      byQuadrant.get(q) || [],
+      wrap,
+      (entry) => colorByQuadrant(entry.quadrant),
+      openEntryPopup,
+      setHover,
+      entryButtons
+    );
   });
 }
 
@@ -526,7 +709,7 @@ function showLoadError(error) {
   console.error(error);
   const subtitle = $("radar-subtitle");
   if (subtitle) {
-    subtitle.textContent = "Failed to load radar files. Start a local server and verify data files.";
+    subtitle.textContent = `Failed to load radar files: ${error?.message || "Unknown error."}`;
   }
 }
 

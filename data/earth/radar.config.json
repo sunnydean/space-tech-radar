@@ -1,17 +1,269 @@
 {
   "title": "Earth Observation Tech Radar",
-  "subtitle": "Space Tech Radar for Earth Observation and Geospatial Technologies",
+  "subtitle": "Earth Observation Tech Radar for Downstream Science, Analytics, and Applications",
   "textFile": "radar-text.md",
   "rings": [
-    { "name": "Adopt", "color": "#1e9f5b" },
-    { "name": "Trial", "color": "#1f83c2" },
-    { "name": "Assess", "color": "#d79a00" },
-    { "name": "Hold", "color": "#c8553d" }
+    {
+      "name": "Core",
+      "color": "#0f766e"
+    },
+    {
+      "name": "Adopt",
+      "color": "#1e9f5b"
+    },
+    {
+      "name": "Trial",
+      "color": "#1f83c2"
+    },
+    {
+      "name": "Assess",
+      "color": "#d79a00"
+    },
+    {
+      "name": "Hold",
+      "color": "#c8553d"
+    }
   ],
-  "quadrantFiles": [
-    "quadrants/tools.json",
-    "quadrants/techniques.json",
-    "quadrants/data.json",
-    "quadrants/standards.json"
+  "core": {
+    "entries": [
+      {
+        "name": "Python",
+        "moved": 0,
+        "link": "https://www.python.org/",
+        "description": "Primary language across EO ingestion, analytics, and production model workflows."
+      },
+      {
+        "name": "GDAL + PROJ",
+        "moved": 0,
+        "link": "https://gdal.org/",
+        "description": "Foundational geospatial I/O and coordinate transformation stack for raster and vector processing."
+      },
+      {
+        "name": "PostgreSQL + PostGIS",
+        "moved": 0,
+        "link": "https://postgis.net/",
+        "description": "Core transactional and spatial query layer that underpins many EO products and APIs."
+      },
+      {
+        "name": "S3-Compatible Object Storage",
+        "moved": 0,
+        "link": "https://aws.amazon.com/s3/",
+        "description": "Baseline storage contract for cloud-native geospatial data lakes and tile assets."
+      },
+      {
+        "name": "GeoPandas",
+        "moved": 0,
+        "link": "https://geopandas.org/",
+        "description": "Core dataframe API for vector processing and geospatial data engineering."
+      },
+      {
+        "name": "Rasterio",
+        "moved": 0,
+        "link": "https://rasterio.readthedocs.io/",
+        "description": "Standard raster read/write and windowed access library in Python EO pipelines."
+      },
+      {
+        "name": "Xarray",
+        "moved": 0,
+        "link": "https://xarray.dev/",
+        "description": "Default multidimensional model for time-series and gridded EO analysis."
+      },
+      {
+        "name": "Dask",
+        "moved": 0,
+        "link": "https://www.dask.org/",
+        "description": "Parallel execution backbone for scaling EO preprocessing and analytics workloads."
+      },
+      {
+        "name": "Apache Parquet",
+        "moved": 0,
+        "link": "https://parquet.apache.org/",
+        "description": "Columnar storage baseline for high-volume geospatial tabular data."
+      },
+      {
+        "name": "JupyterLab",
+        "moved": 0,
+        "link": "https://jupyter.org/",
+        "description": "Primary interactive workspace for geospatial exploration, notebooks, and review."
+      }
+    ]
+  },
+  "quadrants": [
+    {
+      "quadrant": {
+        "index": 0,
+        "name": "Tools",
+        "color": "#16a34a"
+      },
+      "entries": [
+        {
+          "name": "QGIS",
+          "ring": 0,
+          "moved": 0,
+          "link": "https://qgis.org/",
+          "description": "Default desktop GIS for spatial editing, QA, and analyst workflows."
+        },
+        {
+          "name": "DuckDB + Spatial",
+          "ring": 0,
+          "moved": 1,
+          "link": "https://duckdb.org/docs/stable/core_extensions/spatial/overview.html",
+          "description": "Fast local analytics on parquet and geospatial data with minimal setup."
+        },
+        {
+          "name": "TiTiler",
+          "ring": 1,
+          "moved": 1,
+          "link": "https://developmentseed.org/titiler/",
+          "description": "Dynamic tile serving for raster assets and cloud-native imagery."
+        },
+        {
+          "name": "Polars",
+          "ring": 1,
+          "moved": 0,
+          "link": "https://pola.rs/",
+          "description": "High-performance DataFrame processing for geospatial ETL support."
+        },
+        {
+          "name": "Custom WebGL Terrain Pipelines",
+          "ring": 2,
+          "moved": 0,
+          "link": "https://deck.gl/",
+          "description": "Promising for advanced rendering, but complexity is still high."
+        }
+      ]
+    },
+    {
+      "quadrant": {
+        "index": 1,
+        "name": "Techniques",
+        "color": "#0ea5e9"
+      },
+      "entries": [
+        {
+          "name": "Human-in-the-Loop QA",
+          "ring": 0,
+          "moved": 0,
+          "link": "https://en.wikipedia.org/wiki/Human-in-the-loop",
+          "description": "Critical review checkpoints before production release of new detections."
+        },
+        {
+          "name": "Active Learning for Labeling",
+          "ring": 1,
+          "moved": 1,
+          "link": "https://en.wikipedia.org/wiki/Active_learning_(machine_learning)",
+          "description": "Use model uncertainty to prioritize human review and reduce labeling costs."
+        },
+        {
+          "name": "Edge Inference for EO",
+          "ring": 2,
+          "moved": 0,
+          "link": "https://www.tensorflow.org/lite",
+          "description": "Early-stage experiments for low-latency, low-bandwidth deployments."
+        },
+        {
+          "name": "Semantic Search on Embeddings",
+          "ring": 2,
+          "moved": 1,
+          "link": "https://www.sbert.net/examples/applications/semantic-search/README.html",
+          "description": "Supports cross-region similarity queries over EO features and annotations."
+        },
+        {
+          "name": "Rule-Only Change Detection",
+          "ring": 3,
+          "moved": -1,
+          "link": "https://en.wikipedia.org/wiki/Change_detection",
+          "description": "Too brittle alone; use in combination with learning-based methods."
+        }
+      ]
+    },
+    {
+      "quadrant": {
+        "index": 2,
+        "name": "Data",
+        "color": "#eab308"
+      },
+      "entries": [
+        {
+          "name": "Cloud Optimized GeoTIFF (COG)",
+          "ring": 0,
+          "moved": 0,
+          "link": "https://www.cogeo.org/",
+          "description": "Primary raster format for cloud access and selective reads."
+        },
+        {
+          "name": "OpenStreetMap",
+          "ring": 0,
+          "moved": 0,
+          "link": "https://www.openstreetmap.org/",
+          "description": "Core baseline dataset for roads, places, and contextual mapping layers."
+        },
+        {
+          "name": "GeoParquet",
+          "ring": 1,
+          "moved": 1,
+          "link": "https://geoparquet.org/",
+          "description": "Preferred columnar format for vector analytics and lakehouse storage."
+        },
+        {
+          "name": "Synthetic Training Data",
+          "ring": 2,
+          "moved": 2,
+          "link": "https://en.wikipedia.org/wiki/Synthetic_data",
+          "description": "Useful for augmentation, but realism and bias controls need care."
+        },
+        {
+          "name": "Heavy Shapefile Archives",
+          "ring": 3,
+          "moved": -1,
+          "link": "https://en.wikipedia.org/wiki/Shapefile",
+          "description": "Legacy interchange format kept only where backward compatibility is required."
+        }
+      ]
+    },
+    {
+      "quadrant": {
+        "index": 3,
+        "name": "Standards",
+        "color": "#dc2626"
+      },
+      "entries": [
+        {
+          "name": "STAC API",
+          "ring": 0,
+          "moved": 1,
+          "link": "https://api.stacspec.org/v1.0.0/",
+          "description": "Default interface for searchable geospatial catalogs and metadata discovery."
+        },
+        {
+          "name": "OGC API - Features",
+          "ring": 1,
+          "moved": 1,
+          "link": "https://ogcapi.ogc.org/features/",
+          "description": "Modern replacement path for feature services where interoperability matters."
+        },
+        {
+          "name": "PMTiles",
+          "ring": 1,
+          "moved": 2,
+          "link": "https://docs.protomaps.com/pmtiles/",
+          "description": "Single-file vector tile delivery with easy CDN distribution."
+        },
+        {
+          "name": "GeoZarr",
+          "ring": 2,
+          "moved": 1,
+          "link": "https://github.com/zarr-developers/geozarr-spec",
+          "description": "Emerging chunked format for multidimensional geospatial arrays."
+        },
+        {
+          "name": "Vendor-Locked Metadata Schemas",
+          "ring": 3,
+          "moved": -1,
+          "link": "https://en.wikipedia.org/wiki/Vendor_lock-in",
+          "description": "Avoid when possible to reduce migration cost and integration risk."
+        }
+      ]
+    }
   ]
 }

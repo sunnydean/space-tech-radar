@@ -1,17 +1,299 @@
 {
   "title": "Space Observation Tech Radar",
-  "subtitle": "Space Tech Radar for Earth Observation and Geospatial Technologies",
+  "subtitle": "Space Observation Tech Radar for Downstream Science, Analytics, and Applications",
   "textFile": "radar-text.md",
   "rings": [
-    { "name": "Adopt", "color": "#1e9f5b" },
-    { "name": "Trial", "color": "#1f83c2" },
-    { "name": "Assess", "color": "#d79a00" },
-    { "name": "Hold", "color": "#c8553d" }
+    {
+      "name": "Core",
+      "color": "#0f766e"
+    },
+    {
+      "name": "Adopt",
+      "color": "#1e9f5b"
+    },
+    {
+      "name": "Trial",
+      "color": "#1f83c2"
+    },
+    {
+      "name": "Assess",
+      "color": "#d79a00"
+    },
+    {
+      "name": "Hold",
+      "color": "#c8553d"
+    }
   ],
-  "quadrantFiles": [
-    "quadrants/tools.json",
-    "quadrants/techniques.json",
-    "quadrants/data.json",
-    "quadrants/standards.json"
+  "core": {
+    "entries": [
+      {
+        "name": "Python",
+        "moved": 0,
+        "link": "https://www.python.org/",
+        "description": "Default orchestration language for mission analysis pipelines and automation tooling."
+      },
+      {
+        "name": "NumPy + SciPy",
+        "moved": 0,
+        "link": "https://numpy.org/",
+        "description": "Numerical foundation for orbit dynamics, calibration math, and simulation workloads."
+      },
+      {
+        "name": "PostgreSQL + PostGIS",
+        "moved": 0,
+        "link": "https://postgis.net/",
+        "description": "Reliable mission data backbone for telemetry indexing, geospatial joins, and service APIs."
+      },
+      {
+        "name": "Containerized Workloads",
+        "moved": 0,
+        "link": "https://www.docker.com/",
+        "description": "Core packaging model for reproducible deployment of processing and operations services."
+      },
+      {
+        "name": "Orekit",
+        "moved": 0,
+        "link": "https://www.orekit.org/",
+        "description": "Core orbit propagation and astrodynamics library used across mission tooling."
+      },
+      {
+        "name": "CCSDS Specifications",
+        "moved": 0,
+        "link": "https://public.ccsds.org/default.aspx",
+        "description": "Interoperability baseline for telemetry, telecommand, and mission data exchange."
+      },
+      {
+        "name": "Apache Arrow",
+        "moved": 0,
+        "link": "https://arrow.apache.org/",
+        "description": "In-memory columnar format that speeds analytics and interchange in pipelines."
+      },
+      {
+        "name": "Apache Parquet",
+        "moved": 0,
+        "link": "https://parquet.apache.org/",
+        "description": "Long-term storage format for large mission and geospatial analytics datasets."
+      },
+      {
+        "name": "JupyterLab",
+        "moved": 0,
+        "link": "https://jupyter.org/",
+        "description": "Standard interactive environment for mission prototyping and data validation."
+      },
+      {
+        "name": "Kubernetes",
+        "moved": 0,
+        "link": "https://kubernetes.io/",
+        "description": "Core control plane for scaling mission data and processing services."
+      },
+      {
+        "name": "CI/CD Pipelines",
+        "moved": 0,
+        "link": "https://github.com/features/actions",
+        "description": "Automated build/test/deploy backbone for mission software reliability."
+      },
+      {
+        "name": "Prometheus + Grafana",
+        "moved": 0,
+        "link": "https://prometheus.io/",
+        "description": "Baseline observability stack for service health, telemetry, and alerting."
+      },
+      {
+        "name": "Git",
+        "moved": 0,
+        "link": "https://git-scm.com/",
+        "description": "Version-control foundation for flight software, ground systems, and configs."
+      },
+      {
+        "name": "Linux",
+        "moved": 0,
+        "link": "https://kernel.org/",
+        "description": "Primary execution environment across mission operations and backend systems."
+      },
+      {
+        "name": "Terraform",
+        "moved": 0,
+        "link": "https://www.terraform.io/",
+        "description": "Core infrastructure-as-code layer for reproducible mission platform environments."
+      }
+    ]
+  },
+  "quadrants": [
+    {
+      "quadrant": {
+        "index": 0,
+        "name": "Tools",
+        "color": "#3b82f6"
+      },
+      "entries": [
+        {
+          "name": "CesiumJS",
+          "ring": 0,
+          "moved": 1,
+          "link": "https://cesium.com/platform/cesiumjs/",
+          "description": "Core web engine for interactive 3D space and geospatial visualization."
+        },
+        {
+          "name": "Orekit",
+          "ring": 1,
+          "moved": 1,
+          "link": "https://www.orekit.org/",
+          "description": "Robust orbital mechanics library for mission analysis and tracking."
+        },
+        {
+          "name": "GMAT",
+          "ring": 1,
+          "moved": 0,
+          "link": "https://gmatcentral.org/",
+          "description": "Open-source mission design and trajectory optimization toolkit."
+        },
+        {
+          "name": "Open MCT",
+          "ring": 2,
+          "moved": 1,
+          "link": "https://github.com/nasa/openmct",
+          "description": "Telemetry visualization platform for mission operations consoles."
+        },
+        {
+          "name": "Legacy Desktop Flight Tools",
+          "ring": 3,
+          "moved": -1,
+          "link": "https://en.wikipedia.org/wiki/Flight_dynamics_(spacecraft)",
+          "description": "Retain only when migration risk outweighs modernization benefits."
+        }
+      ]
+    },
+    {
+      "quadrant": {
+        "index": 1,
+        "name": "Techniques",
+        "color": "#14b8a6"
+      },
+      "entries": [
+        {
+          "name": "Constellation Revisit Optimization",
+          "ring": 0,
+          "moved": 1,
+          "link": "https://en.wikipedia.org/wiki/Satellite_constellation",
+          "description": "Optimize orbital planes and tasking windows for target revisit goals."
+        },
+        {
+          "name": "SAR Interferometry (InSAR)",
+          "ring": 1,
+          "moved": 1,
+          "link": "https://earth.esa.int/eogateway/activities/insar",
+          "description": "High-value deformation monitoring technique across large regions."
+        },
+        {
+          "name": "Onboard Edge AI Inference",
+          "ring": 1,
+          "moved": 2,
+          "link": "https://www.nasa.gov/smallsat-institute/sst-soa/small-spacecraft-avionics/",
+          "description": "Run inference near the sensor to reduce downlink pressure and latency."
+        },
+        {
+          "name": "Cross-Sensor Fusion Pipelines",
+          "ring": 2,
+          "moved": 1,
+          "link": "https://en.wikipedia.org/wiki/Sensor_fusion",
+          "description": "Fuse optical, SAR, and thermal feeds into unified analytic products."
+        },
+        {
+          "name": "Manual-Only Mission Planning",
+          "ring": 3,
+          "moved": -1,
+          "link": "https://en.wikipedia.org/wiki/Mission_planning",
+          "description": "Avoid for modern constellations where scale requires automation."
+        }
+      ]
+    },
+    {
+      "quadrant": {
+        "index": 2,
+        "name": "Data",
+        "color": "#a855f7"
+      },
+      "entries": [
+        {
+          "name": "Sentinel-2 L2A",
+          "ring": 0,
+          "moved": 0,
+          "link": "https://dataspace.copernicus.eu/",
+          "description": "Baseline multispectral data source for many EO production workflows."
+        },
+        {
+          "name": "Landsat Collection 2",
+          "ring": 0,
+          "moved": 0,
+          "link": "https://www.usgs.gov/landsat-missions/landsat-collection-2",
+          "description": "Long-term calibrated archive for time-series analysis."
+        },
+        {
+          "name": "PlanetScope Daily Imagery",
+          "ring": 1,
+          "moved": 1,
+          "link": "https://www.planet.com/products/planet-imagery/",
+          "description": "Commercial high-frequency imagery for near-daily monitoring use cases."
+        },
+        {
+          "name": "SWOT Hydrology Products",
+          "ring": 2,
+          "moved": 1,
+          "link": "https://swot.jpl.nasa.gov/",
+          "description": "Emerging water-surface data products with strong scientific upside."
+        },
+        {
+          "name": "Uncalibrated Third-Party Feeds",
+          "ring": 3,
+          "moved": -1,
+          "link": "https://en.wikipedia.org/wiki/Calibration",
+          "description": "Avoid for critical analytics unless provenance and calibration are verified."
+        }
+      ]
+    },
+    {
+      "quadrant": {
+        "index": 3,
+        "name": "Standards",
+        "color": "#f97316"
+      },
+      "entries": [
+        {
+          "name": "CCSDS Telemetry and Telecommand",
+          "ring": 0,
+          "moved": 0,
+          "link": "https://public.ccsds.org/default.aspx",
+          "description": "Core interoperability standard for spacecraft data and command exchange."
+        },
+        {
+          "name": "STAC for EO Catalogs",
+          "ring": 1,
+          "moved": 1,
+          "link": "https://stacspec.org/",
+          "description": "Consistent metadata pattern for discoverable Earth observation assets."
+        },
+        {
+          "name": "OGC API - Processes",
+          "ring": 2,
+          "moved": 1,
+          "link": "https://ogcapi.ogc.org/processes/",
+          "description": "Standardized API contract for geospatial processing services."
+        },
+        {
+          "name": "ISO 19115 Metadata",
+          "ring": 2,
+          "moved": 0,
+          "link": "https://www.iso.org/standard/53798.html",
+          "description": "Well-established metadata model for geospatial datasets and lineage."
+        },
+        {
+          "name": "Proprietary Tasking Schemas",
+          "ring": 3,
+          "moved": -1,
+          "link": "https://en.wikipedia.org/wiki/Vendor_lock-in",
+          "description": "Use only when no open alternative can meet mission requirements."
+        }
+      ]
+    }
   ]
 }

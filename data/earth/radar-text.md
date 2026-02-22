@@ -1,15 +1,49 @@
-# Earth Observation Narrative
+<!-- 
+Narrative
+Fast Adopters
+Open Data
+Commonalities
+Core Open Source Libraries
+Future
+ -->
 
-# Section
+# Earth Observation Open Source Technologies
 
-This view is optimized for teams building practical Earth observation products in the next 12 to 18 months.
+Our world and modern science is built upon open source tech.
 
-## What this mode emphasizes
+This tech radar focuses on the downstream technologies.
 
-- Reliable geospatial delivery over experimental complexity
-- Standards-first interoperability across cloud systems
-- Production-ready analytics and QA workflows
 
-## Planning guidance
+## What About Open Data?
 
-Start with **Adopt** technologies for new production work, use **Trial** for bounded pilots, and treat **Assess** as strategic exploration. Keep **Hold** items only when legacy constraints make them unavoidable.
+Repositories:
+- Earth Data NASA
+- EarthCODE Open Science Catalog ESA
+- NDVI4Earth
+
+## Who's Adopting EO Open Source?
+
+1. Defence
+2. Government broadly
+3. Space
+
+## What's Common Between Earth and Space?
+
+Multidimensional data science started from space and EO is still adopting.
+
+Data Science..
+
+XDDGs is a modern example
+
+## Core Open Source Libraries
+
+The core that we build ..
+
+## Languages and Frameworks
+Python, R, Rust and C
+
+Pangeo, QGIS
+
+## Future
+
+..

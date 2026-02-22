@@ -4,6 +4,7 @@
   --muted: #567869;
   --line: #d7e8de;
   --accent: #2f9d5b;
+  --core-color: #0f766e;
   --focus-ring: #86d8a5;
 
   --ring-stroke: #abc6b5;
@@ -276,6 +277,7 @@ header {
   box-shadow: 0 0 14px var(--beam-glow);
   filter: blur(0.7px);
   opacity: 0.96;
+  animation: beam-soft-glimmer 3s ease-in-out infinite;
 }
 
 .mode-visual .beam::before,
@@ -490,6 +492,26 @@ header {
 .blip.hovered {
   transform: scale(1.18);
   filter: brightness(1.05) drop-shadow(0 8px 14px rgba(17, 34, 55, 0.3));
+}
+
+.core-area {
+  fill-opacity: 0.11;
+  pointer-events: none;
+}
+
+.core-list {
+  --core-list-color: var(--core-color);
+  width: min(100%, var(--radar-size));
+  margin: 0.38rem auto 0;
+  text-align: center;
+}
+
+.core-title {
+  color: var(--core-list-color);
+}
+
+.core-entries {
+  justify-content: center;
 }
 
 .quad-list {
@@ -711,6 +733,20 @@ header {
   }
   50% {
     opacity: 1;
+  }
+}
+
+@keyframes beam-soft-glimmer {
+  0%,
+  100% {
+    opacity: 0.9;
+    box-shadow: 0 0 10px var(--beam-glow);
+    filter: blur(0.78px);
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 19px var(--beam-glow);
+    filter: blur(0.58px);
   }
 }
 
