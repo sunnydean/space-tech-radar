@@ -27,5 +27,5 @@ Heavy Shapefile Archives,Data,Hold,https://en.wikipedia.org/wiki/Shapefile,-1,Le
 STAC API,Standards,Adopt,https://api.stacspec.org/v1.0.0/,1,Default interface for searchable geospatial catalogs and metadata discovery.,"[""Data management"", ""Data Repository"", ""Platform""]",0,0,0,"{""JavaScript"": 1}"
 OGC API - Features,Standards,Trial,https://ogcapi.ogc.org/features/,1,Modern replacement path for feature services where interoperability matters.,"[""Platform"", ""Server-Side"", ""Data management""]",0,0,0,"{""JavaScript"": 1}"
 PMTiles,Standards,Trial,https://docs.protomaps.com/pmtiles/,1,Single-file vector tile delivery with easy CDN distribution.,"[""Web-Tools"", ""Cartography and visualisation"", ""Data management""]",0,0,0,{}
-GeoZarr,Standards,Assess,https://github.com/zarr-developers/geozarr-spec,1,Emerging chunked format for multidimensional geospatial arrays.,"[""Data Repository"", ""Pangeo"", ""Data management""]",0,0,0,{}
+GeoZarr,Standards,Assess,https://github.com/zarr-developers/geozarr-spec,1,Emerging chunked format for multidimensional geospatial arrays and analysis.,"[""Data Repository"", ""Pangeo"", ""Data management""]",0,0,0,{}
 Vendor-Locked Metadata Schemas,Standards,Hold,https://en.wikipedia.org/wiki/Vendor_lock-in,-1,Avoid when possible to reduce migration cost and integration risk.,"[""Data management"", ""Platform""]",0,0,0,{}
