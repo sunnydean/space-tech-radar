@@ -1,5 +1,5 @@
 Name,Quadrant,Ring,Link,Moved,Description,Tags,Downloads,Forks,Activity Metric,Languages
-Python,CORE,Core,https://www.python.org/,0,Default orchestration language for mission analysis pipelines and automation tooling.,"[""Core Library"", ""Server-Side""]",0,0,0,"{""Python"": 1}"
+Pyyython,CORE,Core,https://www.python.org/,0,Default orchestration language for mission analysis pipelines and automation tooling.,"[""Core Library"", ""Server-Side""]",0,0,0,"{""Python"": 1}"
 NumPy + SciPy,CORE,Core,https://numpy.org/,0,"Numerical foundation for orbit dynamics, calibration math, and simulation workloads.","[""Core Library"", ""Pangeo"", ""Spatial analysis""]",0,0,0,"{""Python"": 1}"
 PostgreSQL + PostGIS,CORE,Core,https://postgis.net/,0,"Reliable mission data backbone for telemetry indexing, geospatial joins, and service APIs.","[""Database"", ""Server-Side"", ""Data management""]",0,0,0,"{""C"": 1}"
 Containerized Workloads,CORE,Core,https://www.docker.com/,0,Core packaging model for reproducible deployment of processing and operations services.,"[""Platform"", ""Server-Side""]",0,0,0,"{""YAML"": 1}"
