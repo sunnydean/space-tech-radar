@@ -16,8 +16,8 @@ const RADAR = {
 };
 
 const MODES = {
-  earth: { key: "earth", word: "Earth", root: "data/earth" },
-  space: { key: "space", word: "Space", root: "data/space" }
+  earth: { key: "earth", word: "Earth", root: "config/earth" },
+  space: { key: "space", word: "Space", root: "config/space" }
 };
 
 const FALLBACK_QUADRANT_COLORS = ["#3b82f6", "#14b8a6", "#a855f7", "#f97316"];
@@ -817,6 +817,7 @@ const popupController = createPopupController();
 const toggleWordButton = $("mode-toggle");
 const toggleVisualButton = $("mode-visual");
 const modeWord = $("radar-mode-word");
+const subtitleText = $("radar-subtitle");
 let currentMode = MODES.earth.key;
 let loadTicket = 0;
 
@@ -832,6 +833,9 @@ function setModeUI(modeKey) {
     : "Switch to Space Observation Tech Radar";
 
   if (modeWord) modeWord.textContent = mode.word;
+  if (subtitleText) {
+    subtitleText.textContent = `${mode.word} Observation Tech Radar for Downstream Science, Analytics, and Applications`;
+  }
 
   if (toggleVisualButton) {
     toggleVisualButton.classList.toggle("is-space", isSpace);

@@ -60,22 +60,55 @@ Open `http://localhost:8080`.
 
 ## Project structure
 
-- `index.html`: static shell.
-- `styles.css`: all styling and responsive rules.
-- `main.js`: app logic (data loading, layout, rendering, popup, mode switching).
-- `data/earth/*` and `data/space/*`: mode-specific config, quadrants, and narrative text.
+- `index.html`: static entry shell.
+- `app/styles.css`: all styling and responsive rules.
+- `app/main.js`: app logic (data loading, layout, rendering, popup, mode switching).
+- `config/earth/*` and `config/space/*`: mode-specific radar config and narrative text.
+- `config/eo.csv` and `config/space.csv`: CSV sources for config generation.
+- `scripts/csv_to_radar_config.py`: CLI to build `radar.config.json` from CSV.
 
 ## Data format
 
 Each mode folder has:
 
 - `radar.config.json`
-  - `rings`: ordered ring names.
-  - `quadrantFiles`: list of quadrant JSON files.
+  - `rings`: ordered ring definitions (`Core`, `Adopt`, `Trial`, `Assess`, `Hold`).
+  - `core.entries`: core technologies.
+  - `quadrants`: list of quadrants with embedded entries.
   - `textFile`: markdown file rendered below radar.
-- `quadrants/*.json`
-  - `quadrant`: `{ index, name, color }`
-  - `entries`: `{ name, ring, link, description }[]`
+
+Each entry includes:
+
+- `Name`, `Quadrant`, `Ring`, `Link`, `Moved`, `Description`, `Tags`, `Downloads`, `Forks`, `Activity Metric`, `Languages`
+
+## CSV to config
+
+Generate configs from CSV:
+
+```bash
+python3 scripts/csv_to_radar_config.py eo config/eo.csv
+python3 scripts/csv_to_radar_config.py space config/space.csv
+```
+
+## GitHub Actions automation
+
+Workflow: `.github/workflows/csv-radar.yml`
+
+What it does:
+
+- Triggers on changes to `config/eo.csv` or `config/space.csv`.
+- Runs `scripts/csv_to_radar_config.py` to regenerate:
+  - `config/earth/radar.config.json`
+  - `config/space/radar.config.json`
+- Commits generated config changes back to the branch.
+- Redeploys the GitHub Pages site on pushes to the default branch.
+
+Source of truth rule:
+
+- For radar data changes, edit only:
+  - `config/eo.csv`
+  - `config/space.csv`
+- Do not manually edit `config/earth/radar.config.json` or `config/space/radar.config.json`; they are generated and will be overwritten by the workflow.
 
 Optional per-entry markdown overrides are supported in `radar-text.md` before `# Section`:
 
@@ -84,4 +117,3 @@ Optional per-entry markdown overrides are supported in `radar-text.md` before `#
 linkName: docs.example.com
 Custom popup description...
 ```
-

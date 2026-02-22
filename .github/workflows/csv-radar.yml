@@ -3,12 +3,12 @@ name: Build Radar Config From CSV
 on:
   push:
     paths:
-      - "data/eo.csv"
-      - "data/space.csv"
+      - "config/eo.csv"
+      - "config/space.csv"
   pull_request:
     paths:
-      - "data/eo.csv"
-      - "data/space.csv"
+      - "config/eo.csv"
+      - "config/space.csv"
 
 permissions:
   contents: write
@@ -25,14 +25,14 @@ jobs:
           python-version: "3.x"
       - name: Generate radar configs
         run: |
-          python3 csv_to_radar_config.py eo data/eo.csv
-          python3 csv_to_radar_config.py space data/space.csv
+          python3 scripts/csv_to_radar_config.py eo config/eo.csv
+          python3 scripts/csv_to_radar_config.py space config/space.csv
       - name: Commit updated radar configs
         if: github.event_name == 'push'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/earth/radar.config.json data/space/radar.config.json
+          git add config/earth/radar.config.json config/space/radar.config.json
           git diff --cached --quiet || (git commit -m "update radar config from csv" && git push)
       - name: Upload site artifact
         if: github.event_name == 'push' && github.ref_name == github.event.repository.default_branch

@@ -12,15 +12,11 @@ QUADS = ["Mapping", "Intelligence", "Data", "Standards"]
 RMAP = {k.lower(): k for k in ["Core", "Adopt", "Trial", "Assess", "Hold"]}
 MODE = {
     "space": {
-        "title": "Space Observation Tech Radar",
-        "subtitle": "Space Observation Tech Radar for Downstream Science, Analytics, and Applications",
-        "out": pathlib.Path("data/space/radar.config.json"),
+        "out": pathlib.Path("config/space/radar.config.json"),
         "colors": ["#3b82f6", "#14b8a6", "#a855f7", "#f97316"],
     },
     "eo": {
-        "title": "Earth Observation Tech Radar",
-        "subtitle": "Earth Observation Tech Radar for Downstream Science, Analytics, and Applications",
-        "out": pathlib.Path("data/earth/radar.config.json"),
+        "out": pathlib.Path("config/earth/radar.config.json"),
         "colors": ["#16a34a", "#0ea5e9", "#eab308", "#dc2626"],
     },
 }
@@ -39,7 +35,9 @@ def parse_tags(raw):
 
 
 if len(sys.argv) != 3:
-    raise SystemExit("Usage: python3 csv_to_radar_config.py [space|eo] input.csv")
+    raise SystemExit(
+        "Usage: python3 scripts/csv_to_radar_config.py [space|eo] input.csv"
+    )
 try:
     m, p = sys.argv[1].lower(), pathlib.Path(sys.argv[2])
     meta = MODE[m]
@@ -66,8 +64,6 @@ try:
             }
             (core if q == "CORE" else grouped[q]).append(e)
     out = {
-        "title": meta["title"],
-        "subtitle": meta["subtitle"],
         "textFile": "radar-text.md",
         "rings": RINGS,
         "core": {"entries": core},
