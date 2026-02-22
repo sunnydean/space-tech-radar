@@ -558,7 +558,7 @@
           "Ring": "Assess",
           "Link": "https://github.com/zarr-developers/geozarr-spec",
           "Moved": 1,
-          "Description": "Emerging chunked format for multidimensional geospatial arrays.",
+          "Description": "Emerging chunked format for multidimensional geospatial arrays and analysis.",
           "Tags": [
             "Data Repository",
             "Pangeo",
