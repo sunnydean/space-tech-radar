@@ -27,64 +27,167 @@
   "core": {
     "entries": [
       {
-        "name": "Python",
-        "moved": 0,
-        "link": "https://www.python.org/",
-        "description": "Primary language across EO ingestion, analytics, and production model workflows."
+        "Name": "GDAL + PROJ",
+        "Quadrant": "CORE",
+        "Ring": "Core",
+        "Link": "https://gdal.org/",
+        "Moved": 0,
+        "Description": "Foundational geospatial I/O and coordinate transformation stack for raster and vector processing.",
+        "Tags": [
+          "Core Library",
+          "Geocoding and georeferencing",
+          "Spatial analysis"
+        ],
+        "Downloads": 0.0,
+        "Forks": 0.0,
+        "Activity Metric": 0.0,
+        "Languages": {
+          "C": 1
+        }
       },
       {
-        "name": "GDAL + PROJ",
-        "moved": 0,
-        "link": "https://gdal.org/",
-        "description": "Foundational geospatial I/O and coordinate transformation stack for raster and vector processing."
+        "Name": "PostgreSQL + PostGIS",
+        "Quadrant": "CORE",
+        "Ring": "Core",
+        "Link": "https://postgis.net/",
+        "Moved": 0,
+        "Description": "Core transactional and spatial query layer that underpins many EO products and APIs.",
+        "Tags": [
+          "Database",
+          "Server-Side",
+          "Data management"
+        ],
+        "Downloads": 0.0,
+        "Forks": 0.0,
+        "Activity Metric": 0.0,
+        "Languages": {
+          "C": 1
+        }
       },
       {
-        "name": "PostgreSQL + PostGIS",
-        "moved": 0,
-        "link": "https://postgis.net/",
-        "description": "Core transactional and spatial query layer that underpins many EO products and APIs."
+        "Name": "S3-Compatible Object Storage",
+        "Quadrant": "CORE",
+        "Ring": "Core",
+        "Link": "https://aws.amazon.com/s3/",
+        "Moved": 0,
+        "Description": "Baseline storage contract for cloud-native geospatial data lakes and tile assets.",
+        "Tags": [
+          "Data Repository",
+          "Data management",
+          "Server-Side"
+        ],
+        "Downloads": 0.0,
+        "Forks": 0.0,
+        "Activity Metric": 0.0,
+        "Languages": {}
       },
       {
-        "name": "S3-Compatible Object Storage",
-        "moved": 0,
-        "link": "https://aws.amazon.com/s3/",
-        "description": "Baseline storage contract for cloud-native geospatial data lakes and tile assets."
+        "Name": "GeoPandas",
+        "Quadrant": "CORE",
+        "Ring": "Core",
+        "Link": "https://geopandas.org/",
+        "Moved": 0,
+        "Description": "Core dataframe API for vector processing and geospatial data engineering.",
+        "Tags": [
+          "Core Library",
+          "Spatial analysis"
+        ],
+        "Downloads": 0.0,
+        "Forks": 0.0,
+        "Activity Metric": 0.0,
+        "Languages": {
+          "Python": 1
+        }
       },
       {
-        "name": "GeoPandas",
-        "moved": 0,
-        "link": "https://geopandas.org/",
-        "description": "Core dataframe API for vector processing and geospatial data engineering."
+        "Name": "Rasterio",
+        "Quadrant": "CORE",
+        "Ring": "Core",
+        "Link": "https://rasterio.readthedocs.io/",
+        "Moved": 0,
+        "Description": "Standard raster read/write and windowed access library in Python EO pipelines.",
+        "Tags": [
+          "Core Library",
+          "Remote sensing analysis"
+        ],
+        "Downloads": 0.0,
+        "Forks": 0.0,
+        "Activity Metric": 0.0,
+        "Languages": {
+          "Python": 1
+        }
       },
       {
-        "name": "Rasterio",
-        "moved": 0,
-        "link": "https://rasterio.readthedocs.io/",
-        "description": "Standard raster read/write and windowed access library in Python EO pipelines."
+        "Name": "Xarray",
+        "Quadrant": "CORE",
+        "Ring": "Core",
+        "Link": "https://xarray.dev/",
+        "Moved": 0,
+        "Description": "Default multidimensional model for time-series and gridded EO analysis.",
+        "Tags": [
+          "Core Library",
+          "Pangeo",
+          "Data management"
+        ],
+        "Downloads": 0.0,
+        "Forks": 0.0,
+        "Activity Metric": 0.0,
+        "Languages": {
+          "Python": 1
+        }
       },
       {
-        "name": "Xarray",
-        "moved": 0,
-        "link": "https://xarray.dev/",
-        "description": "Default multidimensional model for time-series and gridded EO analysis."
+        "Name": "Dask",
+        "Quadrant": "CORE",
+        "Ring": "Core",
+        "Link": "https://www.dask.org/",
+        "Moved": 0,
+        "Description": "Parallel execution backbone for scaling EO preprocessing and analytics workloads.",
+        "Tags": [
+          "Core Library",
+          "Pangeo",
+          "Server-Side"
+        ],
+        "Downloads": 0.0,
+        "Forks": 0.0,
+        "Activity Metric": 0.0,
+        "Languages": {
+          "Python": 1
+        }
       },
       {
-        "name": "Dask",
-        "moved": 0,
-        "link": "https://www.dask.org/",
-        "description": "Parallel execution backbone for scaling EO preprocessing and analytics workloads."
+        "Name": "Apache Parquet",
+        "Quadrant": "CORE",
+        "Ring": "Core",
+        "Link": "https://parquet.apache.org/",
+        "Moved": 0,
+        "Description": "Columnar storage baseline for high-volume geospatial tabular data.",
+        "Tags": [
+          "Data Repository",
+          "Data management",
+          "Core Library"
+        ],
+        "Downloads": 0.0,
+        "Forks": 0.0,
+        "Activity Metric": 0.0,
+        "Languages": {}
       },
       {
-        "name": "Apache Parquet",
-        "moved": 0,
-        "link": "https://parquet.apache.org/",
-        "description": "Columnar storage baseline for high-volume geospatial tabular data."
-      },
-      {
-        "name": "JupyterLab",
-        "moved": 0,
-        "link": "https://jupyter.org/",
-        "description": "Primary interactive workspace for geospatial exploration, notebooks, and review."
+        "Name": "JupyterLab",
+        "Quadrant": "CORE",
+        "Ring": "Core",
+        "Link": "https://jupyter.org/",
+        "Moved": 0,
+        "Description": "Primary interactive workspace for geospatial exploration, notebooks, and review.",
+        "Tags": [
+          "Platform",
+          "Desktop",
+          "Pangeo"
+        ],
+        "Downloads": 0.0,
+        "Forks": 0.0,
+        "Activity Metric": 0.0,
+        "Languages": {}
       }
     ]
   },
@@ -92,88 +195,189 @@
     {
       "quadrant": {
         "index": 0,
-        "name": "Tools",
+        "name": "Mapping",
         "color": "#16a34a"
       },
       "entries": [
         {
-          "name": "QGIS",
-          "ring": 0,
-          "moved": 0,
-          "link": "https://qgis.org/",
-          "description": "Default desktop GIS for spatial editing, QA, and analyst workflows."
+          "Name": "QGIS",
+          "Quadrant": "Mapping",
+          "Ring": "Adopt",
+          "Link": "https://qgis.org/",
+          "Moved": 0,
+          "Description": "Default desktop GIS for spatial editing, QA, and analyst workflows.",
+          "Tags": [
+            "Desktop",
+            "Cartography and visualisation",
+            "Spatial analysis"
+          ],
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
+          "Languages": {
+            "C": 1
+          }
         },
         {
-          "name": "DuckDB + Spatial",
-          "ring": 0,
-          "moved": 1,
-          "link": "https://duckdb.org/docs/stable/core_extensions/spatial/overview.html",
-          "description": "Fast local analytics on parquet and geospatial data with minimal setup."
+          "Name": "DuckDB + Spatial",
+          "Quadrant": "Mapping",
+          "Ring": "Adopt",
+          "Link": "https://duckdb.org/docs/stable/core_extensions/spatial/overview.html",
+          "Moved": 1,
+          "Description": "Fast local analytics on parquet and geospatial data with minimal setup.",
+          "Tags": [
+            "Database",
+            "Spatial analysis",
+            "Desktop"
+          ],
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
+          "Languages": {}
         },
         {
-          "name": "TiTiler",
-          "ring": 1,
-          "moved": 1,
-          "link": "https://developmentseed.org/titiler/",
-          "description": "Dynamic tile serving for raster assets and cloud-native imagery."
+          "Name": "TiTiler",
+          "Quadrant": "Mapping",
+          "Ring": "Trial",
+          "Link": "https://developmentseed.org/titiler/",
+          "Moved": 1,
+          "Description": "Dynamic tile serving for raster assets and cloud-native imagery.",
+          "Tags": [
+            "Server-Side",
+            "Web-Tools",
+            "Remote sensing analysis"
+          ],
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
+          "Languages": {}
         },
         {
-          "name": "Polars",
-          "ring": 1,
-          "moved": 0,
-          "link": "https://pola.rs/",
-          "description": "High-performance DataFrame processing for geospatial ETL support."
+          "Name": "Polars",
+          "Quadrant": "Mapping",
+          "Ring": "Trial",
+          "Link": "https://pola.rs/",
+          "Moved": 0,
+          "Description": "High-performance DataFrame processing for geospatial ETL support.",
+          "Tags": [
+            "Core Library",
+            "Data management",
+            "Server-Side"
+          ],
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
+          "Languages": {}
         },
         {
-          "name": "Custom WebGL Terrain Pipelines",
-          "ring": 2,
-          "moved": 0,
-          "link": "https://deck.gl/",
-          "description": "Promising for advanced rendering, but complexity is still high."
+          "Name": "Custom WebGL Terrain Pipelines",
+          "Quadrant": "Mapping",
+          "Ring": "Assess",
+          "Link": "https://deck.gl/",
+          "Moved": 0,
+          "Description": "Promising for advanced rendering, but complexity is still high.",
+          "Tags": [
+            "Web-Tools",
+            "3D modeling",
+            "Cartography and visualisation"
+          ],
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
+          "Languages": {}
         }
       ]
     },
     {
       "quadrant": {
         "index": 1,
-        "name": "Techniques",
+        "name": "Intelligence",
         "color": "#0ea5e9"
       },
       "entries": [
         {
-          "name": "Human-in-the-Loop QA",
-          "ring": 0,
-          "moved": 0,
-          "link": "https://en.wikipedia.org/wiki/Human-in-the-loop",
-          "description": "Critical review checkpoints before production release of new detections."
+          "Name": "Human-in-the-Loop QA",
+          "Quadrant": "Intelligence",
+          "Ring": "Adopt",
+          "Link": "https://en.wikipedia.org/wiki/Human-in-the-loop",
+          "Moved": 0,
+          "Description": "Critical review checkpoints before production release of new detections.",
+          "Tags": [
+            "Techniques",
+            "Data management",
+            "Mobile data collection"
+          ],
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
+          "Languages": {}
         },
         {
-          "name": "Active Learning for Labeling",
-          "ring": 1,
-          "moved": 1,
-          "link": "https://en.wikipedia.org/wiki/Active_learning_(machine_learning)",
-          "description": "Use model uncertainty to prioritize human review and reduce labeling costs."
+          "Name": "Active Learning for Labeling",
+          "Quadrant": "Intelligence",
+          "Ring": "Trial",
+          "Link": "https://en.wikipedia.org/wiki/Active_learning_(machine_learning)",
+          "Moved": 1,
+          "Description": "Use model uncertainty to prioritize human review and reduce labeling costs.",
+          "Tags": [
+            "Techniques",
+            "Data management",
+            "Remote sensing analysis"
+          ],
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
+          "Languages": {}
         },
         {
-          "name": "Edge Inference for EO",
-          "ring": 2,
-          "moved": 0,
-          "link": "https://www.tensorflow.org/lite",
-          "description": "Early-stage experiments for low-latency, low-bandwidth deployments."
+          "Name": "Edge Inference for EO",
+          "Quadrant": "Intelligence",
+          "Ring": "Assess",
+          "Link": "https://www.tensorflow.org/lite",
+          "Moved": 0,
+          "Description": "Early-stage experiments for low-latency, low-bandwidth deployments.",
+          "Tags": [
+            "Techniques",
+            "Mobile",
+            "Remote sensing analysis"
+          ],
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
+          "Languages": {}
         },
         {
-          "name": "Semantic Search on Embeddings",
-          "ring": 2,
-          "moved": 1,
-          "link": "https://www.sbert.net/examples/applications/semantic-search/README.html",
-          "description": "Supports cross-region similarity queries over EO features and annotations."
+          "Name": "Semantic Search on Embeddings",
+          "Quadrant": "Intelligence",
+          "Ring": "Assess",
+          "Link": "https://www.sbert.net/examples/applications/semantic-search/README.html",
+          "Moved": 1,
+          "Description": "Supports cross-region similarity queries over EO features and annotations.",
+          "Tags": [
+            "Techniques",
+            "Data management",
+            "Server-Side"
+          ],
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
+          "Languages": {}
         },
         {
-          "name": "Rule-Only Change Detection",
-          "ring": 3,
-          "moved": -1,
-          "link": "https://en.wikipedia.org/wiki/Change_detection",
-          "description": "Too brittle alone; use in combination with learning-based methods."
+          "Name": "Rule-Only Change Detection",
+          "Quadrant": "Intelligence",
+          "Ring": "Hold",
+          "Link": "https://en.wikipedia.org/wiki/Change_detection",
+          "Moved": -1,
+          "Description": "Too brittle alone; use in combination with learning-based methods.",
+          "Tags": [
+            "Techniques",
+            "Remote sensing analysis"
+          ],
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
+          "Languages": {}
         }
       ]
     },
@@ -185,39 +389,88 @@
       },
       "entries": [
         {
-          "name": "Cloud Optimized GeoTIFF (COG)",
-          "ring": 0,
-          "moved": 0,
-          "link": "https://www.cogeo.org/",
-          "description": "Primary raster format for cloud access and selective reads."
+          "Name": "Cloud Optimized GeoTIFF (COG)",
+          "Quadrant": "Data",
+          "Ring": "Adopt",
+          "Link": "https://www.cogeo.org/",
+          "Moved": 0,
+          "Description": "Primary raster format for cloud access and selective reads.",
+          "Tags": [
+            "Data Repository",
+            "Remote sensing analysis"
+          ],
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
+          "Languages": {}
         },
         {
-          "name": "OpenStreetMap",
-          "ring": 0,
-          "moved": 0,
-          "link": "https://www.openstreetmap.org/",
-          "description": "Core baseline dataset for roads, places, and contextual mapping layers."
+          "Name": "OpenStreetMap",
+          "Quadrant": "Data",
+          "Ring": "Adopt",
+          "Link": "https://www.openstreetmap.org/",
+          "Moved": 0,
+          "Description": "Core baseline dataset for roads, places, and contextual mapping layers.",
+          "Tags": [
+            "Data Repository",
+            "Cartography and visualisation",
+            "Geocoding and georeferencing",
+            "Mobile data collection"
+          ],
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
+          "Languages": {}
         },
         {
-          "name": "GeoParquet",
-          "ring": 1,
-          "moved": 1,
-          "link": "https://geoparquet.org/",
-          "description": "Preferred columnar format for vector analytics and lakehouse storage."
+          "Name": "GeoParquet",
+          "Quadrant": "Data",
+          "Ring": "Trial",
+          "Link": "https://geoparquet.org/",
+          "Moved": 1,
+          "Description": "Preferred columnar format for vector analytics and lakehouse storage.",
+          "Tags": [
+            "Data Repository",
+            "Data management",
+            "Spatial analysis"
+          ],
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
+          "Languages": {}
         },
         {
-          "name": "Synthetic Training Data",
-          "ring": 2,
-          "moved": 2,
-          "link": "https://en.wikipedia.org/wiki/Synthetic_data",
-          "description": "Useful for augmentation, but realism and bias controls need care."
+          "Name": "Synthetic Training Data",
+          "Quadrant": "Data",
+          "Ring": "Assess",
+          "Link": "https://en.wikipedia.org/wiki/Synthetic_data",
+          "Moved": 1,
+          "Description": "Useful for augmentation, but realism and bias controls need care.",
+          "Tags": [
+            "Data management",
+            "Remote sensing analysis",
+            "Techniques"
+          ],
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
+          "Languages": {}
         },
         {
-          "name": "Heavy Shapefile Archives",
-          "ring": 3,
-          "moved": -1,
-          "link": "https://en.wikipedia.org/wiki/Shapefile",
-          "description": "Legacy interchange format kept only where backward compatibility is required."
+          "Name": "Heavy Shapefile Archives",
+          "Quadrant": "Data",
+          "Ring": "Hold",
+          "Link": "https://en.wikipedia.org/wiki/Shapefile",
+          "Moved": -1,
+          "Description": "Legacy interchange format kept only where backward compatibility is required.",
+          "Tags": [
+            "Data management",
+            "Spatial analysis"
+          ],
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
+          "Languages": {}
         }
       ]
     },
@@ -229,39 +482,92 @@
       },
       "entries": [
         {
-          "name": "STAC API",
-          "ring": 0,
-          "moved": 1,
-          "link": "https://api.stacspec.org/v1.0.0/",
-          "description": "Default interface for searchable geospatial catalogs and metadata discovery."
+          "Name": "STAC API",
+          "Quadrant": "Standards",
+          "Ring": "Adopt",
+          "Link": "https://api.stacspec.org/v1.0.0/",
+          "Moved": 1,
+          "Description": "Default interface for searchable geospatial catalogs and metadata discovery.",
+          "Tags": [
+            "Data management",
+            "Data Repository",
+            "Platform"
+          ],
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
+          "Languages": {
+            "JavaScript": 1
+          }
         },
         {
-          "name": "OGC API - Features",
-          "ring": 1,
-          "moved": 1,
-          "link": "https://ogcapi.ogc.org/features/",
-          "description": "Modern replacement path for feature services where interoperability matters."
+          "Name": "OGC API - Features",
+          "Quadrant": "Standards",
+          "Ring": "Trial",
+          "Link": "https://ogcapi.ogc.org/features/",
+          "Moved": 1,
+          "Description": "Modern replacement path for feature services where interoperability matters.",
+          "Tags": [
+            "Platform",
+            "Server-Side",
+            "Data management"
+          ],
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
+          "Languages": {
+            "JavaScript": 1
+          }
         },
         {
-          "name": "PMTiles",
-          "ring": 1,
-          "moved": 2,
-          "link": "https://docs.protomaps.com/pmtiles/",
-          "description": "Single-file vector tile delivery with easy CDN distribution."
+          "Name": "PMTiles",
+          "Quadrant": "Standards",
+          "Ring": "Trial",
+          "Link": "https://docs.protomaps.com/pmtiles/",
+          "Moved": 1,
+          "Description": "Single-file vector tile delivery with easy CDN distribution.",
+          "Tags": [
+            "Web-Tools",
+            "Cartography and visualisation",
+            "Data management"
+          ],
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
+          "Languages": {}
         },
         {
-          "name": "GeoZarr",
-          "ring": 2,
-          "moved": 1,
-          "link": "https://github.com/zarr-developers/geozarr-spec",
-          "description": "Emerging chunked format for multidimensional geospatial arrays."
+          "Name": "GeoZarr",
+          "Quadrant": "Standards",
+          "Ring": "Assess",
+          "Link": "https://github.com/zarr-developers/geozarr-spec",
+          "Moved": 1,
+          "Description": "Emerging chunked format for multidimensional geospatial arrays.",
+          "Tags": [
+            "Data Repository",
+            "Pangeo",
+            "Data management"
+          ],
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
+          "Languages": {}
         },
         {
-          "name": "Vendor-Locked Metadata Schemas",
-          "ring": 3,
-          "moved": -1,
-          "link": "https://en.wikipedia.org/wiki/Vendor_lock-in",
-          "description": "Avoid when possible to reduce migration cost and integration risk."
+          "Name": "Vendor-Locked Metadata Schemas",
+          "Quadrant": "Standards",
+          "Ring": "Hold",
+          "Link": "https://en.wikipedia.org/wiki/Vendor_lock-in",
+          "Moved": -1,
+          "Description": "Avoid when possible to reduce migration cost and integration risk.",
+          "Tags": [
+            "Data management",
+            "Platform"
+          ],
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
+          "Languages": {}
         }
       ]
     }

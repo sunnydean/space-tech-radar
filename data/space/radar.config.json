@@ -27,94 +27,266 @@
   "core": {
     "entries": [
       {
-        "name": "Python",
-        "moved": 0,
-        "link": "https://www.python.org/",
-        "description": "Default orchestration language for mission analysis pipelines and automation tooling."
+        "Name": "Python",
+        "Quadrant": "CORE",
+        "Ring": "Core",
+        "Link": "https://www.python.org/",
+        "Moved": 0,
+        "Description": "Default orchestration language for mission analysis pipelines and automation tooling.",
+        "Tags": [
+          "Core Library",
+          "Server-Side"
+        ],
+        "Downloads": 0,
+        "Forks": 0,
+        "Activity Metric": 0,
+        "Languages": {
+          "Python": 1
+        }
       },
       {
-        "name": "NumPy + SciPy",
-        "moved": 0,
-        "link": "https://numpy.org/",
-        "description": "Numerical foundation for orbit dynamics, calibration math, and simulation workloads."
+        "Name": "NumPy + SciPy",
+        "Quadrant": "CORE",
+        "Ring": "Core",
+        "Link": "https://numpy.org/",
+        "Moved": 0,
+        "Description": "Numerical foundation for orbit dynamics, calibration math, and simulation workloads.",
+        "Tags": [
+          "Core Library",
+          "Pangeo",
+          "Spatial analysis"
+        ],
+        "Downloads": 0,
+        "Forks": 0,
+        "Activity Metric": 0,
+        "Languages": {
+          "Python": 1
+        }
       },
       {
-        "name": "PostgreSQL + PostGIS",
-        "moved": 0,
-        "link": "https://postgis.net/",
-        "description": "Reliable mission data backbone for telemetry indexing, geospatial joins, and service APIs."
+        "Name": "PostgreSQL + PostGIS",
+        "Quadrant": "CORE",
+        "Ring": "Core",
+        "Link": "https://postgis.net/",
+        "Moved": 0,
+        "Description": "Reliable mission data backbone for telemetry indexing, geospatial joins, and service APIs.",
+        "Tags": [
+          "Database",
+          "Server-Side",
+          "Data management"
+        ],
+        "Downloads": 0,
+        "Forks": 0,
+        "Activity Metric": 0,
+        "Languages": {
+          "C": 1
+        }
       },
       {
-        "name": "Containerized Workloads",
-        "moved": 0,
-        "link": "https://www.docker.com/",
-        "description": "Core packaging model for reproducible deployment of processing and operations services."
+        "Name": "Containerized Workloads",
+        "Quadrant": "CORE",
+        "Ring": "Core",
+        "Link": "https://www.docker.com/",
+        "Moved": 0,
+        "Description": "Core packaging model for reproducible deployment of processing and operations services.",
+        "Tags": [
+          "Platform",
+          "Server-Side"
+        ],
+        "Downloads": 0,
+        "Forks": 0,
+        "Activity Metric": 0,
+        "Languages": {
+          "YAML": 1
+        }
       },
       {
-        "name": "Orekit",
-        "moved": 0,
-        "link": "https://www.orekit.org/",
-        "description": "Core orbit propagation and astrodynamics library used across mission tooling."
+        "Name": "Orekit",
+        "Quadrant": "CORE",
+        "Ring": "Core",
+        "Link": "https://www.orekit.org/",
+        "Moved": 0,
+        "Description": "Core orbit propagation and astrodynamics library used across mission tooling.",
+        "Tags": [
+          "Core Library",
+          "Techniques",
+          "Server-Side"
+        ],
+        "Downloads": 0,
+        "Forks": 0,
+        "Activity Metric": 0,
+        "Languages": {}
       },
       {
-        "name": "CCSDS Specifications",
-        "moved": 0,
-        "link": "https://public.ccsds.org/default.aspx",
-        "description": "Interoperability baseline for telemetry, telecommand, and mission data exchange."
+        "Name": "CCSDS Specifications",
+        "Quadrant": "CORE",
+        "Ring": "Core",
+        "Link": "https://public.ccsds.org/default.aspx",
+        "Moved": 0,
+        "Description": "Interoperability baseline for telemetry, telecommand, and mission data exchange.",
+        "Tags": [
+          "Platform",
+          "Data management"
+        ],
+        "Downloads": 0,
+        "Forks": 0,
+        "Activity Metric": 0,
+        "Languages": {}
       },
       {
-        "name": "Apache Arrow",
-        "moved": 0,
-        "link": "https://arrow.apache.org/",
-        "description": "In-memory columnar format that speeds analytics and interchange in pipelines."
+        "Name": "Apache Arrow",
+        "Quadrant": "CORE",
+        "Ring": "Core",
+        "Link": "https://arrow.apache.org/",
+        "Moved": 0,
+        "Description": "In-memory columnar format that speeds analytics and interchange in pipelines.",
+        "Tags": [
+          "Core Library",
+          "Data management",
+          "Server-Side"
+        ],
+        "Downloads": 0,
+        "Forks": 0,
+        "Activity Metric": 0,
+        "Languages": {}
       },
       {
-        "name": "Apache Parquet",
-        "moved": 0,
-        "link": "https://parquet.apache.org/",
-        "description": "Long-term storage format for large mission and geospatial analytics datasets."
+        "Name": "Apache Parquet",
+        "Quadrant": "CORE",
+        "Ring": "Core",
+        "Link": "https://parquet.apache.org/",
+        "Moved": 0,
+        "Description": "Long-term storage format for large mission and geospatial analytics datasets.",
+        "Tags": [
+          "Data Repository",
+          "Data management",
+          "Core Library"
+        ],
+        "Downloads": 0,
+        "Forks": 0,
+        "Activity Metric": 0,
+        "Languages": {}
       },
       {
-        "name": "JupyterLab",
-        "moved": 0,
-        "link": "https://jupyter.org/",
-        "description": "Standard interactive environment for mission prototyping and data validation."
+        "Name": "JupyterLab",
+        "Quadrant": "CORE",
+        "Ring": "Core",
+        "Link": "https://jupyter.org/",
+        "Moved": 0,
+        "Description": "Standard interactive environment for mission prototyping and data validation.",
+        "Tags": [
+          "Platform",
+          "Desktop",
+          "Pangeo"
+        ],
+        "Downloads": 0,
+        "Forks": 0,
+        "Activity Metric": 0,
+        "Languages": {}
       },
       {
-        "name": "Kubernetes",
-        "moved": 0,
-        "link": "https://kubernetes.io/",
-        "description": "Core control plane for scaling mission data and processing services."
+        "Name": "Kubernetes",
+        "Quadrant": "CORE",
+        "Ring": "Core",
+        "Link": "https://kubernetes.io/",
+        "Moved": 0,
+        "Description": "Core control plane for scaling mission data and processing services.",
+        "Tags": [
+          "Platform",
+          "Server-Side"
+        ],
+        "Downloads": 0,
+        "Forks": 0,
+        "Activity Metric": 0,
+        "Languages": {
+          "YAML": 1
+        }
       },
       {
-        "name": "CI/CD Pipelines",
-        "moved": 0,
-        "link": "https://github.com/features/actions",
-        "description": "Automated build/test/deploy backbone for mission software reliability."
+        "Name": "CI/CD Pipelines",
+        "Quadrant": "CORE",
+        "Ring": "Core",
+        "Link": "https://github.com/features/actions",
+        "Moved": 0,
+        "Description": "Automated build/test/deploy backbone for mission software reliability.",
+        "Tags": [
+          "Platform",
+          "Server-Side"
+        ],
+        "Downloads": 0,
+        "Forks": 0,
+        "Activity Metric": 0,
+        "Languages": {}
       },
       {
-        "name": "Prometheus + Grafana",
-        "moved": 0,
-        "link": "https://prometheus.io/",
-        "description": "Baseline observability stack for service health, telemetry, and alerting."
+        "Name": "Prometheus + Grafana",
+        "Quadrant": "CORE",
+        "Ring": "Core",
+        "Link": "https://prometheus.io/",
+        "Moved": 0,
+        "Description": "Baseline observability stack for service health, telemetry, and alerting.",
+        "Tags": [
+          "Platform",
+          "Server-Side",
+          "Web-Tools"
+        ],
+        "Downloads": 0,
+        "Forks": 0,
+        "Activity Metric": 0,
+        "Languages": {}
       },
       {
-        "name": "Git",
-        "moved": 0,
-        "link": "https://git-scm.com/",
-        "description": "Version-control foundation for flight software, ground systems, and configs."
+        "Name": "Git",
+        "Quadrant": "CORE",
+        "Ring": "Core",
+        "Link": "https://git-scm.com/",
+        "Moved": 0,
+        "Description": "Version-control foundation for flight software, ground systems, and configs.",
+        "Tags": [
+          "Data management",
+          "Platform"
+        ],
+        "Downloads": 0,
+        "Forks": 0,
+        "Activity Metric": 0,
+        "Languages": {}
       },
       {
-        "name": "Linux",
-        "moved": 0,
-        "link": "https://kernel.org/",
-        "description": "Primary execution environment across mission operations and backend systems."
+        "Name": "Linux",
+        "Quadrant": "CORE",
+        "Ring": "Core",
+        "Link": "https://kernel.org/",
+        "Moved": 0,
+        "Description": "Primary execution environment across mission operations and backend systems.",
+        "Tags": [
+          "Platform",
+          "Server-Side"
+        ],
+        "Downloads": 0,
+        "Forks": 0,
+        "Activity Metric": 0,
+        "Languages": {
+          "YAML": 1
+        }
       },
       {
-        "name": "Terraform",
-        "moved": 0,
-        "link": "https://www.terraform.io/",
-        "description": "Core infrastructure-as-code layer for reproducible mission platform environments."
+        "Name": "Terraform",
+        "Quadrant": "CORE",
+        "Ring": "Core",
+        "Link": "https://www.terraform.io/",
+        "Moved": 0,
+        "Description": "Core infrastructure-as-code layer for reproducible mission platform environments.",
+        "Tags": [
+          "Platform",
+          "Server-Side",
+          "Data management"
+        ],
+        "Downloads": 0,
+        "Forks": 0,
+        "Activity Metric": 0,
+        "Languages": {
+          "HCL": 1
+        }
       }
     ]
   },
@@ -122,88 +294,190 @@
     {
       "quadrant": {
         "index": 0,
-        "name": "Tools",
+        "name": "Mapping",
         "color": "#3b82f6"
       },
       "entries": [
         {
-          "name": "CesiumJS",
-          "ring": 0,
-          "moved": 1,
-          "link": "https://cesium.com/platform/cesiumjs/",
-          "description": "Core web engine for interactive 3D space and geospatial visualization."
+          "Name": "CesiumJS",
+          "Quadrant": "Mapping",
+          "Ring": "Adopt",
+          "Link": "https://cesium.com/platform/cesiumjs/",
+          "Moved": 1,
+          "Description": "Core web engine for interactive 3D space and geospatial visualization.",
+          "Tags": [
+            "Web-Tools",
+            "3D modeling",
+            "Cartography and visualisation"
+          ],
+          "Downloads": 0,
+          "Forks": 0,
+          "Activity Metric": 0,
+          "Languages": {
+            "JavaScript": 1
+          }
         },
         {
-          "name": "Orekit",
-          "ring": 1,
-          "moved": 1,
-          "link": "https://www.orekit.org/",
-          "description": "Robust orbital mechanics library for mission analysis and tracking."
+          "Name": "Orekit",
+          "Quadrant": "Mapping",
+          "Ring": "Trial",
+          "Link": "https://www.orekit.org/",
+          "Moved": 1,
+          "Description": "Robust orbital mechanics library for mission analysis and tracking.",
+          "Tags": [
+            "Core Library",
+            "Techniques",
+            "Platform"
+          ],
+          "Downloads": 0,
+          "Forks": 0,
+          "Activity Metric": 0,
+          "Languages": {}
         },
         {
-          "name": "GMAT",
-          "ring": 1,
-          "moved": 0,
-          "link": "https://gmatcentral.org/",
-          "description": "Open-source mission design and trajectory optimization toolkit."
+          "Name": "GMAT",
+          "Quadrant": "Mapping",
+          "Ring": "Trial",
+          "Link": "https://gmatcentral.org/",
+          "Moved": 0,
+          "Description": "Open-source mission design and trajectory optimization toolkit.",
+          "Tags": [
+            "Desktop",
+            "3D modeling",
+            "Techniques"
+          ],
+          "Downloads": 0,
+          "Forks": 0,
+          "Activity Metric": 0,
+          "Languages": {}
         },
         {
-          "name": "Open MCT",
-          "ring": 2,
-          "moved": 1,
-          "link": "https://github.com/nasa/openmct",
-          "description": "Telemetry visualization platform for mission operations consoles."
+          "Name": "Open MCT",
+          "Quadrant": "Mapping",
+          "Ring": "Assess",
+          "Link": "https://github.com/nasa/openmct",
+          "Moved": 1,
+          "Description": "Telemetry visualization platform for mission operations consoles.",
+          "Tags": [
+            "Web-Tools",
+            "Platform",
+            "Server-Side"
+          ],
+          "Downloads": 0,
+          "Forks": 0,
+          "Activity Metric": 0,
+          "Languages": {
+            "JavaScript": 1
+          }
         },
         {
-          "name": "Legacy Desktop Flight Tools",
-          "ring": 3,
-          "moved": -1,
-          "link": "https://en.wikipedia.org/wiki/Flight_dynamics_(spacecraft)",
-          "description": "Retain only when migration risk outweighs modernization benefits."
+          "Name": "Legacy Desktop Flight Tools",
+          "Quadrant": "Mapping",
+          "Ring": "Hold",
+          "Link": "https://en.wikipedia.org/wiki/Flight_dynamics_(spacecraft)",
+          "Moved": -1,
+          "Description": "Retain only when migration risk outweighs modernization benefits.",
+          "Tags": [
+            "Desktop",
+            "Techniques"
+          ],
+          "Downloads": 0,
+          "Forks": 0,
+          "Activity Metric": 0,
+          "Languages": {}
         }
       ]
     },
     {
       "quadrant": {
         "index": 1,
-        "name": "Techniques",
+        "name": "Intelligence",
         "color": "#14b8a6"
       },
       "entries": [
         {
-          "name": "Constellation Revisit Optimization",
-          "ring": 0,
-          "moved": 1,
-          "link": "https://en.wikipedia.org/wiki/Satellite_constellation",
-          "description": "Optimize orbital planes and tasking windows for target revisit goals."
+          "Name": "Constellation Revisit Optimization",
+          "Quadrant": "Intelligence",
+          "Ring": "Adopt",
+          "Link": "https://en.wikipedia.org/wiki/Satellite_constellation",
+          "Moved": 1,
+          "Description": "Optimize orbital planes and tasking windows for target revisit goals.",
+          "Tags": [
+            "Techniques",
+            "Spatial analysis",
+            "Remote sensing analysis"
+          ],
+          "Downloads": 0,
+          "Forks": 0,
+          "Activity Metric": 0,
+          "Languages": {}
         },
         {
-          "name": "SAR Interferometry (InSAR)",
-          "ring": 1,
-          "moved": 1,
-          "link": "https://earth.esa.int/eogateway/activities/insar",
-          "description": "High-value deformation monitoring technique across large regions."
+          "Name": "SAR Interferometry (InSAR)",
+          "Quadrant": "Intelligence",
+          "Ring": "Trial",
+          "Link": "https://earth.esa.int/eogateway/activities/insar",
+          "Moved": 1,
+          "Description": "High-value deformation monitoring technique across large regions.",
+          "Tags": [
+            "Techniques",
+            "Remote sensing analysis",
+            "Spatial analysis"
+          ],
+          "Downloads": 0,
+          "Forks": 0,
+          "Activity Metric": 0,
+          "Languages": {}
         },
         {
-          "name": "Onboard Edge AI Inference",
-          "ring": 1,
-          "moved": 2,
-          "link": "https://www.nasa.gov/smallsat-institute/sst-soa/small-spacecraft-avionics/",
-          "description": "Run inference near the sensor to reduce downlink pressure and latency."
+          "Name": "Onboard Edge AI Inference",
+          "Quadrant": "Intelligence",
+          "Ring": "Trial",
+          "Link": "https://www.nasa.gov/smallsat-institute/sst-soa/small-spacecraft-avionics/",
+          "Moved": 1,
+          "Description": "Run inference near the sensor to reduce downlink pressure and latency.",
+          "Tags": [
+            "Techniques",
+            "Mobile",
+            "Remote sensing analysis"
+          ],
+          "Downloads": 0,
+          "Forks": 0,
+          "Activity Metric": 0,
+          "Languages": {}
         },
         {
-          "name": "Cross-Sensor Fusion Pipelines",
-          "ring": 2,
-          "moved": 1,
-          "link": "https://en.wikipedia.org/wiki/Sensor_fusion",
-          "description": "Fuse optical, SAR, and thermal feeds into unified analytic products."
+          "Name": "Cross-Sensor Fusion Pipelines",
+          "Quadrant": "Intelligence",
+          "Ring": "Assess",
+          "Link": "https://en.wikipedia.org/wiki/Sensor_fusion",
+          "Moved": 1,
+          "Description": "Fuse optical, SAR, and thermal feeds into unified analytic products.",
+          "Tags": [
+            "Techniques",
+            "Data management",
+            "Remote sensing analysis"
+          ],
+          "Downloads": 0,
+          "Forks": 0,
+          "Activity Metric": 0,
+          "Languages": {}
         },
         {
-          "name": "Manual-Only Mission Planning",
-          "ring": 3,
-          "moved": -1,
-          "link": "https://en.wikipedia.org/wiki/Mission_planning",
-          "description": "Avoid for modern constellations where scale requires automation."
+          "Name": "Manual-Only Mission Planning",
+          "Quadrant": "Intelligence",
+          "Ring": "Hold",
+          "Link": "https://en.wikipedia.org/wiki/Mission_planning",
+          "Moved": -1,
+          "Description": "Avoid for modern constellations where scale requires automation.",
+          "Tags": [
+            "Techniques",
+            "Data management"
+          ],
+          "Downloads": 0,
+          "Forks": 0,
+          "Activity Metric": 0,
+          "Languages": {}
         }
       ]
     },
@@ -215,39 +489,85 @@
       },
       "entries": [
         {
-          "name": "Sentinel-2 L2A",
-          "ring": 0,
-          "moved": 0,
-          "link": "https://dataspace.copernicus.eu/",
-          "description": "Baseline multispectral data source for many EO production workflows."
+          "Name": "Sentinel-2 L2A",
+          "Quadrant": "Data",
+          "Ring": "Adopt",
+          "Link": "https://dataspace.copernicus.eu/",
+          "Moved": 0,
+          "Description": "Baseline multispectral data source for many EO production workflows.",
+          "Tags": [
+            "Data Repository",
+            "Remote sensing analysis"
+          ],
+          "Downloads": 0,
+          "Forks": 0,
+          "Activity Metric": 0,
+          "Languages": {}
         },
         {
-          "name": "Landsat Collection 2",
-          "ring": 0,
-          "moved": 0,
-          "link": "https://www.usgs.gov/landsat-missions/landsat-collection-2",
-          "description": "Long-term calibrated archive for time-series analysis."
+          "Name": "Landsat Collection 2",
+          "Quadrant": "Data",
+          "Ring": "Adopt",
+          "Link": "https://www.usgs.gov/landsat-missions/landsat-collection-2",
+          "Moved": 0,
+          "Description": "Long-term calibrated archive for time-series analysis.",
+          "Tags": [
+            "Data Repository",
+            "Remote sensing analysis"
+          ],
+          "Downloads": 0,
+          "Forks": 0,
+          "Activity Metric": 0,
+          "Languages": {}
         },
         {
-          "name": "PlanetScope Daily Imagery",
-          "ring": 1,
-          "moved": 1,
-          "link": "https://www.planet.com/products/planet-imagery/",
-          "description": "Commercial high-frequency imagery for near-daily monitoring use cases."
+          "Name": "PlanetScope Daily Imagery",
+          "Quadrant": "Data",
+          "Ring": "Trial",
+          "Link": "https://www.planet.com/products/planet-imagery/",
+          "Moved": 1,
+          "Description": "Commercial high-frequency imagery for near-daily monitoring use cases.",
+          "Tags": [
+            "Data Repository",
+            "Remote sensing analysis"
+          ],
+          "Downloads": 0,
+          "Forks": 0,
+          "Activity Metric": 0,
+          "Languages": {}
         },
         {
-          "name": "SWOT Hydrology Products",
-          "ring": 2,
-          "moved": 1,
-          "link": "https://swot.jpl.nasa.gov/",
-          "description": "Emerging water-surface data products with strong scientific upside."
+          "Name": "SWOT Hydrology Products",
+          "Quadrant": "Data",
+          "Ring": "Assess",
+          "Link": "https://swot.jpl.nasa.gov/",
+          "Moved": 1,
+          "Description": "Emerging water-surface data products with strong scientific upside.",
+          "Tags": [
+            "Data Repository",
+            "Remote sensing analysis",
+            "Spatial analysis"
+          ],
+          "Downloads": 0,
+          "Forks": 0,
+          "Activity Metric": 0,
+          "Languages": {}
         },
         {
-          "name": "Uncalibrated Third-Party Feeds",
-          "ring": 3,
-          "moved": -1,
-          "link": "https://en.wikipedia.org/wiki/Calibration",
-          "description": "Avoid for critical analytics unless provenance and calibration are verified."
+          "Name": "Uncalibrated Third-Party Feeds",
+          "Quadrant": "Data",
+          "Ring": "Hold",
+          "Link": "https://en.wikipedia.org/wiki/Calibration",
+          "Moved": -1,
+          "Description": "Avoid for critical analytics unless provenance and calibration are verified.",
+          "Tags": [
+            "Data Repository",
+            "Data management"
+          ],
+          "Downloads": 0,
+          "Forks": 0,
+          "Activity Metric": 0,
+          "Languages": {}
         }
       ]
     },
@@ -259,39 +579,89 @@
       },
       "entries": [
         {
-          "name": "CCSDS Telemetry and Telecommand",
-          "ring": 0,
-          "moved": 0,
-          "link": "https://public.ccsds.org/default.aspx",
-          "description": "Core interoperability standard for spacecraft data and command exchange."
+          "Name": "CCSDS Telemetry and Telecommand",
+          "Quadrant": "Standards",
+          "Ring": "Adopt",
+          "Link": "https://public.ccsds.org/default.aspx",
+          "Moved": 0,
+          "Description": "Core interoperability standard for spacecraft data and command exchange.",
+          "Tags": [
+            "Platform",
+            "Data management"
+          ],
+          "Downloads": 0,
+          "Forks": 0,
+          "Activity Metric": 0,
+          "Languages": {}
         },
         {
-          "name": "STAC for EO Catalogs",
-          "ring": 1,
-          "moved": 1,
-          "link": "https://stacspec.org/",
-          "description": "Consistent metadata pattern for discoverable Earth observation assets."
+          "Name": "STAC for EO Catalogs",
+          "Quadrant": "Standards",
+          "Ring": "Trial",
+          "Link": "https://stacspec.org/",
+          "Moved": 1,
+          "Description": "Consistent metadata pattern for discoverable Earth observation assets.",
+          "Tags": [
+            "Data Repository",
+            "Data management",
+            "Platform"
+          ],
+          "Downloads": 0,
+          "Forks": 0,
+          "Activity Metric": 0,
+          "Languages": {}
         },
         {
-          "name": "OGC API - Processes",
-          "ring": 2,
-          "moved": 1,
-          "link": "https://ogcapi.ogc.org/processes/",
-          "description": "Standardized API contract for geospatial processing services."
+          "Name": "OGC API - Processes",
+          "Quadrant": "Standards",
+          "Ring": "Assess",
+          "Link": "https://ogcapi.ogc.org/processes/",
+          "Moved": 1,
+          "Description": "Standardized API contract for geospatial processing services.",
+          "Tags": [
+            "Platform",
+            "Server-Side",
+            "Data management"
+          ],
+          "Downloads": 0,
+          "Forks": 0,
+          "Activity Metric": 0,
+          "Languages": {
+            "JavaScript": 1
+          }
         },
         {
-          "name": "ISO 19115 Metadata",
-          "ring": 2,
-          "moved": 0,
-          "link": "https://www.iso.org/standard/53798.html",
-          "description": "Well-established metadata model for geospatial datasets and lineage."
+          "Name": "ISO 19115 Metadata",
+          "Quadrant": "Standards",
+          "Ring": "Assess",
+          "Link": "https://www.iso.org/standard/53798.html",
+          "Moved": 0,
+          "Description": "Well-established metadata model for geospatial datasets and lineage.",
+          "Tags": [
+            "Data management",
+            "Data Repository",
+            "Platform"
+          ],
+          "Downloads": 0,
+          "Forks": 0,
+          "Activity Metric": 0,
+          "Languages": {}
         },
         {
-          "name": "Proprietary Tasking Schemas",
-          "ring": 3,
-          "moved": -1,
-          "link": "https://en.wikipedia.org/wiki/Vendor_lock-in",
-          "description": "Use only when no open alternative can meet mission requirements."
+          "Name": "Proprietary Tasking Schemas",
+          "Quadrant": "Standards",
+          "Ring": "Hold",
+          "Link": "https://en.wikipedia.org/wiki/Vendor_lock-in",
+          "Moved": -1,
+          "Description": "Use only when no open alternative can meet mission requirements.",
+          "Tags": [
+            "Data management",
+            "Platform"
+          ],
+          "Downloads": 0,
+          "Forks": 0,
+          "Activity Metric": 0,
+          "Languages": {}
         }
       ]
     }

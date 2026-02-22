@@ -1,0 +1,36 @@
+Name,Quadrant,Ring,Link,Moved,Description,Tags,Downloads,Forks,Activity Metric,Languages
+Python,CORE,Core,https://www.python.org/,0,Default orchestration language for mission analysis pipelines and automation tooling.,"[""Core Library"", ""Server-Side""]",0,0,0,"{""Python"": 1}"
+NumPy + SciPy,CORE,Core,https://numpy.org/,0,"Numerical foundation for orbit dynamics, calibration math, and simulation workloads.","[""Core Library"", ""Pangeo"", ""Spatial analysis""]",0,0,0,"{""Python"": 1}"
+PostgreSQL + PostGIS,CORE,Core,https://postgis.net/,0,"Reliable mission data backbone for telemetry indexing, geospatial joins, and service APIs.","[""Database"", ""Server-Side"", ""Data management""]",0,0,0,"{""C"": 1}"
+Containerized Workloads,CORE,Core,https://www.docker.com/,0,Core packaging model for reproducible deployment of processing and operations services.,"[""Platform"", ""Server-Side""]",0,0,0,"{""YAML"": 1}"
+Orekit,CORE,Core,https://www.orekit.org/,0,Core orbit propagation and astrodynamics library used across mission tooling.,"[""Core Library"", ""Techniques"", ""Server-Side""]",0,0,0,{}
+CCSDS Specifications,CORE,Core,https://public.ccsds.org/default.aspx,0,"Interoperability baseline for telemetry, telecommand, and mission data exchange.","[""Platform"", ""Data management""]",0,0,0,{}
+Apache Arrow,CORE,Core,https://arrow.apache.org/,0,In-memory columnar format that speeds analytics and interchange in pipelines.,"[""Core Library"", ""Data management"", ""Server-Side""]",0,0,0,{}
+Apache Parquet,CORE,Core,https://parquet.apache.org/,0,Long-term storage format for large mission and geospatial analytics datasets.,"[""Data Repository"", ""Data management"", ""Core Library""]",0,0,0,{}
+JupyterLab,CORE,Core,https://jupyter.org/,0,Standard interactive environment for mission prototyping and data validation.,"[""Platform"", ""Desktop"", ""Pangeo""]",0,0,0,{}
+Kubernetes,CORE,Core,https://kubernetes.io/,0,Core control plane for scaling mission data and processing services.,"[""Platform"", ""Server-Side""]",0,0,0,"{""YAML"": 1}"
+CI/CD Pipelines,CORE,Core,https://github.com/features/actions,0,Automated build/test/deploy backbone for mission software reliability.,"[""Platform"", ""Server-Side""]",0,0,0,{}
+Prometheus + Grafana,CORE,Core,https://prometheus.io/,0,"Baseline observability stack for service health, telemetry, and alerting.","[""Platform"", ""Server-Side"", ""Web-Tools""]",0,0,0,{}
+Git,CORE,Core,https://git-scm.com/,0,"Version-control foundation for flight software, ground systems, and configs.","[""Data management"", ""Platform""]",0,0,0,{}
+Linux,CORE,Core,https://kernel.org/,0,Primary execution environment across mission operations and backend systems.,"[""Platform"", ""Server-Side""]",0,0,0,"{""YAML"": 1}"
+Terraform,CORE,Core,https://www.terraform.io/,0,Core infrastructure-as-code layer for reproducible mission platform environments.,"[""Platform"", ""Server-Side"", ""Data management""]",0,0,0,"{""HCL"": 1}"
+CesiumJS,Mapping,Adopt,https://cesium.com/platform/cesiumjs/,1,Core web engine for interactive 3D space and geospatial visualization.,"[""Web-Tools"", ""3D modeling"", ""Cartography and visualisation""]",0,0,0,"{""JavaScript"": 1}"
+Orekit,Mapping,Trial,https://www.orekit.org/,1,Robust orbital mechanics library for mission analysis and tracking.,"[""Core Library"", ""Techniques"", ""Platform""]",0,0,0,{}
+GMAT,Mapping,Trial,https://gmatcentral.org/,0,Open-source mission design and trajectory optimization toolkit.,"[""Desktop"", ""3D modeling"", ""Techniques""]",0,0,0,{}
+Open MCT,Mapping,Assess,https://github.com/nasa/openmct,1,Telemetry visualization platform for mission operations consoles.,"[""Web-Tools"", ""Platform"", ""Server-Side""]",0,0,0,"{""JavaScript"": 1}"
+Legacy Desktop Flight Tools,Mapping,Hold,https://en.wikipedia.org/wiki/Flight_dynamics_(spacecraft),-1,Retain only when migration risk outweighs modernization benefits.,"[""Desktop"", ""Techniques""]",0,0,0,{}
+Constellation Revisit Optimization,Intelligence,Adopt,https://en.wikipedia.org/wiki/Satellite_constellation,1,Optimize orbital planes and tasking windows for target revisit goals.,"[""Techniques"", ""Spatial analysis"", ""Remote sensing analysis""]",0,0,0,{}
+SAR Interferometry (InSAR),Intelligence,Trial,https://earth.esa.int/eogateway/activities/insar,1,High-value deformation monitoring technique across large regions.,"[""Techniques"", ""Remote sensing analysis"", ""Spatial analysis""]",0,0,0,{}
+Onboard Edge AI Inference,Intelligence,Trial,https://www.nasa.gov/smallsat-institute/sst-soa/small-spacecraft-avionics/,1,Run inference near the sensor to reduce downlink pressure and latency.,"[""Techniques"", ""Mobile"", ""Remote sensing analysis""]",0,0,0,{}
+Cross-Sensor Fusion Pipelines,Intelligence,Assess,https://en.wikipedia.org/wiki/Sensor_fusion,1,"Fuse optical, SAR, and thermal feeds into unified analytic products.","[""Techniques"", ""Data management"", ""Remote sensing analysis""]",0,0,0,{}
+Manual-Only Mission Planning,Intelligence,Hold,https://en.wikipedia.org/wiki/Mission_planning,-1,Avoid for modern constellations where scale requires automation.,"[""Techniques"", ""Data management""]",0,0,0,{}
+Sentinel-2 L2A,Data,Adopt,https://dataspace.copernicus.eu/,0,Baseline multispectral data source for many EO production workflows.,"[""Data Repository"", ""Remote sensing analysis""]",0,0,0,{}
+Landsat Collection 2,Data,Adopt,https://www.usgs.gov/landsat-missions/landsat-collection-2,0,Long-term calibrated archive for time-series analysis.,"[""Data Repository"", ""Remote sensing analysis""]",0,0,0,{}
+PlanetScope Daily Imagery,Data,Trial,https://www.planet.com/products/planet-imagery/,1,Commercial high-frequency imagery for near-daily monitoring use cases.,"[""Data Repository"", ""Remote sensing analysis""]",0,0,0,{}
+SWOT Hydrology Products,Data,Assess,https://swot.jpl.nasa.gov/,1,Emerging water-surface data products with strong scientific upside.,"[""Data Repository"", ""Remote sensing analysis"", ""Spatial analysis""]",0,0,0,{}
+Uncalibrated Third-Party Feeds,Data,Hold,https://en.wikipedia.org/wiki/Calibration,-1,Avoid for critical analytics unless provenance and calibration are verified.,"[""Data Repository"", ""Data management""]",0,0,0,{}
+CCSDS Telemetry and Telecommand,Standards,Adopt,https://public.ccsds.org/default.aspx,0,Core interoperability standard for spacecraft data and command exchange.,"[""Platform"", ""Data management""]",0,0,0,{}
+STAC for EO Catalogs,Standards,Trial,https://stacspec.org/,1,Consistent metadata pattern for discoverable Earth observation assets.,"[""Data Repository"", ""Data management"", ""Platform""]",0,0,0,{}
+OGC API - Processes,Standards,Assess,https://ogcapi.ogc.org/processes/,1,Standardized API contract for geospatial processing services.,"[""Platform"", ""Server-Side"", ""Data management""]",0,0,0,"{""JavaScript"": 1}"
+ISO 19115 Metadata,Standards,Assess,https://www.iso.org/standard/53798.html,0,Well-established metadata model for geospatial datasets and lineage.,"[""Data management"", ""Data Repository"", ""Platform""]",0,0,0,{}
+Proprietary Tasking Schemas,Standards,Hold,https://en.wikipedia.org/wiki/Vendor_lock-in,-1,Use only when no open alternative can meet mission requirements.,"[""Data management"", ""Platform""]",0,0,0,{}

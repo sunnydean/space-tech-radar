@@ -25,6 +25,19 @@ const CORE = {
   label: "CORE",
   fallbackColor: "#0f766e"
 };
+const REQUIRED_ENTRY_FIELDS = [
+  "Name",
+  "Quadrant",
+  "Ring",
+  "Link",
+  "Moved",
+  "Description",
+  "Tags",
+  "Downloads",
+  "Forks",
+  "Activity Metric",
+  "Languages"
+];
 
 const $ = (id) => document.getElementById(id);
 const clamp = (value, min, max) => Math.max(min, Math.min(max, value));
@@ -75,12 +88,126 @@ function parseEntryTextOverrides(markdown) {
   return overrides;
 }
 
+function normalizeRadarEntry(rawEntry, ringIndexByName, { isCore, expectedQuadrant }) {
+  if (!rawEntry || typeof rawEntry !== "object" || Array.isArray(rawEntry)) {
+    throw new Error("Invalid entry: each entry must be an object.");
+  }
+
+  const missing = REQUIRED_ENTRY_FIELDS.filter(
+    (field) => !Object.prototype.hasOwnProperty.call(rawEntry, field)
+  );
+  if (missing.length) {
+    throw new Error(`Invalid entry: missing required fields: ${missing.join(", ")}.`);
+  }
+
+  const name = String(rawEntry.Name || "").trim();
+  if (!name) throw new Error("Invalid entry: Name is required.");
+
+  const quadrantLabel = String(rawEntry.Quadrant || "").trim();
+  if (!quadrantLabel) throw new Error(`Invalid entry "${name}": Quadrant is required.`);
+
+  if (expectedQuadrant && quadrantLabel.toLowerCase() !== String(expectedQuadrant).toLowerCase()) {
+    throw new Error(
+      `Invalid entry "${name}": Quadrant "${quadrantLabel}" must match "${expectedQuadrant}".`
+    );
+  }
+
+  if (isCore && quadrantLabel.toUpperCase() !== CORE.label) {
+    throw new Error(`Invalid core entry "${name}": Quadrant must be "${CORE.label}".`);
+  }
+
+  const ringLabel = String(rawEntry.Ring || "").trim();
+  if (!ringLabel) throw new Error(`Invalid entry "${name}": Ring is required.`);
+
+  const ring = ringIndexByName.get(ringLabel.toLowerCase());
+  if (ring === undefined) {
+    throw new Error(`Invalid entry "${name}": Ring "${ringLabel}" does not exist in config.rings.`);
+  }
+
+  if (isCore && ring !== 0) {
+    throw new Error(`Invalid core entry "${name}": Ring must be "${CORE.label}".`);
+  }
+  if (!isCore && ring === 0) {
+    throw new Error(`Invalid entry "${name}": non-core entries cannot use Ring "${CORE.label}".`);
+  }
+
+  const link = String(rawEntry.Link || "").trim();
+  if (!link) throw new Error(`Invalid entry "${name}": Link is required.`);
+
+  const moved = Number(rawEntry.Moved);
+  if (!Number.isInteger(moved) || ![-1, 0, 1].includes(moved)) {
+    throw new Error(`Invalid entry "${name}": Moved must be -1, 0, or 1.`);
+  }
+
+  const description = String(rawEntry.Description || "").trim();
+  if (!description) throw new Error(`Invalid entry "${name}": Description is required.`);
+
+  if (!Array.isArray(rawEntry.Tags)) {
+    throw new Error(`Invalid entry "${name}": Tags must be an array.`);
+  }
+  const tags = rawEntry.Tags.map((tag) => String(tag).trim()).filter(Boolean);
+  if (!tags.length) throw new Error(`Invalid entry "${name}": Tags must include at least one value.`);
+
+  const downloads = Number(rawEntry.Downloads);
+  if (!Number.isFinite(downloads) || downloads < 0) {
+    throw new Error(`Invalid entry "${name}": Downloads must be a non-negative number.`);
+  }
+
+  const forks = Number(rawEntry.Forks);
+  if (!Number.isFinite(forks) || forks < 0) {
+    throw new Error(`Invalid entry "${name}": Forks must be a non-negative number.`);
+  }
+
+  const activityMetric = Number(rawEntry["Activity Metric"]);
+  if (!Number.isFinite(activityMetric) || activityMetric < 0) {
+    throw new Error(`Invalid entry "${name}": Activity Metric must be a non-negative number.`);
+  }
+
+  const languagesInput = rawEntry.Languages;
+  if (!languagesInput || typeof languagesInput !== "object" || Array.isArray(languagesInput)) {
+    throw new Error(`Invalid entry "${name}": Languages must be an object.`);
+  }
+
+  const languages = {};
+  Object.entries(languagesInput).forEach(([language, amount]) => {
+    const languageName = String(language).trim();
+    const languageAmount = Number(amount);
+    if (!languageName) {
+      throw new Error(`Invalid entry "${name}": Languages keys must be non-empty strings.`);
+    }
+    if (!Number.isFinite(languageAmount) || languageAmount < 0) {
+      throw new Error(
+        `Invalid entry "${name}": Languages["${languageName}"] must be a non-negative number.`
+      );
+    }
+    languages[languageName] = languageAmount;
+  });
+
+  return {
+    name,
+    quadrantLabel,
+    ringLabel,
+    ring,
+    link,
+    moved,
+    description,
+    tags,
+    downloads,
+    forks,
+    activityMetric,
+    languages
+  };
+}
+
 async function loadRadarData(mode) {
   const configPath = joinPath(mode.root, "radar.config.json");
   const config = await fetchJson(configPath);
   const rings = Array.isArray(config.rings) ? config.rings : [];
   const hasCoreRing = String(rings[0]?.name || "").trim().toLowerCase() === "core";
   if (!hasCoreRing) throw new Error(`Invalid ${configPath}: first ring must be "Core".`);
+  const ringIndexByName = new Map(
+    rings.map((ring, index) => [String(ring?.name || "").trim().toLowerCase(), index])
+  );
 
   const textPath = config.textFile ? joinPath(mode.root, config.textFile) : null;
   const coreEntries = Array.isArray(config?.core?.entries) ? config.core.entries : [];
@@ -92,17 +219,27 @@ async function loadRadarData(mode) {
   const quadrants = [];
   const quadrantColors = [];
   const entries = [];
-  const maxRing = rings.length - 1;
 
   coreEntries.forEach((entry) => {
-    const override = textOverrides.get(entry.name) || {};
+    const normalized = normalizeRadarEntry(entry, ringIndexByName, {
+      isCore: true,
+      expectedQuadrant: CORE.label
+    });
+    const override = textOverrides.get(normalized.name) || {};
     entries.push({
-      ...entry,
+      name: normalized.name,
       ring: 0,
       quadrant: null,
       isCore: true,
-      description: override.description || entry.description || "",
-      linkName: override.linkName || entry.linkName || hostname(entry.link)
+      link: normalized.link,
+      moved: normalized.moved,
+      description: override.description || normalized.description,
+      linkName: override.linkName || hostname(normalized.link),
+      tags: normalized.tags,
+      downloads: normalized.downloads,
+      forks: normalized.forks,
+      activityMetric: normalized.activityMetric,
+      languages: normalized.languages
     });
   });
 
@@ -116,19 +253,25 @@ async function loadRadarData(mode) {
     quadrantColors[q.index] = q.color || FALLBACK_QUADRANT_COLORS[q.index % FALLBACK_QUADRANT_COLORS.length];
 
     (doc.entries || []).forEach((entry) => {
-      const ring = Number(entry.ring) + 1;
-      if (!Number.isInteger(ring) || ring < 1 || ring > maxRing) {
-        throw new Error(`Invalid ring index for entry "${entry.name}".`);
-      }
-
-      const override = textOverrides.get(entry.name) || {};
+      const normalized = normalizeRadarEntry(entry, ringIndexByName, {
+        isCore: false,
+        expectedQuadrant: q.name
+      });
+      const override = textOverrides.get(normalized.name) || {};
       entries.push({
-        ...entry,
-        ring,
+        name: normalized.name,
+        ring: normalized.ring,
         quadrant: q.index,
         isCore: false,
-        description: override.description || entry.description || "",
-        linkName: override.linkName || entry.linkName || hostname(entry.link)
+        link: normalized.link,
+        moved: normalized.moved,
+        description: override.description || normalized.description,
+        linkName: override.linkName || hostname(normalized.link),
+        tags: normalized.tags,
+        downloads: normalized.downloads,
+        forks: normalized.forks,
+        activityMetric: normalized.activityMetric,
+        languages: normalized.languages
       });
     });
   });
@@ -197,7 +340,10 @@ function createPopupController() {
     if (!popup || !title || !meta || !body || !link) return;
 
     title.textContent = entry.name;
-    meta.textContent = `${quadrantName} · ${ringName}`;
+    const metaParts = [quadrantName, ringName, ...(Array.isArray(entry.tags) ? entry.tags : [])]
+      .map((part) => String(part || "").trim())
+      .filter(Boolean);
+    meta.textContent = [...new Set(metaParts)].join(" · ");
     body.textContent = entry.description || "No description available.";
 
     if (entry.link) {

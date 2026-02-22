@@ -1,9 +1,6 @@
 
 # todo:
 add tagging
-add core - section or center+section?
-change categories
-when i hover over a ball the name should show up
 add an arrow
 
 
