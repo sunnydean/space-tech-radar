@@ -37,9 +37,9 @@
   --beam-col-end: rgba(56, 189, 248, 0.08);
   --beam-glow: rgba(56, 189, 248, 0.45);
 
-  --radar-size: min(67vw, 860px);
-  --list-width: clamp(236px, 22vw, 300px);
-  --list-gap: clamp(6px, 0.9vw, 12px);
+  --radar-size: min(56vw, 730px);
+  --list-width: clamp(200px, 18vw, 248px);
+  --list-gap: clamp(4px, 0.7vw, 8px);
 }
 
 * {
@@ -520,7 +520,7 @@ header {
 }
 
 .corner-tr {
-  left: calc(50% + (var(--radar-size) / 2) + var(--list-gap));
+  left: calc(50% + (var(--radar-size) / 2) + var(--list-gap) + clamp(8px, 0.9vw, 14px));
   top: calc(var(--radar-top) + clamp(44px, 5vw, 68px));
 }
 
@@ -530,7 +530,7 @@ header {
 }
 
 .corner-br {
-  left: calc(50% + (var(--radar-size) / 2) + var(--list-gap));
+  left: calc(50% + (var(--radar-size) / 2) + var(--list-gap) + clamp(8px, 0.9vw, 14px));
   top: calc(var(--radar-top) + var(--radar-size) - clamp(116px, 10vw, 148px));
 }
 
@@ -811,7 +811,7 @@ header {
     width: auto;
     height: auto;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 1rem;
   }
 
@@ -825,9 +825,11 @@ header {
   }
 
   .quad-list {
-    position: static;
-    width: auto;
-    max-width: none;
+    display: none;
+  }
+
+  .core-list {
+    display: none;
   }
 
   .quad-list.is-dense .quad-entries {
@@ -846,6 +848,18 @@ header {
 @media (max-width: 700px) {
   .wrap {
     padding: 1rem 0.9rem 2rem;
+  }
+
+  .stage {
+    grid-template-columns: 1fr;
+  }
+
+  .quad-list {
+    display: none;
+  }
+
+  .core-list {
+    display: none;
   }
 
   .mode-switch {

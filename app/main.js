@@ -1,7 +1,7 @@
 const RADAR = {
   size: 980,
   outer: 485,
-  dotRadius: 12.5,
+  dotRadius: 11,
   coreLabelSafeRadius: 46,
   quadrantAngles: [
     [-Math.PI / 2, 0],
