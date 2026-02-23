@@ -413,6 +413,7 @@ header {
 }
 
 .stage {
+  --radar-top: 28px;
   position: relative;
   width: min(1260px, 100%);
   height: calc(var(--radar-size) + 56px);
@@ -422,11 +423,11 @@ header {
 #radar {
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: var(--radar-top);
   z-index: 1;
   width: var(--radar-size);
   height: var(--radar-size);
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
   filter: drop-shadow(0 11px 22px rgba(0, 0, 0, 0.12));
 }
 
@@ -515,22 +516,22 @@ header {
 
 .corner-tl {
   left: calc(50% - (var(--radar-size) / 2) - var(--list-width) - var(--list-gap));
-  top: calc(50% - (var(--radar-size) / 2) + clamp(44px, 5vw, 68px));
+  top: calc(var(--radar-top) + clamp(44px, 5vw, 68px));
 }
 
 .corner-tr {
   left: calc(50% + (var(--radar-size) / 2) + var(--list-gap));
-  top: calc(50% - (var(--radar-size) / 2) + clamp(44px, 5vw, 68px));
+  top: calc(var(--radar-top) + clamp(44px, 5vw, 68px));
 }
 
 .corner-bl {
   left: calc(50% - (var(--radar-size) / 2) - var(--list-width) - var(--list-gap));
-  top: calc(50% + (var(--radar-size) / 2) - clamp(116px, 10vw, 148px));
+  top: calc(var(--radar-top) + var(--radar-size) - clamp(116px, 10vw, 148px));
 }
 
 .corner-br {
   left: calc(50% + (var(--radar-size) / 2) + var(--list-gap));
-  top: calc(50% + (var(--radar-size) / 2) - clamp(116px, 10vw, 148px));
+  top: calc(var(--radar-top) + var(--radar-size) - clamp(116px, 10vw, 148px));
 }
 
 .quad-title {

@@ -2,6 +2,8 @@
 
 An Earth and Space Observation Tech Radar for Downstream Science, Analytics, and Applications.
 
+To update radar content, edit `config/eo.csv` and/or `config/space.csv`, then commit and push your changes.
+The GitHub Actions workflow regenerates the radar config files and redeploys the site automatically.
 
 # Dev
 

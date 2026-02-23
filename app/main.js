@@ -582,13 +582,12 @@ function clearCoreList() {
   return { section, entries };
 }
 
-let maxStageHeight = 0;
-
 function rebalanceQuadrantPanels(sections) {
   const stage = document.querySelector(".stage");
   if (!stage || !sections?.length) return;
 
   sections.forEach((section) => section.style.removeProperty("top"));
+  stage.style.removeProperty("height");
 
   if (window.getComputedStyle(sections[0]).position !== "absolute") return;
 
@@ -617,8 +616,9 @@ function rebalanceQuadrantPanels(sections) {
     neededHeight = Math.max(neededHeight, bottomTop + bottomHeight + 20);
   });
 
-  maxStageHeight = Math.max(maxStageHeight, stageRect.height, neededHeight);
-  stage.style.height = `${Math.ceil(maxStageHeight)}px`;
+  if (neededHeight > stageRect.height + 1) {
+    stage.style.height = `${Math.ceil(neededHeight)}px`;
+  }
 }
 
 function createEntryButton(entry, color, openEntryPopup, setHover) {
