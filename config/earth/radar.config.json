@@ -107,7 +107,6 @@
         "Forks": 0.0,
         "Activity Metric": 0.0,
         "Languages": {}
-        "Languages": {}
       },
       {
         "Name": "shapely",
@@ -626,7 +625,6 @@
           "Forks": 0.0,
           "Activity Metric": 0.0,
           "Languages": {}
-          "Languages": {}
         },
         {
           "Name": "Leaflet",
@@ -863,7 +861,6 @@
         },
         {
           "Name": "open street map",
-          "Name": "open street map",
           "Quadrant": "Data",
           "Ring": "Adopt",
           "Link": "https://www.openstreetmap.org/",
@@ -1040,7 +1037,6 @@
           "Downloads": 0.0,
           "Forks": 0.0,
           "Activity Metric": 0.0,
-          "Languages": {}
           "Languages": {}
         },
         {
@@ -1219,7 +1215,7 @@
           "Languages": {}
         },
         {
-          "Name": "netcdf",
+          "Name": "PMTiles",
           "Quadrant": "Standards",
           "Ring": "Trial",
           "Link": "https://github.com/protomaps/PMTiles",
