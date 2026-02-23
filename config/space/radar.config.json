@@ -291,6 +291,99 @@
   "quadrants": [
     {
       "quadrant": {
+        "index": 0,
+        "name": "Intelligence",
+        "color": "#14b8a6"
+      },
+      "entries": [
+        {
+          "Name": "Constellation Revisit Optimization",
+          "Quadrant": "Intelligence",
+          "Ring": "Adopt",
+          "Link": "https://en.wikipedia.org/wiki/Satellite_constellation",
+          "Moved": 1,
+          "Description": "Optimize orbital planes and tasking windows for target revisit goals.",
+          "Tags": [
+            "Techniques",
+            "Spatial analysis",
+            "Remote sensing analysis"
+          ],
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
+          "Languages": {}
+        },
+        {
+          "Name": "SAR Interferometry (InSAR)",
+          "Quadrant": "Intelligence",
+          "Ring": "Trial",
+          "Link": "https://earth.esa.int/eogateway/activities/insar",
+          "Moved": 1,
+          "Description": "High-value deformation monitoring technique across large regions.",
+          "Tags": [
+            "Techniques",
+            "Remote sensing analysis",
+            "Spatial analysis"
+          ],
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
+          "Languages": {}
+        },
+        {
+          "Name": "Onboard Edge AI Inference",
+          "Quadrant": "Intelligence",
+          "Ring": "Trial",
+          "Link": "https://www.nasa.gov/smallsat-institute/sst-soa/small-spacecraft-avionics/",
+          "Moved": 1,
+          "Description": "Run inference near the sensor to reduce downlink pressure and latency.",
+          "Tags": [
+            "Techniques",
+            "Mobile",
+            "Remote sensing analysis"
+          ],
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
+          "Languages": {}
+        },
+        {
+          "Name": "Cross-Sensor Fusion Pipelines",
+          "Quadrant": "Intelligence",
+          "Ring": "Assess",
+          "Link": "https://en.wikipedia.org/wiki/Sensor_fusion",
+          "Moved": 1,
+          "Description": "Fuse optical, SAR, and thermal feeds into unified analytic products.",
+          "Tags": [
+            "Techniques",
+            "Data management",
+            "Remote sensing analysis"
+          ],
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
+          "Languages": {}
+        },
+        {
+          "Name": "Manual-Only Mission Planning",
+          "Quadrant": "Intelligence",
+          "Ring": "Hold",
+          "Link": "https://en.wikipedia.org/wiki/Mission_planning",
+          "Moved": -1,
+          "Description": "Avoid for modern constellations where scale requires automation.",
+          "Tags": [
+            "Techniques",
+            "Data management"
+          ],
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
+          "Languages": {}
+        }
+      ]
+    },
+    {
+      "quadrant": {
         "index": 1,
         "name": "Mapping",
         "color": "#3b82f6"
@@ -378,99 +471,6 @@
           "Tags": [
             "Desktop",
             "Techniques"
-          ],
-          "Downloads": 0.0,
-          "Forks": 0.0,
-          "Activity Metric": 0.0,
-          "Languages": {}
-        }
-      ]
-    },
-    {
-      "quadrant": {
-        "index": 0,
-        "name": "Intelligence",
-        "color": "#14b8a6"
-      },
-      "entries": [
-        {
-          "Name": "Constellation Revisit Optimization",
-          "Quadrant": "Intelligence",
-          "Ring": "Adopt",
-          "Link": "https://en.wikipedia.org/wiki/Satellite_constellation",
-          "Moved": 1,
-          "Description": "Optimize orbital planes and tasking windows for target revisit goals.",
-          "Tags": [
-            "Techniques",
-            "Spatial analysis",
-            "Remote sensing analysis"
-          ],
-          "Downloads": 0.0,
-          "Forks": 0.0,
-          "Activity Metric": 0.0,
-          "Languages": {}
-        },
-        {
-          "Name": "SAR Interferometry (InSAR)",
-          "Quadrant": "Intelligence",
-          "Ring": "Trial",
-          "Link": "https://earth.esa.int/eogateway/activities/insar",
-          "Moved": 1,
-          "Description": "High-value deformation monitoring technique across large regions.",
-          "Tags": [
-            "Techniques",
-            "Remote sensing analysis",
-            "Spatial analysis"
-          ],
-          "Downloads": 0.0,
-          "Forks": 0.0,
-          "Activity Metric": 0.0,
-          "Languages": {}
-        },
-        {
-          "Name": "Onboard Edge AI Inference",
-          "Quadrant": "Intelligence",
-          "Ring": "Trial",
-          "Link": "https://www.nasa.gov/smallsat-institute/sst-soa/small-spacecraft-avionics/",
-          "Moved": 1,
-          "Description": "Run inference near the sensor to reduce downlink pressure and latency.",
-          "Tags": [
-            "Techniques",
-            "Mobile",
-            "Remote sensing analysis"
-          ],
-          "Downloads": 0.0,
-          "Forks": 0.0,
-          "Activity Metric": 0.0,
-          "Languages": {}
-        },
-        {
-          "Name": "Cross-Sensor Fusion Pipelines",
-          "Quadrant": "Intelligence",
-          "Ring": "Assess",
-          "Link": "https://en.wikipedia.org/wiki/Sensor_fusion",
-          "Moved": 1,
-          "Description": "Fuse optical, SAR, and thermal feeds into unified analytic products.",
-          "Tags": [
-            "Techniques",
-            "Data management",
-            "Remote sensing analysis"
-          ],
-          "Downloads": 0.0,
-          "Forks": 0.0,
-          "Activity Metric": 0.0,
-          "Languages": {}
-        },
-        {
-          "Name": "Manual-Only Mission Planning",
-          "Quadrant": "Intelligence",
-          "Ring": "Hold",
-          "Link": "https://en.wikipedia.org/wiki/Mission_planning",
-          "Moved": -1,
-          "Description": "Avoid for modern constellations where scale requires automation.",
-          "Tags": [
-            "Techniques",
-            "Data management"
           ],
           "Downloads": 0.0,
           "Forks": 0.0,

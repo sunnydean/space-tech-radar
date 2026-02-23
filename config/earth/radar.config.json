@@ -25,72 +25,17 @@
   "core": {
     "entries": [
       {
-        "Name": "Python",
-        "Quadrant": "CORE",
-        "Ring": "Core",
-        "Link": "https://www.python.org/",
-        "Moved": 0,
-        "Description": "Primary language across EO ingestion, analytics, and production model workflows.",
-        "Tags": [
-          "Core Library",
-          "Server-Side"
-        ],
-        "Downloads": 0.0,
-        "Forks": 0.0,
-        "Activity Metric": 0.0,
-        "Languages": {
-          "Python": 1
-        }
-      },
-      {
-        "Name": "GDAL + PROJ",
+        "Name": "gdal",
         "Quadrant": "CORE",
         "Ring": "Core",
         "Link": "https://gdal.org/",
         "Moved": 0,
-        "Description": "Foundational geospatial I/O and coordinate transformation stack for raster and vector processing.",
+        "Description": "Foundational geospatial I/O and processing library for raster and vector formats; underpins many EO and GIS tools.",
         "Tags": [
           "Core Library",
-          "Geocoding and georeferencing",
-          "Spatial analysis"
-        ],
-        "Downloads": 0.0,
-        "Forks": 0.0,
-        "Activity Metric": 0.0,
-        "Languages": {
-          "C": 1
-        }
-      },
-      {
-        "Name": "PostgreSQL + PostGIS",
-        "Quadrant": "CORE",
-        "Ring": "Core",
-        "Link": "https://postgis.net/",
-        "Moved": 0,
-        "Description": "Core transactional and spatial query layer that underpins many EO products and APIs.",
-        "Tags": [
-          "Database",
-          "Server-Side",
-          "Data management"
-        ],
-        "Downloads": 0.0,
-        "Forks": 0.0,
-        "Activity Metric": 0.0,
-        "Languages": {
-          "C": 1
-        }
-      },
-      {
-        "Name": "S3-Compatible Object Storage",
-        "Quadrant": "CORE",
-        "Ring": "Core",
-        "Link": "https://aws.amazon.com/s3/",
-        "Moved": 0,
-        "Description": "Baseline storage contract for cloud-native geospatial data lakes and tile assets.",
-        "Tags": [
-          "Data Repository",
-          "Data management",
-          "Server-Side"
+          "Raster",
+          "Vector",
+          "IO"
         ],
         "Downloads": 0.0,
         "Forks": 0.0,
@@ -98,89 +43,32 @@
         "Languages": {}
       },
       {
-        "Name": "GeoPandas",
+        "Name": "OSGeo/PROJ",
         "Quadrant": "CORE",
         "Ring": "Core",
-        "Link": "https://geopandas.org/",
+        "Link": "https://proj.org/",
         "Moved": 0,
-        "Description": "Core dataframe API for vector processing and geospatial data engineering.",
+        "Description": "Coordinate reference system and cartographic projections library used across geospatial stacks.",
         "Tags": [
           "Core Library",
-          "Spatial analysis"
+          "CRS",
+          "Projections"
         ],
         "Downloads": 0.0,
         "Forks": 0.0,
         "Activity Metric": 0.0,
-        "Languages": {
-          "Python": 1
-        }
+        "Languages": {}
       },
       {
-        "Name": "Rasterio",
+        "Name": "pdal",
         "Quadrant": "CORE",
         "Ring": "Core",
-        "Link": "https://rasterio.readthedocs.io/",
+        "Link": "https://pdal.io/",
         "Moved": 0,
-        "Description": "Standard raster read/write and windowed access library in Python EO pipelines.",
+        "Description": "Point cloud processing and translation library with pipeline-based filters; core for LiDAR and 3D workflows.",
         "Tags": [
-          "Core Library",
-          "Remote sensing analysis"
-        ],
-        "Downloads": 0.0,
-        "Forks": 0.0,
-        "Activity Metric": 0.0,
-        "Languages": {
-          "Python": 1
-        }
-      },
-      {
-        "Name": "Xarray",
-        "Quadrant": "CORE",
-        "Ring": "Core",
-        "Link": "https://xarray.dev/",
-        "Moved": 0,
-        "Description": "Default multidimensional model for time-series and gridded EO analysis.",
-        "Tags": [
-          "Core Library",
-          "Pangeo",
-          "Data management"
-        ],
-        "Downloads": 0.0,
-        "Forks": 0.0,
-        "Activity Metric": 0.0,
-        "Languages": {
-          "Python": 1
-        }
-      },
-      {
-        "Name": "Dask",
-        "Quadrant": "CORE",
-        "Ring": "Core",
-        "Link": "https://www.dask.org/",
-        "Moved": 0,
-        "Description": "Parallel execution backbone for scaling EO preprocessing and analytics workloads.",
-        "Tags": [
-          "Core Library",
-          "Pangeo",
-          "Server-Side"
-        ],
-        "Downloads": 0.0,
-        "Forks": 0.0,
-        "Activity Metric": 0.0,
-        "Languages": {
-          "Python": 1
-        }
-      },
-      {
-        "Name": "Apache Parquet",
-        "Quadrant": "CORE",
-        "Ring": "Core",
-        "Link": "https://parquet.apache.org/",
-        "Moved": 0,
-        "Description": "Columnar storage baseline for high-volume geospatial tabular data.",
-        "Tags": [
-          "Data Repository",
-          "Data management",
+          "Point Cloud",
+          "LiDAR",
           "Core Library"
         ],
         "Downloads": 0.0,
@@ -189,16 +77,32 @@
         "Languages": {}
       },
       {
-        "Name": "JupyterLab",
+        "Name": "geos",
         "Quadrant": "CORE",
         "Ring": "Core",
-        "Link": "https://jupyter.org/",
+        "Link": "https://libgeos.org/",
         "Moved": 0,
-        "Description": "Primary interactive workspace for geospatial exploration, notebooks, and review.",
+        "Description": "Computational geometry engine implementing robust 2D spatial predicates and operations; foundation for many vector tools.",
         "Tags": [
-          "Platform",
-          "Desktop",
-          "Pangeo"
+          "Core Library",
+          "Geometry"
+        ],
+        "Downloads": 0.0,
+        "Forks": 0.0,
+        "Activity Metric": 0.0,
+        "Languages": {}
+      },
+      {
+        "Name": "shapely",
+        "Quadrant": "CORE",
+        "Ring": "Core",
+        "Link": "https://shapely.readthedocs.io/",
+        "Moved": 0,
+        "Description": "Pythonic geometry operations built on GEOS; widely used in EO/GIS vector pipelines.",
+        "Tags": [
+          "Python",
+          "Geometry",
+          "Core Library"
         ],
         "Downloads": 0.0,
         "Forks": 0.0,
@@ -216,50 +120,16 @@
       },
       "entries": [
         {
-          "Name": "Human-in-the-Loop QA",
-          "Quadrant": "Intelligence",
-          "Ring": "Adopt",
-          "Link": "https://en.wikipedia.org/wiki/Human-in-the-loop",
-          "Moved": 0,
-          "Description": "Critical review checkpoints before production release of new detections.",
-          "Tags": [
-            "Techniques",
-            "Data management",
-            "Mobile data collection"
-          ],
-          "Downloads": 0.0,
-          "Forks": 0.0,
-          "Activity Metric": 0.0,
-          "Languages": {}
-        },
-        {
-          "Name": "Active Learning for Labeling",
+          "Name": "GeoAI",
           "Quadrant": "Intelligence",
           "Ring": "Trial",
-          "Link": "https://en.wikipedia.org/wiki/Active_learning_(machine_learning)",
-          "Moved": 1,
-          "Description": "Use model uncertainty to prioritize human review and reduce labeling costs.",
-          "Tags": [
-            "Techniques",
-            "Data management",
-            "Remote sensing analysis"
-          ],
-          "Downloads": 0.0,
-          "Forks": 0.0,
-          "Activity Metric": 0.0,
-          "Languages": {}
-        },
-        {
-          "Name": "Edge Inference for EO",
-          "Quadrant": "Intelligence",
-          "Ring": "Assess",
-          "Link": "https://www.tensorflow.org/lite",
+          "Link": "https://geoai.icaci.org/",
           "Moved": 0,
-          "Description": "Early-stage experiments for low-latency, low-bandwidth deployments.",
+          "Description": "Geospatial AI: applying AI/ML methods to spatial and Earth observation data for feature extraction, prediction, and decision support.",
           "Tags": [
-            "Techniques",
-            "Mobile",
-            "Remote sensing analysis"
+            "GeoAI",
+            "Machine Learning",
+            "EO"
           ],
           "Downloads": 0.0,
           "Forks": 0.0,
@@ -267,16 +137,16 @@
           "Languages": {}
         },
         {
-          "Name": "Semantic Search on Embeddings",
+          "Name": "Earth Co-pilot",
           "Quadrant": "Intelligence",
           "Ring": "Assess",
-          "Link": "https://www.sbert.net/examples/applications/semantic-search/README.html",
-          "Moved": 1,
-          "Description": "Supports cross-region similarity queries over EO features and annotations.",
+          "Link": "https://github.com/microsoft/Earth-Copilot",
+          "Moved": 0,
+          "Description": "AI-powered geospatial application that allows exploration and visualization of Earth science data using natural-language queries.",
           "Tags": [
-            "Techniques",
-            "Data management",
-            "Server-Side"
+            "EO",
+            "Natural Language",
+            "App"
           ],
           "Downloads": 0.0,
           "Forks": 0.0,
@@ -284,15 +154,133 @@
           "Languages": {}
         },
         {
-          "Name": "Rule-Only Change Detection",
+          "Name": "tesseract",
           "Quadrant": "Intelligence",
-          "Ring": "Hold",
-          "Link": "https://en.wikipedia.org/wiki/Change_detection",
-          "Moved": -1,
-          "Description": "Too brittle alone; use in combination with learning-based methods.",
+          "Ring": "Adopt",
+          "Link": "https://github.com/tesseract-ocr/tesseract",
+          "Moved": 0,
+          "Description": "Open-source OCR engine for extracting text from scanned documents and imagery.",
           "Tags": [
-            "Techniques",
-            "Remote sensing analysis"
+            "OCR",
+            "Text Extraction"
+          ],
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
+          "Languages": {}
+        },
+        {
+          "Name": "scikitlearn image",
+          "Quadrant": "Intelligence",
+          "Ring": "Adopt",
+          "Link": "https://scikit-image.org/",
+          "Moved": 0,
+          "Description": "Classic image ML pipeline tooling: scikit-image for image features/processing, often paired with scikit-learn for ML models.",
+          "Tags": [
+            "Image Processing",
+            "ML",
+            "Python"
+          ],
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
+          "Languages": {}
+        },
+        {
+          "Name": "torchgeo",
+          "Quadrant": "Intelligence",
+          "Ring": "Adopt",
+          "Link": "https://torchgeo.readthedocs.io/en/stable/",
+          "Moved": 0,
+          "Description": "PyTorch domain library providing geospatial/remote-sensing datasets, samplers, transforms, and pretrained models.",
+          "Tags": [
+            "Deep Learning",
+            "PyTorch",
+            "Remote Sensing"
+          ],
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
+          "Languages": {}
+        },
+        {
+          "Name": "huggingface",
+          "Quadrant": "Intelligence",
+          "Ring": "Adopt",
+          "Link": "https://huggingface.co/",
+          "Moved": 0,
+          "Description": "Open ML platform and ecosystem for model/dataset sharing and tooling (e.g., Transformers) used in EO ML.",
+          "Tags": [
+            "Models",
+            "Datasets",
+            "Foundation Models"
+          ],
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
+          "Languages": {}
+        },
+        {
+          "Name": "Geospatial Foundation Models & Vision Transformers",
+          "Quadrant": "Intelligence",
+          "Ring": "Assess",
+          "Link": "https://arxiv.org/search/?query=geospatial+foundation+model+vision+transformer&searchtype=all",
+          "Moved": 0,
+          "Description": "Large pretrained EO/remote-sensing models (often ViT-based) that learn transferable representations for multiple EO tasks.",
+          "Tags": [
+            "Foundation Models",
+            "Vision Transformers",
+            "EO"
+          ],
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
+          "Languages": {}
+        },
+        {
+          "Name": "Natural-language geocoding",
+          "Quadrant": "Intelligence",
+          "Ring": "Trial",
+          "Link": "https://github.com/Element84/natural-language-geocoding",
+          "Moved": 0,
+          "Description": "OSS technique/library converting natural-language area descriptions into geometries by composing spatial operations.",
+          "Tags": [
+            "Geocoding",
+            "LLMs",
+            "Spatial Queries"
+          ],
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
+          "Languages": {}
+        },
+        {
+          "Name": "Agents",
+          "Quadrant": "Intelligence",
+          "Ring": "Assess",
+          "Link": "https://www.ibm.com/think/topics/agentic-ai",
+          "Moved": 0,
+          "Description": "Agentic AI systems that plan and act using tools to perform multi-step analysis, including EO workflows.",
+          "Tags": [
+            "Agentic AI",
+            "Automation"
+          ],
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
+          "Languages": {}
+        },
+        {
+          "Name": "Geospatial Vector Embeddings",
+          "Quadrant": "Intelligence",
+          "Ring": "Assess",
+          "Link": "https://developers.google.com/earth-engine/datasets/catalog/GOOGLE_SATELLITE_EMBEDDING_V1_ANNUAL",
+          "Moved": 0,
+          "Description": "Vector representations of EO imagery/locations enabling similarity search and retrieval-driven analytics.",
+          "Tags": [
+            "Embeddings",
+            "Retrieval",
+            "EO"
           ],
           "Downloads": 0.0,
           "Forks": 0.0,
@@ -314,64 +302,27 @@
           "Ring": "Adopt",
           "Link": "https://qgis.org/",
           "Moved": 0,
-          "Description": "Default desktop GIS for spatial editing, QA, and analyst workflows.",
+          "Description": "Open-source desktop GIS for viewing, editing, analysis, and cartographic production across raster/vector workflows.",
           "Tags": [
-            "Desktop",
-            "Cartography and visualisation",
-            "Spatial analysis"
+            "Desktop GIS",
+            "Cartography"
           ],
           "Downloads": 0.0,
           "Forks": 0.0,
           "Activity Metric": 0.0,
-          "Languages": {
-            "C": 1
-          }
+          "Languages": {}
         },
         {
-          "Name": "DuckDB + Spatial",
+          "Name": "matplotlib - carta",
           "Quadrant": "Mapping",
           "Ring": "Adopt",
-          "Link": "https://duckdb.org/docs/stable/core_extensions/spatial/overview.html",
-          "Moved": 1,
-          "Description": "Fast local analytics on parquet and geospatial data with minimal setup.",
-          "Tags": [
-            "Database",
-            "Spatial analysis",
-            "Desktop"
-          ],
-          "Downloads": 0.0,
-          "Forks": 0.0,
-          "Activity Metric": 0.0,
-          "Languages": {}
-        },
-        {
-          "Name": "TiTiler",
-          "Quadrant": "Mapping",
-          "Ring": "Trial",
-          "Link": "https://developmentseed.org/titiler/",
-          "Moved": 1,
-          "Description": "Dynamic tile serving for raster assets and cloud-native imagery.",
-          "Tags": [
-            "Server-Side",
-            "Web-Tools",
-            "Remote sensing analysis"
-          ],
-          "Downloads": 0.0,
-          "Forks": 0.0,
-          "Activity Metric": 0.0,
-          "Languages": {}
-        },
-        {
-          "Name": "Polars",
-          "Quadrant": "Mapping",
-          "Ring": "Trial",
-          "Link": "https://pola.rs/",
+          "Link": "https://matplotlib.org/",
           "Moved": 0,
-          "Description": "High-performance DataFrame processing for geospatial ETL support.",
+          "Description": "Python plotting library commonly used with cartography tooling (e.g., Cartopy) for map projections and EO visualisations.",
           "Tags": [
-            "Core Library",
-            "Data management",
-            "Server-Side"
+            "Plotting",
+            "Cartography",
+            "Python"
           ],
           "Downloads": 0.0,
           "Forks": 0.0,
@@ -379,16 +330,117 @@
           "Languages": {}
         },
         {
-          "Name": "Custom WebGL Terrain Pipelines",
+          "Name": "Leaflet",
+          "Quadrant": "Mapping",
+          "Ring": "Adopt",
+          "Link": "https://leafletjs.com/",
+          "Moved": 0,
+          "Description": "Lightweight open-source JavaScript library for interactive web maps.",
+          "Tags": [
+            "Web Maps",
+            "JavaScript"
+          ],
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
+          "Languages": {}
+        },
+        {
+          "Name": "openlayers",
+          "Quadrant": "Mapping",
+          "Ring": "Adopt",
+          "Link": "https://openlayers.org/",
+          "Moved": 0,
+          "Description": "Open-source JavaScript mapping library for dynamic maps with raster and vector layers.",
+          "Tags": [
+            "Web Maps",
+            "JavaScript"
+          ],
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
+          "Languages": {}
+        },
+        {
+          "Name": "mapbox-gl-js",
+          "Quadrant": "Mapping",
+          "Ring": "Hold",
+          "Link": "https://github.com/mapbox/mapbox-gl-js",
+          "Moved": 0,
+          "Description": "WebGL vector map renderer; Mapbox GL JS v2+ is under a proprietary license (MapLibre is the fully open alternative).",
+          "Tags": [
+            "WebGL",
+            "Vector Tiles",
+            "License Risk"
+          ],
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
+          "Languages": {}
+        },
+        {
+          "Name": "geoserver",
+          "Quadrant": "Mapping",
+          "Ring": "Adopt",
+          "Link": "https://geoserver.org/",
+          "Moved": 0,
+          "Description": "Open-source geospatial server for publishing data via OGC services (e.g., WMS/WFS/WCS).",
+          "Tags": [
+            "OGC",
+            "Server",
+            "Web Services"
+          ],
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
+          "Languages": {}
+        },
+        {
+          "Name": "osmbuildings",
           "Quadrant": "Mapping",
           "Ring": "Assess",
-          "Link": "https://deck.gl/",
+          "Link": "https://osmbuildings.org/",
           "Moved": 0,
-          "Description": "Promising for advanced rendering, but complexity is still high.",
+          "Description": "WebGL visualization library focused on displaying 3D buildings sourced from OpenStreetMap data.",
           "Tags": [
-            "Web-Tools",
-            "3D modeling",
-            "Cartography and visualisation"
+            "3D",
+            "WebGL",
+            "OSM"
+          ],
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
+          "Languages": {}
+        },
+        {
+          "Name": "maplibre js",
+          "Quadrant": "Mapping",
+          "Ring": "Adopt",
+          "Link": "https://maplibre.org/maplibre-gl-js/docs/",
+          "Moved": 0,
+          "Description": "Open-source WebGL map renderer for vector tiles and interactive mapping in the browser.",
+          "Tags": [
+            "WebGL",
+            "Vector Tiles",
+            "JavaScript"
+          ],
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
+          "Languages": {}
+        },
+        {
+          "Name": "titiler",
+          "Quadrant": "Mapping",
+          "Ring": "Adopt",
+          "Link": "https://developmentseed.org/titiler/",
+          "Moved": 0,
+          "Description": "FastAPI-based dynamic tile server toolkit for serving EO rasters (COGs, STAC items, mosaics) as map tiles.",
+          "Tags": [
+            "Tiles",
+            "COG",
+            "STAC",
+            "FastAPI"
           ],
           "Downloads": 0.0,
           "Forks": 0.0,
@@ -405,15 +457,16 @@
       },
       "entries": [
         {
-          "Name": "Cloud Optimized GeoTIFF (COG)",
+          "Name": "Pangeo",
           "Quadrant": "Data",
           "Ring": "Adopt",
-          "Link": "https://www.cogeo.org/",
+          "Link": "https://pangeo.io/",
           "Moved": 0,
-          "Description": "Primary raster format for cloud access and selective reads.",
+          "Description": "Community and ecosystem enabling open, reproducible, scalable geoscience and EO analysis (often using Xarray/Dask/Zarr).",
           "Tags": [
-            "Data Repository",
-            "Remote sensing analysis"
+            "Community",
+            "Scalable Compute",
+            "EO"
           ],
           "Downloads": 0.0,
           "Forks": 0.0,
@@ -421,17 +474,84 @@
           "Languages": {}
         },
         {
-          "Name": "OpenStreetMap",
+          "Name": "Geopandas",
+          "Quadrant": "Data",
+          "Ring": "Adopt",
+          "Link": "https://geopandas.org/",
+          "Moved": 0,
+          "Description": "Python GeoDataFrame library extending pandas for vector geospatial operations and analysis.",
+          "Tags": [
+            "Vector",
+            "Python",
+            "DataFrame"
+          ],
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
+          "Languages": {}
+        },
+        {
+          "Name": "Xarray",
+          "Quadrant": "Data",
+          "Ring": "Adopt",
+          "Link": "https://docs.xarray.dev/en/stable/",
+          "Moved": 0,
+          "Description": "Labelled N-dimensional arrays/datasets for gridded EO and climate data cubes and spatiotemporal analysis.",
+          "Tags": [
+            "Data Cube",
+            "Arrays",
+            "Python"
+          ],
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
+          "Languages": {}
+        },
+        {
+          "Name": "dask",
+          "Quadrant": "Data",
+          "Ring": "Adopt",
+          "Link": "https://www.dask.org/",
+          "Moved": 0,
+          "Description": "Parallel and distributed computing framework for scaling Python analytics; commonly paired with Xarray for EO workloads.",
+          "Tags": [
+            "Distributed",
+            "Parallel",
+            "Python"
+          ],
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
+          "Languages": {}
+        },
+        {
+          "Name": "tiledb",
+          "Quadrant": "Data",
+          "Ring": "Trial",
+          "Link": "https://tiledb.com/",
+          "Moved": 0,
+          "Description": "Storage engine for dense/sparse multidimensional arrays, suitable for large EO rasters and analytical grids.",
+          "Tags": [
+            "Array Store",
+            "Raster",
+            "EO"
+          ],
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
+          "Languages": {}
+        },
+        {
+          "Name": "open street map",
           "Quadrant": "Data",
           "Ring": "Adopt",
           "Link": "https://www.openstreetmap.org/",
           "Moved": 0,
-          "Description": "Core baseline dataset for roads, places, and contextual mapping layers.",
+          "Description": "Open, community-maintained global map dataset used for basemaps, validation, and training labels.",
           "Tags": [
-            "Data Repository",
-            "Cartography and visualisation",
-            "Geocoding and georeferencing",
-            "Mobile data collection"
+            "Open Data",
+            "Basemap",
+            "Vector"
           ],
           "Downloads": 0.0,
           "Forks": 0.0,
@@ -439,16 +559,33 @@
           "Languages": {}
         },
         {
-          "Name": "GeoParquet",
+          "Name": "postgis",
+          "Quadrant": "Data",
+          "Ring": "Adopt",
+          "Link": "https://postgis.net/",
+          "Moved": 0,
+          "Description": "Spatial extension for PostgreSQL providing geometry types, spatial indexes, and SQL functions.",
+          "Tags": [
+            "Database",
+            "Vector",
+            "SQL"
+          ],
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
+          "Languages": {}
+        },
+        {
+          "Name": "duckdb",
           "Quadrant": "Data",
           "Ring": "Trial",
-          "Link": "https://geoparquet.org/",
-          "Moved": 1,
-          "Description": "Preferred columnar format for vector analytics and lakehouse storage.",
+          "Link": "https://duckdb.org/",
+          "Moved": 0,
+          "Description": "Embedded analytical SQL engine used for fast local analytics; often used with Parquet/GeoParquet in geo pipelines.",
           "Tags": [
-            "Data Repository",
-            "Data management",
-            "Spatial analysis"
+            "OLAP",
+            "SQL",
+            "Parquet"
           ],
           "Downloads": 0.0,
           "Forks": 0.0,
@@ -456,16 +593,15 @@
           "Languages": {}
         },
         {
-          "Name": "Synthetic Training Data",
+          "Name": "Hyperspectral",
           "Quadrant": "Data",
           "Ring": "Assess",
-          "Link": "https://en.wikipedia.org/wiki/Synthetic_data",
-          "Moved": 1,
-          "Description": "Useful for augmentation, but realism and bias controls need care.",
+          "Link": "https://en.wikipedia.org/wiki/Hyperspectral_imaging",
+          "Moved": 0,
+          "Description": "EO data modality with many contiguous spectral bands enabling material/biophysical inference beyond multispectral imagery.",
           "Tags": [
-            "Data management",
-            "Remote sensing analysis",
-            "Techniques"
+            "EO Modality",
+            "Spectral"
           ],
           "Downloads": 0.0,
           "Forks": 0.0,
@@ -473,15 +609,50 @@
           "Languages": {}
         },
         {
-          "Name": "Heavy Shapefile Archives",
+          "Name": "Lidar",
           "Quadrant": "Data",
-          "Ring": "Hold",
-          "Link": "https://en.wikipedia.org/wiki/Shapefile",
-          "Moved": -1,
-          "Description": "Legacy interchange format kept only where backward compatibility is required.",
+          "Ring": "Adopt",
+          "Link": "https://www.ngs.noaa.gov/INFO/facts/lidar.shtml",
+          "Moved": 0,
+          "Description": "Laser-based active remote sensing producing 3D point clouds used for terrain, canopy, and infrastructure modeling.",
           "Tags": [
-            "Data management",
-            "Spatial analysis"
+            "EO Modality",
+            "Point Cloud",
+            "3D"
+          ],
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
+          "Languages": {}
+        },
+        {
+          "Name": "NiSAR",
+          "Quadrant": "Data",
+          "Ring": "Adopt",
+          "Link": "https://science.nasa.gov/mission/nisar/mission-overview/",
+          "Moved": 0,
+          "Description": "NASA\u2013ISRO Synthetic Aperture Radar mission providing global L- and S-band SAR observations for surface change, hazards, ice, and biomass studies.",
+          "Tags": [
+            "SAR",
+            "Mission",
+            "EO"
+          ],
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
+          "Languages": {}
+        },
+        {
+          "Name": "Virtualizarr",
+          "Quadrant": "Data",
+          "Ring": "Trial",
+          "Link": "https://virtualizarr.readthedocs.io/en/latest/",
+          "Moved": 0,
+          "Description": "Creates 'virtual' Zarr datasets over archival formats (e.g., netCDF/HDF), enabling cloud-friendly access without copying data.",
+          "Tags": [
+            "Zarr",
+            "Virtual Datasets",
+            "Xarray"
           ],
           "Downloads": 0.0,
           "Forks": 0.0,
@@ -498,54 +669,16 @@
       },
       "entries": [
         {
-          "Name": "STAC API",
+          "Name": "Zarr",
           "Quadrant": "Standards",
           "Ring": "Adopt",
-          "Link": "https://api.stacspec.org/v1.0.0/",
-          "Moved": 1,
-          "Description": "Default interface for searchable geospatial catalogs and metadata discovery.",
+          "Link": "https://zarr.dev/",
+          "Moved": 0,
+          "Description": "Open specification and ecosystem for chunked N-dimensional arrays, enabling scalable cloud/object-storage workflows.",
           "Tags": [
-            "Data management",
-            "Data Repository",
-            "Platform"
-          ],
-          "Downloads": 0.0,
-          "Forks": 0.0,
-          "Activity Metric": 0.0,
-          "Languages": {
-            "JavaScript": 1
-          }
-        },
-        {
-          "Name": "OGC API - Features",
-          "Quadrant": "Standards",
-          "Ring": "Trial",
-          "Link": "https://ogcapi.ogc.org/features/",
-          "Moved": 1,
-          "Description": "Modern replacement path for feature services where interoperability matters.",
-          "Tags": [
-            "Platform",
-            "Server-Side",
-            "Data management"
-          ],
-          "Downloads": 0.0,
-          "Forks": 0.0,
-          "Activity Metric": 0.0,
-          "Languages": {
-            "JavaScript": 1
-          }
-        },
-        {
-          "Name": "PMTiles",
-          "Quadrant": "Standards",
-          "Ring": "Trial",
-          "Link": "https://docs.protomaps.com/pmtiles/",
-          "Moved": 1,
-          "Description": "Single-file vector tile delivery with easy CDN distribution.",
-          "Tags": [
-            "Web-Tools",
-            "Cartography and visualisation",
-            "Data management"
+            "Format",
+            "Arrays",
+            "Cloud-native"
           ],
           "Downloads": 0.0,
           "Forks": 0.0,
@@ -557,12 +690,12 @@
           "Quadrant": "Standards",
           "Ring": "Assess",
           "Link": "https://github.com/zarr-developers/geozarr-spec",
-          "Moved": 1,
-          "Description": "Emerging chunked format for multidimensional geospatial arrays and analysis.",
+          "Moved": 0,
+          "Description": "Geospatial conventions for storing multidimensional georeferenced grids using Zarr; defines metadata patterns for EO data cubes.",
           "Tags": [
-            "Data Repository",
-            "Pangeo",
-            "Data management"
+            "Zarr",
+            "Conventions",
+            "Raster"
           ],
           "Downloads": 0.0,
           "Forks": 0.0,
@@ -570,15 +703,118 @@
           "Languages": {}
         },
         {
-          "Name": "Vendor-Locked Metadata Schemas",
+          "Name": "OSPD WORKFLOWS",
           "Quadrant": "Standards",
-          "Ring": "Hold",
-          "Link": "https://en.wikipedia.org/wiki/Vendor_lock-in",
-          "Moved": -1,
-          "Description": "Avoid when possible to reduce migration cost and integration risk.",
+          "Ring": "Assess",
+          "Link": "https://www.ogc.org/initiatives/open-science/",
+          "Moved": 0,
+          "Description": "OGC Open Science Persistent Demonstrator effort to standardize description, sharing, and reuse of reproducible Earth science workflows.",
           "Tags": [
-            "Data management",
-            "Platform"
+            "Workflows",
+            "Reproducibility",
+            "OGC"
+          ],
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
+          "Languages": {}
+        },
+        {
+          "Name": "xddgs",
+          "Quadrant": "Standards",
+          "Ring": "Trial",
+          "Link": "https://github.com/xarray-contrib/xdggs",
+          "Moved": 0,
+          "Description": "Xarray extension for Discrete Global Grid Systems (DGGS), enabling resampling and analytics on global grid indexes.",
+          "Tags": [
+            "DGGS",
+            "Xarray",
+            "Indexing"
+          ],
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
+          "Languages": {}
+        },
+        {
+          "Name": "h3",
+          "Quadrant": "Standards",
+          "Ring": "Adopt",
+          "Link": "https://h3geo.org/",
+          "Moved": 0,
+          "Description": "Hierarchical hexagonal global grid system for spatial indexing and aggregation.",
+          "Tags": [
+            "DGGS",
+            "Indexing",
+            "Aggregation"
+          ],
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
+          "Languages": {}
+        },
+        {
+          "Name": "hdf5",
+          "Quadrant": "Standards",
+          "Ring": "Adopt",
+          "Link": "https://www.hdfgroup.org/solutions/hdf5/",
+          "Moved": 0,
+          "Description": "Scientific data model and file format for storing large array-based datasets; common in EO archives.",
+          "Tags": [
+            "Format",
+            "Scientific Data",
+            "Arrays"
+          ],
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
+          "Languages": {}
+        },
+        {
+          "Name": "netcdf",
+          "Quadrant": "Standards",
+          "Ring": "Adopt",
+          "Link": "https://www.unidata.ucar.edu/software/netcdf/",
+          "Moved": 0,
+          "Description": "Self-describing scientific data format and libraries for array-oriented geoscience data; common for EO/climate gridded products.",
+          "Tags": [
+            "Format",
+            "Climate/EO",
+            "Arrays"
+          ],
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
+          "Languages": {}
+        },
+        {
+          "Name": "stac",
+          "Quadrant": "Standards",
+          "Ring": "Adopt",
+          "Link": "https://stacspec.org/",
+          "Moved": 0,
+          "Description": "SpatioTemporal Asset Catalog specification for describing and discovering geospatial/EO assets via interoperable JSON metadata.",
+          "Tags": [
+            "Metadata",
+            "Discovery",
+            "EO"
+          ],
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
+          "Languages": {}
+        },
+        {
+          "Name": "GeoParquet",
+          "Quadrant": "Standards",
+          "Ring": "Adopt",
+          "Link": "https://geoparquet.org/",
+          "Moved": 0,
+          "Description": "OGC-aligned encoding for storing vector geometries in Apache Parquet with interoperable metadata and types.",
+          "Tags": [
+            "Format",
+            "Vector",
+            "Parquet"
           ],
           "Downloads": 0.0,
           "Forks": 0.0,
