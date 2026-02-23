@@ -59,27 +59,6 @@ python3 -m http.server 8080
 
 Open `http://localhost:8080`.
 
-## Project Structure
-
-- `index.html`: static entry shell
-- `app/styles.css`: all styling and responsive rules
-- `app/main.js`: data loading, layout, rendering, popup, and mode switching
-- `config/earth/*` and `config/space/*`: mode-specific config and narrative text
-- `config/eo.csv` and `config/space.csv`: CSV source files
-- `scripts/csv_to_radar_config.py`: CSV -> `radar.config.json` generator
-
-## Data Format
-
-Each mode folder contains `radar.config.json` with:
-
-- `textFile`: markdown file rendered below radar
-- `rings`: ordered ring definitions (`Core`, `Adopt`, `Trial`, `Assess`, `Hold`)
-- `core.entries`: core technologies
-- `quadrants`: quadrant definitions with embedded entries
-
-Each entry includes:
-
-- `Name`, `Quadrant`, `Ring`, `Link`, `Moved`, `Description`, `Tags`, `Downloads`, `Forks`, `Activity Metric`, `Languages`
 
 ## Generate Config from CSV
 
