@@ -767,21 +767,6 @@
       },
       "entries": [
         {
-          "Name": "duckdb",
-          "Quadrant": "Data",
-          "Ring": "Trial",
-          "Link": "https://duckdb.org/",
-          "Moved": 0,
-          "Description": "Embedded analytical SQL engine used for fast local analytics; often used with Parquet/GeoParquet in geo pipelines.",
-          "Tags": [
-            "Database"
-          ],
-          "Downloads": 0.0,
-          "Forks": 0.0,
-          "Activity Metric": 0.0,
-          "Languages": {}
-        },
-        {
           "Name": "DuckDB Spatial Extension",
           "Quadrant": "Data",
           "Ring": "Assess",
