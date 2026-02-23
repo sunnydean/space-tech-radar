@@ -31,11 +31,23 @@ An Earth and Space Observation Tech Radar for Downstream Science, Analytics, and
 
 ## Tagging
 
-- Architecture: Techniques, Platform, Core Library, Server-Side, Web-Tools
-- Surfaces: Desktop, Mobile
-- Data stack: Data Repository, Database, Data management
-- Spatial analysis: Spatial analysis, Cartography and visualisation, Geocoding and georeferencing, Remote sensing analysis
-- Domain and ecosystem: Pangeo, 3D modeling, Mobile data collection
+- Techniques
+- Platform
+- Core Library
+- Server-Side
+- Web-Tools
+- Desktop
+- Mobile
+- Data Repository
+- Database
+- Data management
+- Spatial analysis
+- Cartography and visualisation
+- Geocoding and georeferencing
+- Remote sensing analysis
+- Pangeo
+- 3D modeling
+- Mobile data collection
 
 ## Run Locally
 
