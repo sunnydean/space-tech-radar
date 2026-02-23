@@ -471,7 +471,7 @@
           "Ring": "Trial",
           "Link": "https://github.com/WorldWideTelescope/wwt-webgl-engine",
           "Moved": 0,
-          "Description": "Reusable WebGL/TypeScript rendering engine that powers the web-based WorldWide Telescope visualization stack.",
+          "Description": "Reusable WebGL/TypeScript rendering engine that power the web-based WorldWide Telescope visualization stack.",
           "Tags": [
             "Web-Tools",
             "Cartography and visualisation"
