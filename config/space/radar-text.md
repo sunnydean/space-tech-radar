@@ -1,15 +1,13 @@
-# Space Observation Narrative
+# Space Observation Open Source Technologies
 
-# Section
+## Open Data and Where I can get it
 
-This view focuses on technologies for satellite systems, orbital operations, and downstream Earth observation products.
+## Who's Adopting Space Open Source?
 
-## What this mode emphasizes
+## What's Common Between Space and Earth?
 
-- Scalable mission operations and repeatable constellation workflows
-- Sensor fusion and onboard processing for faster insight latency
-- Open standards that keep ground systems interoperable
+## Core Open Source Libraries
 
-## Planning guidance
+## Languages and Frameworks
 
-Prioritize **Adopt** entries for production programs and operational tooling. Use **Trial** for mission-bounded pilots. Keep **Assess** exploratory and time-boxed, and restrict **Hold** to legacy integrations with explicit retirement plans.
+## Future
