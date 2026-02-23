@@ -140,29 +140,10 @@ header {
   box-shadow: 0 7px 16px rgba(30, 64, 175, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.86);
 }
 
-.mode-word-toggle::before,
-.mode-word-toggle::after {
+.mode-word-toggle::before {
   content: "";
   position: absolute;
   pointer-events: none;
-}
-
-.mode-word-toggle:not(.is-space)::after {
-  top: 50%;
-  left: 0.34rem;
-  width: 1.45rem;
-  height: 1.45rem;
-  border-radius: 50%;
-  transform: translateY(-50%);
-  border: 1px solid rgba(26, 111, 71, 0.28);
-  background:
-    radial-gradient(circle at 68% 30%, rgba(255, 255, 255, 0.46) 0 17%, transparent 18%),
-    radial-gradient(ellipse at 38% 42%, rgba(74, 192, 109, 0.96) 0 24%, transparent 25%),
-    radial-gradient(ellipse at 61% 62%, rgba(45, 162, 92, 0.96) 0 22%, transparent 23%),
-    radial-gradient(circle at 36% 28%, #86dcff 0%, #37a4e5 60%, #1b73b8 100%);
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.48), 0 0 8px rgba(35, 125, 95, 0.22);
-  opacity: 0.95;
-  animation: earth-bob 2.8s ease-in-out infinite;
 }
 
 .mode-word-toggle.is-space::before {
@@ -704,16 +685,6 @@ header {
   text-decoration: underline;
 }
 
-@keyframes earth-bob {
-  0%,
-  100% {
-    transform: translateY(-50%) scale(0.96);
-  }
-  50% {
-    transform: translateY(-50%) scale(1.04);
-  }
-}
-
 @keyframes star-twinkle-soft {
   0%,
   100% {
@@ -796,12 +767,6 @@ header {
   .mode-word-toggle {
     min-width: 6.95ch;
     padding: 0.14em 0.68em 0.18em;
-  }
-
-  .mode-word-toggle:not(.is-space)::after {
-    width: 1.06rem;
-    height: 1.06rem;
-    left: 0.22rem;
   }
 
   .mode-visual {

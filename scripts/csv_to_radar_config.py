@@ -8,16 +8,16 @@ RINGS = [
     {"name": "Assess", "color": "#d79a00"},
     {"name": "Hold", "color": "#c8553d"},
 ]
-QUADS = ["Mapping", "Intelligence", "Data", "Standards"]
+QUADS = ["Intelligence", "Mapping", "Data", "Standards"]
 RMAP = {k.lower(): k for k in ["Core", "Adopt", "Trial", "Assess", "Hold"]}
 MODE = {
     "space": {
         "out": pathlib.Path("config/space/radar.config.json"),
-        "colors": ["#3b82f6", "#14b8a6", "#a855f7", "#f97316"],
+        "colors": ["#14b8a6", "#3b82f6", "#a855f7", "#f97316"],
     },
     "eo": {
         "out": pathlib.Path("config/earth/radar.config.json"),
-        "colors": ["#16a34a", "#0ea5e9", "#eab308", "#dc2626"],
+        "colors": ["#0ea5e9", "#16a34a", "#eab308", "#dc2626"],
     },
 }
 

@@ -211,6 +211,99 @@
     {
       "quadrant": {
         "index": 0,
+        "name": "Intelligence",
+        "color": "#0ea5e9"
+      },
+      "entries": [
+        {
+          "Name": "Human-in-the-Loop QA",
+          "Quadrant": "Intelligence",
+          "Ring": "Adopt",
+          "Link": "https://en.wikipedia.org/wiki/Human-in-the-loop",
+          "Moved": 0,
+          "Description": "Critical review checkpoints before production release of new detections.",
+          "Tags": [
+            "Techniques",
+            "Data management",
+            "Mobile data collection"
+          ],
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
+          "Languages": {}
+        },
+        {
+          "Name": "Active Learning for Labeling",
+          "Quadrant": "Intelligence",
+          "Ring": "Trial",
+          "Link": "https://en.wikipedia.org/wiki/Active_learning_(machine_learning)",
+          "Moved": 1,
+          "Description": "Use model uncertainty to prioritize human review and reduce labeling costs.",
+          "Tags": [
+            "Techniques",
+            "Data management",
+            "Remote sensing analysis"
+          ],
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
+          "Languages": {}
+        },
+        {
+          "Name": "Edge Inference for EO",
+          "Quadrant": "Intelligence",
+          "Ring": "Assess",
+          "Link": "https://www.tensorflow.org/lite",
+          "Moved": 0,
+          "Description": "Early-stage experiments for low-latency, low-bandwidth deployments.",
+          "Tags": [
+            "Techniques",
+            "Mobile",
+            "Remote sensing analysis"
+          ],
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
+          "Languages": {}
+        },
+        {
+          "Name": "Semantic Search on Embeddings",
+          "Quadrant": "Intelligence",
+          "Ring": "Assess",
+          "Link": "https://www.sbert.net/examples/applications/semantic-search/README.html",
+          "Moved": 1,
+          "Description": "Supports cross-region similarity queries over EO features and annotations.",
+          "Tags": [
+            "Techniques",
+            "Data management",
+            "Server-Side"
+          ],
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
+          "Languages": {}
+        },
+        {
+          "Name": "Rule-Only Change Detection",
+          "Quadrant": "Intelligence",
+          "Ring": "Hold",
+          "Link": "https://en.wikipedia.org/wiki/Change_detection",
+          "Moved": -1,
+          "Description": "Too brittle alone; use in combination with learning-based methods.",
+          "Tags": [
+            "Techniques",
+            "Remote sensing analysis"
+          ],
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
+          "Languages": {}
+        }
+      ]
+    },
+    {
+      "quadrant": {
+        "index": 1,
         "name": "Mapping",
         "color": "#16a34a"
       },
@@ -296,99 +389,6 @@
             "Web-Tools",
             "3D modeling",
             "Cartography and visualisation"
-          ],
-          "Downloads": 0.0,
-          "Forks": 0.0,
-          "Activity Metric": 0.0,
-          "Languages": {}
-        }
-      ]
-    },
-    {
-      "quadrant": {
-        "index": 1,
-        "name": "Intelligence",
-        "color": "#0ea5e9"
-      },
-      "entries": [
-        {
-          "Name": "Human-in-the-Loop QA",
-          "Quadrant": "Intelligence",
-          "Ring": "Adopt",
-          "Link": "https://en.wikipedia.org/wiki/Human-in-the-loop",
-          "Moved": 0,
-          "Description": "Critical review checkpoints before production release of new detections.",
-          "Tags": [
-            "Techniques",
-            "Data management",
-            "Mobile data collection"
-          ],
-          "Downloads": 0.0,
-          "Forks": 0.0,
-          "Activity Metric": 0.0,
-          "Languages": {}
-        },
-        {
-          "Name": "Active Learning for Labeling",
-          "Quadrant": "Intelligence",
-          "Ring": "Trial",
-          "Link": "https://en.wikipedia.org/wiki/Active_learning_(machine_learning)",
-          "Moved": 1,
-          "Description": "Use model uncertainty to prioritize human review and reduce labeling costs.",
-          "Tags": [
-            "Techniques",
-            "Data management",
-            "Remote sensing analysis"
-          ],
-          "Downloads": 0.0,
-          "Forks": 0.0,
-          "Activity Metric": 0.0,
-          "Languages": {}
-        },
-        {
-          "Name": "Edge Inference for EO",
-          "Quadrant": "Intelligence",
-          "Ring": "Assess",
-          "Link": "https://www.tensorflow.org/lite",
-          "Moved": 0,
-          "Description": "Early-stage experiments for low-latency, low-bandwidth deployments.",
-          "Tags": [
-            "Techniques",
-            "Mobile",
-            "Remote sensing analysis"
-          ],
-          "Downloads": 0.0,
-          "Forks": 0.0,
-          "Activity Metric": 0.0,
-          "Languages": {}
-        },
-        {
-          "Name": "Semantic Search on Embeddings",
-          "Quadrant": "Intelligence",
-          "Ring": "Assess",
-          "Link": "https://www.sbert.net/examples/applications/semantic-search/README.html",
-          "Moved": 1,
-          "Description": "Supports cross-region similarity queries over EO features and annotations.",
-          "Tags": [
-            "Techniques",
-            "Data management",
-            "Server-Side"
-          ],
-          "Downloads": 0.0,
-          "Forks": 0.0,
-          "Activity Metric": 0.0,
-          "Languages": {}
-        },
-        {
-          "Name": "Rule-Only Change Detection",
-          "Quadrant": "Intelligence",
-          "Ring": "Hold",
-          "Link": "https://en.wikipedia.org/wiki/Change_detection",
-          "Moved": -1,
-          "Description": "Too brittle alone; use in combination with learning-based methods.",
-          "Tags": [
-            "Techniques",
-            "Remote sensing analysis"
           ],
           "Downloads": 0.0,
           "Forks": 0.0,

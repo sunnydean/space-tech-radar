@@ -291,7 +291,7 @@
   "quadrants": [
     {
       "quadrant": {
-        "index": 0,
+        "index": 1,
         "name": "Mapping",
         "color": "#3b82f6"
       },
@@ -388,7 +388,7 @@
     },
     {
       "quadrant": {
-        "index": 1,
+        "index": 0,
         "name": "Intelligence",
         "color": "#14b8a6"
       },
