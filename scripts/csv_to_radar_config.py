@@ -8,7 +8,7 @@ RINGS = [
     {"name": "Assess", "color": "#d79a00"},
     {"name": "Hold", "color": "#c8553d"},
 ]
-QUADS = ["Intelligence", "Mapping", "Data", "Standards"]
+QUADS = ["Intelligence", "Visualization", "Data", "Standards"]
 RMAP = {k.lower(): k for k in ["Core", "Adopt", "Trial", "Assess", "Hold"]}
 MODE = {
     "space": {

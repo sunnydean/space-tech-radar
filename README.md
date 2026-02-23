@@ -15,7 +15,7 @@ An Earth and Space Observation Tech Radar for Downstream Science, Analytics, and
 ## Quadrants
 
 - Core Libraries (inner circle)
-- Mapping
+- Visualization
 - Intelligence
 - Data
 - Standards
@@ -42,12 +42,10 @@ An Earth and Space Observation Tech Radar for Downstream Science, Analytics, and
 - Database
 - Data management
 - Spatial analysis
-- Cartography and visualisation
-- Geocoding and georeferencing
+- EO visualization
+- Location parsing and EO referencing
 - Remote sensing analysis
 - Pangeo
-- 3D modeling
-- Mobile data collection
 
 ## Run Locally
 

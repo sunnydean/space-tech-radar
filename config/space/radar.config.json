@@ -25,33 +25,15 @@
   "core": {
     "entries": [
       {
-        "Name": "Python",
+        "Name": "Astropy",
         "Quadrant": "CORE",
         "Ring": "Core",
-        "Link": "https://www.python.org/",
+        "Link": "https://github.com/astropy/astropy",
         "Moved": 0,
-        "Description": "Default orchestration language for mission analysis pipelines and automation tooling.",
+        "Description": "Community core Python library for astronomy/astrophysics (coordinates, time, units, tables), widely used in space observation pipelines.",
         "Tags": [
           "Core Library",
-          "Server-Side"
-        ],
-        "Downloads": 0.0,
-        "Forks": 0.0,
-        "Activity Metric": 0.0,
-        "Languages": {
-          "Python": 1
-        }
-      },
-      {
-        "Name": "NumPy + SciPy",
-        "Quadrant": "CORE",
-        "Ring": "Core",
-        "Link": "https://numpy.org/",
-        "Moved": 0,
-        "Description": "Numerical foundation for orbit dynamics, calibration math, and simulation workloads.",
-        "Tags": [
-          "Core Library",
-          "Pangeo",
+          "Techniques",
           "Spatial analysis"
         ],
         "Downloads": 0.0,
@@ -62,16 +44,35 @@
         }
       },
       {
-        "Name": "PostgreSQL + PostGIS",
+        "Name": "Astroquery",
         "Quadrant": "CORE",
         "Ring": "Core",
-        "Link": "https://postgis.net/",
+        "Link": "https://github.com/astropy/astroquery",
         "Moved": 0,
-        "Description": "Reliable mission data backbone for telemetry indexing, geospatial joins, and service APIs.",
+        "Description": "Astropy-affiliated Python package providing a consistent interface for querying and retrieving data from many online astronomy/planetary archives and services.",
         "Tags": [
-          "Database",
-          "Server-Side",
-          "Data management"
+          "Core Library",
+          "Data management",
+          "Techniques"
+        ],
+        "Downloads": 0.0,
+        "Forks": 0.0,
+        "Activity Metric": 0.0,
+        "Languages": {
+          "Python": 1
+        }
+      },
+      {
+        "Name": "SPICE Toolkit (NAIF)",
+        "Quadrant": "CORE",
+        "Ring": "Core",
+        "Link": "https://naif.jpl.nasa.gov/naif/toolkit.html",
+        "Moved": 0,
+        "Description": "NASA/NAIF SPICE Toolkit: core geometry, time, reference frame, and ephemeris APIs used across planetary missions and science workflows.",
+        "Tags": [
+          "Core Library",
+          "Techniques",
+          "Geocoding and georeferencing"
         ],
         "Downloads": 0.0,
         "Forks": 0.0,
@@ -81,209 +82,22 @@
         }
       },
       {
-        "Name": "Containerized Workloads",
+        "Name": "SunPy",
         "Quadrant": "CORE",
         "Ring": "Core",
-        "Link": "https://www.docker.com/",
+        "Link": "https://github.com/sunpy/sunpy",
         "Moved": 0,
-        "Description": "Core packaging model for reproducible deployment of processing and operations services.",
-        "Tags": [
-          "Platform",
-          "Server-Side"
-        ],
-        "Downloads": 0.0,
-        "Forks": 0.0,
-        "Activity Metric": 0.0,
-        "Languages": {
-          "YAML": 1
-        }
-      },
-      {
-        "Name": "Orekit",
-        "Quadrant": "CORE",
-        "Ring": "Core",
-        "Link": "https://www.orekit.org/",
-        "Moved": 0,
-        "Description": "Core orbit propagation and astrodynamics library used across mission tooling.",
+        "Description": "Open-source solar physics Python environment for searching, downloading, and analyzing solar observation data (maps, time series, solar coordinate frames).",
         "Tags": [
           "Core Library",
-          "Techniques",
-          "Server-Side"
-        ],
-        "Downloads": 0.0,
-        "Forks": 0.0,
-        "Activity Metric": 0.0,
-        "Languages": {}
-      },
-      {
-        "Name": "CCSDS Specifications",
-        "Quadrant": "CORE",
-        "Ring": "Core",
-        "Link": "https://public.ccsds.org/default.aspx",
-        "Moved": 0,
-        "Description": "Interoperability baseline for telemetry, telecommand, and mission data exchange.",
-        "Tags": [
-          "Platform",
-          "Data management"
-        ],
-        "Downloads": 0.0,
-        "Forks": 0.0,
-        "Activity Metric": 0.0,
-        "Languages": {}
-      },
-      {
-        "Name": "Apache Arrow",
-        "Quadrant": "CORE",
-        "Ring": "Core",
-        "Link": "https://arrow.apache.org/",
-        "Moved": 0,
-        "Description": "In-memory columnar format that speeds analytics and interchange in pipelines.",
-        "Tags": [
-          "Core Library",
-          "Data management",
-          "Server-Side"
-        ],
-        "Downloads": 0.0,
-        "Forks": 0.0,
-        "Activity Metric": 0.0,
-        "Languages": {}
-      },
-      {
-        "Name": "Apache Parquet",
-        "Quadrant": "CORE",
-        "Ring": "Core",
-        "Link": "https://parquet.apache.org/",
-        "Moved": 0,
-        "Description": "Long-term storage format for large mission and geospatial analytics datasets.",
-        "Tags": [
-          "Data Repository",
-          "Data management",
-          "Core Library"
-        ],
-        "Downloads": 0.0,
-        "Forks": 0.0,
-        "Activity Metric": 0.0,
-        "Languages": {}
-      },
-      {
-        "Name": "JupyterLab",
-        "Quadrant": "CORE",
-        "Ring": "Core",
-        "Link": "https://jupyter.org/",
-        "Moved": 0,
-        "Description": "Standard interactive environment for mission prototyping and data validation.",
-        "Tags": [
-          "Platform",
-          "Desktop",
-          "Pangeo"
-        ],
-        "Downloads": 0.0,
-        "Forks": 0.0,
-        "Activity Metric": 0.0,
-        "Languages": {}
-      },
-      {
-        "Name": "Kubernetes",
-        "Quadrant": "CORE",
-        "Ring": "Core",
-        "Link": "https://kubernetes.io/",
-        "Moved": 0,
-        "Description": "Core control plane for scaling mission data and processing services.",
-        "Tags": [
-          "Platform",
-          "Server-Side"
+          "Remote sensing analysis",
+          "Techniques"
         ],
         "Downloads": 0.0,
         "Forks": 0.0,
         "Activity Metric": 0.0,
         "Languages": {
-          "YAML": 1
-        }
-      },
-      {
-        "Name": "CI/CD Pipelines",
-        "Quadrant": "CORE",
-        "Ring": "Core",
-        "Link": "https://github.com/features/actions",
-        "Moved": 0,
-        "Description": "Automated build/test/deploy backbone for mission software reliability.",
-        "Tags": [
-          "Platform",
-          "Server-Side"
-        ],
-        "Downloads": 0.0,
-        "Forks": 0.0,
-        "Activity Metric": 0.0,
-        "Languages": {}
-      },
-      {
-        "Name": "Prometheus + Grafana",
-        "Quadrant": "CORE",
-        "Ring": "Core",
-        "Link": "https://prometheus.io/",
-        "Moved": 0,
-        "Description": "Baseline observability stack for service health, telemetry, and alerting.",
-        "Tags": [
-          "Platform",
-          "Server-Side",
-          "Web-Tools"
-        ],
-        "Downloads": 0.0,
-        "Forks": 0.0,
-        "Activity Metric": 0.0,
-        "Languages": {}
-      },
-      {
-        "Name": "Git",
-        "Quadrant": "CORE",
-        "Ring": "Core",
-        "Link": "https://git-scm.com/",
-        "Moved": 0,
-        "Description": "Version-control foundation for flight software, ground systems, and configs.",
-        "Tags": [
-          "Data management",
-          "Platform"
-        ],
-        "Downloads": 0.0,
-        "Forks": 0.0,
-        "Activity Metric": 0.0,
-        "Languages": {}
-      },
-      {
-        "Name": "Linux",
-        "Quadrant": "CORE",
-        "Ring": "Core",
-        "Link": "https://kernel.org/",
-        "Moved": 0,
-        "Description": "Primary execution environment across mission operations and backend systems.",
-        "Tags": [
-          "Platform",
-          "Server-Side"
-        ],
-        "Downloads": 0.0,
-        "Forks": 0.0,
-        "Activity Metric": 0.0,
-        "Languages": {
-          "YAML": 1
-        }
-      },
-      {
-        "Name": "Terraform",
-        "Quadrant": "CORE",
-        "Ring": "Core",
-        "Link": "https://www.terraform.io/",
-        "Moved": 0,
-        "Description": "Core infrastructure-as-code layer for reproducible mission platform environments.",
-        "Tags": [
-          "Platform",
-          "Server-Side",
-          "Data management"
-        ],
-        "Downloads": 0.0,
-        "Forks": 0.0,
-        "Activity Metric": 0.0,
-        "Languages": {
-          "HCL": 1
+          "Python": 1
         }
       }
     ]
@@ -297,80 +111,230 @@
       },
       "entries": [
         {
-          "Name": "Constellation Revisit Optimization",
+          "Name": "Ames Stereo Pipeline (ASP)",
           "Quadrant": "Intelligence",
           "Ring": "Adopt",
-          "Link": "https://en.wikipedia.org/wiki/Satellite_constellation",
-          "Moved": 1,
-          "Description": "Optimize orbital planes and tasking windows for target revisit goals.",
+          "Link": "https://github.com/NeoGeographyToolkit/StereoPipeline",
+          "Moved": 0,
+          "Description": "Open-source stereogrammetry and geodesy toolkit to produce DTMs/DEMs and other cartographic products from planetary stereo imagery.",
           "Tags": [
-            "Techniques",
-            "Spatial analysis",
-            "Remote sensing analysis"
-          ],
-          "Downloads": 0.0,
-          "Forks": 0.0,
-          "Activity Metric": 0.0,
-          "Languages": {}
-        },
-        {
-          "Name": "SAR Interferometry (InSAR)",
-          "Quadrant": "Intelligence",
-          "Ring": "Trial",
-          "Link": "https://earth.esa.int/eogateway/activities/insar",
-          "Moved": 1,
-          "Description": "High-value deformation monitoring technique across large regions.",
-          "Tags": [
-            "Techniques",
             "Remote sensing analysis",
-            "Spatial analysis"
+            "3D modeling",
+            "Techniques"
           ],
           "Downloads": 0.0,
           "Forks": 0.0,
           "Activity Metric": 0.0,
-          "Languages": {}
+          "Languages": {
+            "C++": 1
+          }
         },
         {
-          "Name": "Onboard Edge AI Inference",
+          "Name": "CFITSIO",
+          "Quadrant": "Intelligence",
+          "Ring": "Adopt",
+          "Link": "https://github.com/HEASARC/cfitsio",
+          "Moved": 0,
+          "Description": "C/Fortran library for reading and writing FITS files; widely embedded in astronomy data systems and toolchains.",
+          "Tags": [
+            "Core Library",
+            "Data management"
+          ],
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
+          "Languages": {
+            "C": 1
+          }
+        },
+        {
+          "Name": "GMAT",
+          "Quadrant": "Intelligence",
+          "Ring": "Adopt",
+          "Link": "https://sourceforge.net/projects/gmat/",
+          "Moved": 0,
+          "Description": "NASA\u2019s open-source General Mission Analysis Tool for mission design, trajectory analysis, and navigation trade studies.",
+          "Tags": [
+            "Platform",
+            "Techniques"
+          ],
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
+          "Languages": {
+            "C++": 1
+          }
+        },
+        {
+          "Name": "ISIS3",
+          "Quadrant": "Intelligence",
+          "Ring": "Adopt",
+          "Link": "https://github.com/DOI-USGS/ISIS3",
+          "Moved": 0,
+          "Description": "USGS Astrogeology\u2019s planetary image processing suite for ingesting, calibrating, mapping, and analyzing mission imagery.",
+          "Tags": [
+            "Remote sensing analysis",
+            "Techniques"
+          ],
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
+          "Languages": {
+            "C++": 1
+          }
+        },
+        {
+          "Name": "Orekit",
+          "Quadrant": "Intelligence",
+          "Ring": "Adopt",
+          "Link": "https://github.com/CS-SI/Orekit",
+          "Moved": 0,
+          "Description": "Low-level space flight dynamics library (orbits, frames, propagation, OD building blocks) for studies through operations.",
+          "Tags": [
+            "Core Library",
+            "Techniques"
+          ],
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
+          "Languages": {
+            "Java": 1
+          }
+        },
+        {
+          "Name": "PDS4 Tools",
+          "Quadrant": "Intelligence",
+          "Ring": "Adopt",
+          "Link": "https://github.com/Small-Bodies-Node/pds4_tools",
+          "Moved": 0,
+          "Description": "Python package (with GUI components) for reading, inspecting, and visualizing NASA PDS4 data and metadata.",
+          "Tags": [
+            "Data management",
+            "Techniques",
+            "Desktop"
+          ],
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
+          "Languages": {
+            "Python": 1
+          }
+        },
+        {
+          "Name": "Photutils",
+          "Quadrant": "Intelligence",
+          "Ring": "Adopt",
+          "Link": "https://github.com/astropy/photutils",
+          "Moved": 0,
+          "Description": "Astropy coordinated package for source detection and photometry on astronomical imagery (aperture/PSF photometry, segmentation, background estimation).",
+          "Tags": [
+            "Spatial analysis",
+            "Techniques"
+          ],
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
+          "Languages": {
+            "Python": 1
+          }
+        },
+        {
+          "Name": "Skyfield",
+          "Quadrant": "Intelligence",
+          "Ring": "Adopt",
+          "Link": "https://github.com/skyfielders/python-skyfield",
+          "Moved": 0,
+          "Description": "Pure-Python high-precision ephemerides and position computations for planets and Earth satellites; integrates with Astropy units/time.",
+          "Tags": [
+            "Geocoding and georeferencing",
+            "Techniques"
+          ],
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
+          "Languages": {
+            "Python": 1
+          }
+        },
+        {
+          "Name": "Specutils",
+          "Quadrant": "Intelligence",
+          "Ring": "Adopt",
+          "Link": "https://github.com/astropy/specutils",
+          "Moved": 0,
+          "Description": "Astropy coordinated package for representing, loading, and analyzing astronomical spectra; a shared toolbox for spectroscopy workflows.",
+          "Tags": [
+            "Data management",
+            "Techniques"
+          ],
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
+          "Languages": {
+            "Python": 1
+          }
+        },
+        {
+          "Name": "SpiceyPy",
+          "Quadrant": "Intelligence",
+          "Ring": "Adopt",
+          "Link": "https://github.com/AndrewAnnex/SpiceyPy",
+          "Moved": 0,
+          "Description": "Python wrapper around the SPICE Toolkit, enabling planetary geometry and event-finding workflows in Python.",
+          "Tags": [
+            "Core Library",
+            "Techniques"
+          ],
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
+          "Languages": {
+            "Python": 1
+          }
+        },
+        {
+          "Name": "TudatPy",
           "Quadrant": "Intelligence",
           "Ring": "Trial",
-          "Link": "https://www.nasa.gov/smallsat-institute/sst-soa/small-spacecraft-avionics/",
-          "Moved": 1,
-          "Description": "Run inference near the sensor to reduce downlink pressure and latency.",
+          "Link": "https://github.com/tudat-team/tudatpy",
+          "Moved": 0,
+          "Description": "Python platform for astrodynamics analysis (propagation, estimation, mission design) built on Tudat with examples and docs.",
           "Tags": [
-            "Techniques",
-            "Mobile",
-            "Remote sensing analysis"
+            "Platform",
+            "Techniques"
           ],
           "Downloads": 0.0,
           "Forks": 0.0,
           "Activity Metric": 0.0,
-          "Languages": {}
+          "Languages": {
+            "Python": 1
+          }
         },
         {
-          "Name": "Cross-Sensor Fusion Pipelines",
+          "Name": "astroplan",
           "Quadrant": "Intelligence",
-          "Ring": "Assess",
-          "Link": "https://en.wikipedia.org/wiki/Sensor_fusion",
-          "Moved": 1,
-          "Description": "Fuse optical, SAR, and thermal feeds into unified analytic products.",
+          "Ring": "Adopt",
+          "Link": "https://github.com/astropy/astroplan",
+          "Moved": 0,
+          "Description": "Astropy affiliated observation-planning toolkit (visibility windows, constraints, scheduling helpers).",
           "Tags": [
             "Techniques",
-            "Data management",
-            "Remote sensing analysis"
+            "Geocoding and georeferencing"
           ],
           "Downloads": 0.0,
           "Forks": 0.0,
           "Activity Metric": 0.0,
-          "Languages": {}
+          "Languages": {
+            "Python": 1
+          }
         },
         {
-          "Name": "Manual-Only Mission Planning",
+          "Name": "ccdproc",
           "Quadrant": "Intelligence",
-          "Ring": "Hold",
-          "Link": "https://en.wikipedia.org/wiki/Mission_planning",
-          "Moved": -1,
-          "Description": "Avoid for modern constellations where scale requires automation.",
+          "Ring": "Adopt",
+          "Link": "https://github.com/astropy/ccdproc",
+          "Moved": 0,
+          "Description": "Astropy affiliated package for basic CCD image reduction with error propagation and bad-pixel tracking.",
           "Tags": [
             "Techniques",
             "Data management"
@@ -378,104 +342,146 @@
           "Downloads": 0.0,
           "Forks": 0.0,
           "Activity Metric": 0.0,
-          "Languages": {}
+          "Languages": {
+            "Python": 1
+          }
+        },
+        {
+          "Name": "healpy",
+          "Quadrant": "Intelligence",
+          "Ring": "Adopt",
+          "Link": "https://github.com/healpy/healpy",
+          "Moved": 0,
+          "Description": "Python tools for HEALPix maps, widely used for spherical mapping/analysis in astronomy and cosmology.",
+          "Tags": [
+            "Spatial analysis",
+            "Techniques"
+          ],
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
+          "Languages": {
+            "Python": 1
+          }
+        },
+        {
+          "Name": "poliastro",
+          "Quadrant": "Intelligence",
+          "Ring": "Trial",
+          "Link": "https://github.com/poliastro/poliastro",
+          "Moved": 0,
+          "Description": "Pure-Python astrodynamics and orbital mechanics library focused on interactive workflows and fast iteration.",
+          "Tags": [
+            "Core Library",
+            "Techniques"
+          ],
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
+          "Languages": {
+            "Python": 1
+          }
+        },
+        {
+          "Name": "regions",
+          "Quadrant": "Intelligence",
+          "Ring": "Adopt",
+          "Link": "https://github.com/astropy/regions",
+          "Moved": 0,
+          "Description": "Astropy coordinated package for region handling (spatial regions on images/cubes; interoperability for masks/footprints).",
+          "Tags": [
+            "Data management",
+            "Spatial analysis"
+          ],
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
+          "Languages": {
+            "Python": 1
+          }
+        },
+        {
+          "Name": "reproject",
+          "Quadrant": "Intelligence",
+          "Ring": "Adopt",
+          "Link": "https://github.com/astropy/reproject",
+          "Moved": 0,
+          "Description": "Astropy package for reprojecting astronomical images between world coordinate systems (interpolation/adaptive/exact overlap; includes HEALPix support).",
+          "Tags": [
+            "Geocoding and georeferencing",
+            "Spatial analysis",
+            "Techniques"
+          ],
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
+          "Languages": {
+            "Python": 1
+          }
         }
       ]
     },
     {
       "quadrant": {
         "index": 1,
-        "name": "Mapping",
+        "name": "Visualization",
         "color": "#3b82f6"
       },
       "entries": [
         {
-          "Name": "CesiumJS",
-          "Quadrant": "Mapping",
-          "Ring": "Adopt",
-          "Link": "https://cesium.com/platform/cesiumjs/",
-          "Moved": 1,
-          "Description": "Core web engine for interactive 3D space and geospatial visualization.",
+          "Name": "OpenSpace",
+          "Quadrant": "Visualization",
+          "Ring": "Trial",
+          "Link": "https://github.com/OpenSpace/OpenSpace",
+          "Moved": 0,
+          "Description": "Open-source astrovisualization software for interactive, presentation-grade exploration of observations and simulations across the known universe.",
           "Tags": [
-            "Web-Tools",
-            "3D modeling",
+            "Desktop",
+            "Cartography and visualisation",
+            "Platform"
+          ],
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
+          "Languages": {
+            "C++": 1
+          }
+        },
+        {
+          "Name": "Stellarium",
+          "Quadrant": "Visualization",
+          "Ring": "Adopt",
+          "Link": "https://github.com/Stellarium/stellarium",
+          "Moved": 0,
+          "Description": "Open-source planetarium for realistic sky rendering and observation planning across desktop platforms.",
+          "Tags": [
+            "Desktop",
             "Cartography and visualisation"
           ],
           "Downloads": 0.0,
           "Forks": 0.0,
           "Activity Metric": 0.0,
           "Languages": {
-            "JavaScript": 1
+            "C++": 1
           }
         },
         {
-          "Name": "Orekit",
-          "Quadrant": "Mapping",
+          "Name": "WorldWide Telescope WebGL engine",
+          "Quadrant": "Visualization",
           "Ring": "Trial",
-          "Link": "https://www.orekit.org/",
-          "Moved": 1,
-          "Description": "Robust orbital mechanics library for mission analysis and tracking.",
-          "Tags": [
-            "Core Library",
-            "Techniques",
-            "Platform"
-          ],
-          "Downloads": 0.0,
-          "Forks": 0.0,
-          "Activity Metric": 0.0,
-          "Languages": {}
-        },
-        {
-          "Name": "GMAT",
-          "Quadrant": "Mapping",
-          "Ring": "Trial",
-          "Link": "https://gmatcentral.org/",
+          "Link": "https://github.com/WorldWideTelescope/wwt-webgl-engine",
           "Moved": 0,
-          "Description": "Open-source mission design and trajectory optimization toolkit.",
-          "Tags": [
-            "Desktop",
-            "3D modeling",
-            "Techniques"
-          ],
-          "Downloads": 0.0,
-          "Forks": 0.0,
-          "Activity Metric": 0.0,
-          "Languages": {}
-        },
-        {
-          "Name": "Open MCT",
-          "Quadrant": "Mapping",
-          "Ring": "Assess",
-          "Link": "https://github.com/nasa/openmct",
-          "Moved": 1,
-          "Description": "Telemetry visualization platform for mission operations consoles.",
+          "Description": "Reusable WebGL/TypeScript rendering engine that powers the web-based WorldWide Telescope visualization stack.",
           "Tags": [
             "Web-Tools",
-            "Platform",
-            "Server-Side"
+            "Cartography and visualisation"
           ],
           "Downloads": 0.0,
           "Forks": 0.0,
           "Activity Metric": 0.0,
           "Languages": {
-            "JavaScript": 1
+            "TypeScript": 1
           }
-        },
-        {
-          "Name": "Legacy Desktop Flight Tools",
-          "Quadrant": "Mapping",
-          "Ring": "Hold",
-          "Link": "https://en.wikipedia.org/wiki/Flight_dynamics_(spacecraft)",
-          "Moved": -1,
-          "Description": "Retain only when migration risk outweighs modernization benefits.",
-          "Tags": [
-            "Desktop",
-            "Techniques"
-          ],
-          "Downloads": 0.0,
-          "Forks": 0.0,
-          "Activity Metric": 0.0,
-          "Languages": {}
         }
       ]
     },
@@ -487,15 +493,15 @@
       },
       "entries": [
         {
-          "Name": "Sentinel-2 L2A",
+          "Name": "ESA Planetary Science Archive (PSA)",
           "Quadrant": "Data",
           "Ring": "Adopt",
-          "Link": "https://dataspace.copernicus.eu/",
+          "Link": "https://psa.esa.int/",
           "Moved": 0,
-          "Description": "Baseline multispectral data source for many EO production workflows.",
+          "Description": "ESA\u2019s central repository for Solar System mission data, distributed in PDS standards for open access and interoperability.",
           "Tags": [
             "Data Repository",
-            "Remote sensing analysis"
+            "Data management"
           ],
           "Downloads": 0.0,
           "Forks": 0.0,
@@ -503,61 +509,12 @@
           "Languages": {}
         },
         {
-          "Name": "Landsat Collection 2",
+          "Name": "NASA Planetary Data System (PDS)",
           "Quadrant": "Data",
           "Ring": "Adopt",
-          "Link": "https://www.usgs.gov/landsat-missions/landsat-collection-2",
+          "Link": "https://pds.nasa.gov/",
           "Moved": 0,
-          "Description": "Long-term calibrated archive for time-series analysis.",
-          "Tags": [
-            "Data Repository",
-            "Remote sensing analysis"
-          ],
-          "Downloads": 0.0,
-          "Forks": 0.0,
-          "Activity Metric": 0.0,
-          "Languages": {}
-        },
-        {
-          "Name": "PlanetScope Daily Imagery",
-          "Quadrant": "Data",
-          "Ring": "Trial",
-          "Link": "https://www.planet.com/products/planet-imagery/",
-          "Moved": 1,
-          "Description": "Commercial high-frequency imagery for near-daily monitoring use cases.",
-          "Tags": [
-            "Data Repository",
-            "Remote sensing analysis"
-          ],
-          "Downloads": 0.0,
-          "Forks": 0.0,
-          "Activity Metric": 0.0,
-          "Languages": {}
-        },
-        {
-          "Name": "SWOT Hydrology Products",
-          "Quadrant": "Data",
-          "Ring": "Assess",
-          "Link": "https://swot.jpl.nasa.gov/",
-          "Moved": 1,
-          "Description": "Emerging water-surface data products with strong scientific upside.",
-          "Tags": [
-            "Data Repository",
-            "Remote sensing analysis",
-            "Spatial analysis"
-          ],
-          "Downloads": 0.0,
-          "Forks": 0.0,
-          "Activity Metric": 0.0,
-          "Languages": {}
-        },
-        {
-          "Name": "Uncalibrated Third-Party Feeds",
-          "Quadrant": "Data",
-          "Ring": "Hold",
-          "Link": "https://en.wikipedia.org/wiki/Calibration",
-          "Moved": -1,
-          "Description": "Avoid for critical analytics unless provenance and calibration are verified.",
+          "Description": "NASA\u2019s long-term open archive for planetary mission data products, curated for preservation and reuse.",
           "Tags": [
             "Data Repository",
             "Data management"
@@ -577,14 +534,13 @@
       },
       "entries": [
         {
-          "Name": "CCSDS Telemetry and Telecommand",
+          "Name": "FITS Standard",
           "Quadrant": "Standards",
           "Ring": "Adopt",
-          "Link": "https://public.ccsds.org/default.aspx",
+          "Link": "https://fits.gsfc.nasa.gov/fits_standard.html",
           "Moved": 0,
-          "Description": "Core interoperability standard for spacecraft data and command exchange.",
+          "Description": "The formal standard defining the Flexible Image Transport System (FITS), a dominant format for astronomy data transport and archiving.",
           "Tags": [
-            "Platform",
             "Data management"
           ],
           "Downloads": 0.0,
@@ -593,68 +549,31 @@
           "Languages": {}
         },
         {
-          "Name": "STAC for EO Catalogs",
+          "Name": "PDS4 Information Model",
           "Quadrant": "Standards",
-          "Ring": "Trial",
-          "Link": "https://stacspec.org/",
-          "Moved": 1,
-          "Description": "Consistent metadata pattern for discoverable Earth observation assets.",
+          "Ring": "Adopt",
+          "Link": "https://github.com/NASA-PDS/pds4-information-model",
+          "Moved": 0,
+          "Description": "Open tooling and artifacts (incl. ontology/model) used to generate and maintain the PDS4 information model.",
           "Tags": [
-            "Data Repository",
-            "Data management",
-            "Platform"
-          ],
-          "Downloads": 0.0,
-          "Forks": 0.0,
-          "Activity Metric": 0.0,
-          "Languages": {}
-        },
-        {
-          "Name": "OGC API - Processes",
-          "Quadrant": "Standards",
-          "Ring": "Assess",
-          "Link": "https://ogcapi.ogc.org/processes/",
-          "Moved": 1,
-          "Description": "Standardized API contract for geospatial processing services.",
-          "Tags": [
-            "Platform",
-            "Server-Side",
             "Data management"
           ],
           "Downloads": 0.0,
           "Forks": 0.0,
           "Activity Metric": 0.0,
           "Languages": {
-            "JavaScript": 1
+            "Java": 1
           }
         },
         {
-          "Name": "ISO 19115 Metadata",
+          "Name": "PDS4 Standards Reference",
           "Quadrant": "Standards",
-          "Ring": "Assess",
-          "Link": "https://www.iso.org/standard/53798.html",
+          "Ring": "Adopt",
+          "Link": "https://pds.nasa.gov/datastandards/documents/sr/",
           "Moved": 0,
-          "Description": "Well-established metadata model for geospatial datasets and lineage.",
+          "Description": "Primary reference for the PDS4 standard defining structures and rules for planetary data products and labels.",
           "Tags": [
-            "Data management",
-            "Data Repository",
-            "Platform"
-          ],
-          "Downloads": 0.0,
-          "Forks": 0.0,
-          "Activity Metric": 0.0,
-          "Languages": {}
-        },
-        {
-          "Name": "Proprietary Tasking Schemas",
-          "Quadrant": "Standards",
-          "Ring": "Hold",
-          "Link": "https://en.wikipedia.org/wiki/Vendor_lock-in",
-          "Moved": -1,
-          "Description": "Use only when no open alternative can meet mission requirements.",
-          "Tags": [
-            "Data management",
-            "Platform"
+            "Data management"
           ],
           "Downloads": 0.0,
           "Forks": 0.0,

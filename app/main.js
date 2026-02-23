@@ -582,17 +582,58 @@ function clearCoreList() {
   return { section, entries };
 }
 
+let maxStageHeight = 0;
+
+function rebalanceQuadrantPanels(sections) {
+  const stage = document.querySelector(".stage");
+  if (!stage || !sections?.length) return;
+
+  sections.forEach((section) => section.style.removeProperty("top"));
+
+  if (window.getComputedStyle(sections[0]).position !== "absolute") return;
+
+  const byClass = (name) => sections.find((section) => section.classList.contains(name));
+  const pairs = [
+    [byClass("corner-tl"), byClass("corner-bl")],
+    [byClass("corner-tr"), byClass("corner-br")]
+  ];
+  const stageRect = stage.getBoundingClientRect();
+  const minGap = 32;
+  let neededHeight = stageRect.height;
+
+  pairs.forEach(([topSection, bottomSection]) => {
+    if (!topSection || !bottomSection) return;
+
+    const topRect = topSection.getBoundingClientRect();
+    const topBottom = topRect.top - stageRect.top + topRect.height;
+    let bottomTop = bottomSection.getBoundingClientRect().top - stageRect.top;
+
+    if (bottomTop < topBottom + minGap) {
+      bottomTop = topBottom + minGap;
+      bottomSection.style.top = `${Math.round(bottomTop)}px`;
+    }
+
+    const bottomHeight = bottomSection.getBoundingClientRect().height;
+    neededHeight = Math.max(neededHeight, bottomTop + bottomHeight + 20);
+  });
+
+  maxStageHeight = Math.max(maxStageHeight, stageRect.height, neededHeight);
+  stage.style.height = `${Math.ceil(maxStageHeight)}px`;
+}
+
 function createEntryButton(entry, color, openEntryPopup, setHover) {
   const button = document.createElement("button");
   button.type = "button";
   button.className = "entry-btn";
   button.dataset.id = String(entry.id);
+  button.title = entry.name;
 
   const dot = document.createElement("span");
   dot.className = "entry-dot";
   dot.style.background = color;
 
   const text = document.createElement("span");
+  text.className = "entry-label";
   text.textContent = entry.name;
 
   button.append(dot, text);
@@ -798,12 +839,15 @@ function renderRadar(data, popupController) {
     const title = section.querySelector(".quad-title");
     const wrap = section.querySelector(".quad-entries");
     if (!title || !wrap) return;
+    const quadrantEntries = byQuadrant.get(q) || [];
 
     title.textContent = quadrantName(q).toUpperCase();
     title.style.color = colorByQuadrant(q);
+    section.classList.toggle("is-dense", quadrantEntries.length >= 7);
+    section.classList.toggle("is-very-dense", quadrantEntries.length >= 12);
 
     appendEntryButtons(
-      byQuadrant.get(q) || [],
+      quadrantEntries,
       wrap,
       (entry) => colorByQuadrant(entry.quadrant),
       openEntryPopup,
@@ -811,6 +855,9 @@ function renderRadar(data, popupController) {
       entryButtons
     );
   });
+
+  rebalanceQuadrantPanels(cornerSections);
+  window.requestAnimationFrame(() => rebalanceQuadrantPanels(cornerSections));
 }
 
 const popupController = createPopupController();
