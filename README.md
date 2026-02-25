@@ -1,4 +1,4 @@
-# Tech Radar
+# Space Tech Radar
 
 An Earth and Space Observation Tech Radar for Downstream Science, Analytics, and Applications.
 
