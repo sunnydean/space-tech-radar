@@ -2,6 +2,9 @@
 
 An Earth and Space Observation Tech Radar for Downstream Science, Analytics, and Applications.
 
+<img width="815" height="987" alt="image" src="https://github.com/user-attachments/assets/eebb8447-9cff-48a8-9a7a-e7166983e061" />
+
+
 To update radar content, edit `config/eo.csv` and/or `config/space.csv`, then commit and push your changes.
 The GitHub Actions workflow regenerates the radar config files and redeploys the site automatically.
 
