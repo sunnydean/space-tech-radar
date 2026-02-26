@@ -1,7 +1,7 @@
 const RADAR = {
   size: 980,
   outer: 485,
-  dotRadius: 11,
+  dotRadius: 12,
   coreLabelSafeRadius: 46,
   quadrantAngles: [
     [-Math.PI / 2, 0],
@@ -38,11 +38,31 @@ const REQUIRED_ENTRY_FIELDS = [
   "Activity Metric",
   "Languages"
 ];
+const QUADRANT_DESCRIPTIONS = {
+  intelligence: "Tools and methods that turn raw observations into analysis, models, forecasts, and decisions.",
+  visualization: "Interfaces and rendering tools that make observations explorable, interpretable, and shareable.",
+  data: "Catalogs, platforms, and data-access tooling used to discover, retrieve, and work with mission datasets.",
+  standards: "Shared formats, metadata models, and protocols that make systems interoperable and results reproducible."
+};
 
 const $ = (id) => document.getElementById(id);
 const clamp = (value, min, max) => Math.max(min, Math.min(max, value));
 const normalizeNewlines = (text) => (text || "").replace(/\r\n?/g, "\n");
 const joinPath = (base, part) => `${base.replace(/\/+$/, "")}/${part.replace(/^\/+/, "")}`;
+const slugify = (value) =>
+  String(value || "")
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+
+function quadrantAnchorId(name) {
+  return `quadrant-${slugify(name) || "unknown"}`;
+}
+
+function quadrantDescription(name) {
+  return QUADRANT_DESCRIPTIONS[slugify(name)] || "Technologies and practices in this quadrant of the radar.";
+}
 
 async function fetchJson(path) {
   const response = await fetch(path);
@@ -285,19 +305,70 @@ async function loadRadarData(mode) {
   };
 }
 
-function renderStory(markdown) {
+function appendQuadrantDetails(body, data) {
+  if (!body || !data) return;
+
+  const details = document.createElement("section");
+  details.className = "quadrant-details";
+
+  const detailsTitle = document.createElement("h2");
+  detailsTitle.textContent = "Quadrant Guide";
+  details.appendChild(detailsTitle);
+
+  const byQuadrant = d3.group(
+    (data.entries || []).filter((entry) => !entry.isCore),
+    (entry) => entry.quadrant
+  );
+
+  (data.quadrants || []).forEach((name, index) => {
+    const quadrantName = String(name || "").trim();
+    if (!quadrantName) return;
+
+    const section = document.createElement("section");
+    section.className = "quadrant-detail";
+    section.id = quadrantAnchorId(quadrantName);
+
+    const title = document.createElement("h3");
+    title.textContent = quadrantName;
+
+    const description = document.createElement("p");
+    description.textContent = quadrantDescription(quadrantName);
+
+    const techTitle = document.createElement("h4");
+    techTitle.textContent = "Technologies in this quadrant";
+
+    const list = document.createElement("ul");
+    const entries = (byQuadrant.get(index) || []).slice().sort((left, right) =>
+      left.name.localeCompare(right.name)
+    );
+
+    if (!entries.length) {
+      const item = document.createElement("li");
+      item.textContent = "No technologies currently listed in this mode.";
+      list.appendChild(item);
+    } else {
+      entries.forEach((entry) => {
+        const item = document.createElement("li");
+        item.textContent = entry.name;
+        list.appendChild(item);
+      });
+    }
+
+    section.append(title, description, techTitle, list);
+    details.appendChild(section);
+  });
+
+  body.appendChild(details);
+}
+
+function renderStory(markdown, data) {
   const section = $("story-section");
   const body = $("story-body");
   if (!section || !body) return;
 
-  if (!markdown || !markdown.trim()) {
-    body.innerHTML = "";
-    section.hidden = true;
-    return;
-  }
-
-  body.innerHTML = marked.parse(markdown);
-  section.hidden = false;
+  body.innerHTML = markdown && markdown.trim() ? marked.parse(markdown) : "";
+  appendQuadrantDetails(body, data);
+  section.hidden = !body.textContent.trim();
 }
 
 function createPopupController() {
@@ -419,7 +490,16 @@ function chooseRows(count, minRadius, maxRadius, angleSpan, options = {}) {
   const radii = buildRows(minRadius, maxRadius, fallbackRows, singlePlacement);
   const capacities = radii.map(capacityAt);
   const total = capacities.reduce((sum, value) => sum + value, 0);
-  if (total < count) capacities[capacities.length - 1] += count - total;
+  if (total < count) {
+    let overflow = count - total;
+    let index = capacities.length - 1;
+    while (overflow > 0) {
+      capacities[index] += 1;
+      overflow -= 1;
+      index = index > 0 ? index - 1 : capacities.length - 1;
+    }
+  }
+
   return { radii, capacities };
 }
 
@@ -665,7 +745,7 @@ function appendEntryButtons(entries, container, color, openEntryPopup, setHover,
 
 function renderRadar(data, popupController) {
   popupController.hide();
-  renderStory(data.storyMarkdown);
+  renderStory(data.storyMarkdown, data);
 
   const center = RADAR.size * 0.5;
   const ringCount = Math.max(1, data.rings.length);
@@ -746,6 +826,7 @@ function renderRadar(data, popupController) {
 
   let activeId = null;
   let hoverId = null;
+  let hoverQuadrant = null;
   const entryButtons = new Map();
   let hideTimer = null;
 
@@ -760,7 +841,7 @@ function renderRadar(data, popupController) {
     clearHideTimer();
     hideTimer = window.setTimeout(() => {
       hideTimer = null;
-      if (hoverId !== null || popupController.isPointerInside()) return;
+      if (hoverId !== null || hoverQuadrant !== null || popupController.isPointerInside()) return;
       popupController.hide();
     }, 90);
   };
@@ -768,7 +849,10 @@ function renderRadar(data, popupController) {
   const syncHighlight = () => {
     blips
       .classed("active", (entry) => entry.id === activeId)
-      .classed("hovered", (entry) => entry.id === hoverId);
+      .classed("hovered", (entry) => entry.id === hoverId)
+      .classed("quad-hovered", (entry) =>
+        hoverQuadrant !== null && !entry.isCore && entry.quadrant === hoverQuadrant
+      );
 
     entryButtons.forEach((button, id) => {
       button.classList.toggle("active", id === activeId);
@@ -778,7 +862,20 @@ function renderRadar(data, popupController) {
 
   const setHover = (id) => {
     hoverId = id;
-    if (id !== null) clearHideTimer();
+    if (id !== null) {
+      const shouldHideQuadrantPopup =
+        activeId === null && hoverQuadrant === null && popupController.isVisible();
+      if (shouldHideQuadrantPopup) {
+        popupController.hide();
+      } else {
+        clearHideTimer();
+      }
+    }
+    syncHighlight();
+  };
+
+  const setHoverQuadrant = (quadrant) => {
+    hoverQuadrant = quadrant;
     syncHighlight();
   };
 
@@ -794,10 +891,35 @@ function renderRadar(data, popupController) {
     syncHighlight();
   };
 
+  const openQuadrantPopup = (quadrant, anchorElement) => {
+    if (!(anchorElement instanceof Element)) return;
+    const qName = quadrantName(quadrant);
+    const rect = anchorElement.getBoundingClientRect();
+
+    clearHideTimer();
+    popupController.open({
+      entry: {
+        name: qName,
+        description: quadrantDescription(qName),
+        tags: [],
+        link: "",
+        linkName: ""
+      },
+      quadrantName: "Quadrant",
+      ringName: "",
+      point: {
+        x: rect.right,
+        y: rect.top + rect.height * 0.5
+      }
+    });
+    activeId = null;
+    hoverId = null;
+    syncHighlight();
+  };
+
   popupController.setOnHide(() => {
     clearHideTimer();
     activeId = null;
-    hoverId = null;
     syncHighlight();
   });
   popupController.setOnLeave(() => {
@@ -841,7 +963,30 @@ function renderRadar(data, popupController) {
     if (!title || !wrap) return;
     const quadrantEntries = byQuadrant.get(q) || [];
 
-    title.textContent = quadrantName(q).toUpperCase();
+    const qName = quadrantName(q);
+    const qDescription = quadrantDescription(qName);
+    const titleLink = document.createElement("a");
+    titleLink.className = "quad-title-link";
+    titleLink.href = `#${quadrantAnchorId(qName)}`;
+    titleLink.textContent = qName.toUpperCase();
+    titleLink.setAttribute("aria-label", `${qName}: ${qDescription}`);
+    titleLink.addEventListener("mouseenter", () => {
+      setHoverQuadrant(q);
+      openQuadrantPopup(q, titleLink);
+    });
+    titleLink.addEventListener("mouseleave", () => {
+      setHoverQuadrant(null);
+      schedulePopupHide();
+    });
+    titleLink.addEventListener("focus", () => {
+      setHoverQuadrant(q);
+      openQuadrantPopup(q, titleLink);
+    });
+    titleLink.addEventListener("blur", () => {
+      setHoverQuadrant(null);
+      schedulePopupHide();
+    });
+    title.replaceChildren(titleLink);
     title.style.color = colorByQuadrant(q);
     section.classList.toggle("is-dense", quadrantEntries.length >= 7);
     section.classList.toggle("is-very-dense", quadrantEntries.length >= 12);
