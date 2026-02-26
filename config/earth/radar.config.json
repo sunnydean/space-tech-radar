@@ -304,7 +304,7 @@
           "Ring": "Adopt",
           "Link": "https://www.ngs.noaa.gov/INFO/facts/lidar.shtml",
           "Moved": 0,
-          "Description": "Laser-based active remote sensing producing 3D point clouds used for terrain, canopy, and infrastructure modeling.",
+          "Description": "Laser based active remote sensing producing 3D point clouds used for terrain, canopy, and infrastructure modeling.",
           "Tags": [
             "Remote sensing analysis",
             "3D modeling"
