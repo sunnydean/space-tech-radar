@@ -263,6 +263,54 @@
     },
     {
       "quadrant": {
+        "index": 1,
+        "name": "Visualization",
+        "color": "#16a34a"
+      },
+      "entries": [
+        {
+          "Name": "geotiff.js",
+          "Quadrant": "Visualization",
+          "Ring": "Adopt",
+          "Link": "https://geotiffjs.github.io/",
+          "Moved": 0,
+          "Description": "A library for rendering GeoTIFF files in the browser",
+          "Tags": [
+            "Web-Tools"
+          ],
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
+          "Languages": {}
+        }
+      ]
+    },
+
+     {
+      "quadrant": {
+        "index": 1,
+        "name": "Visualization",
+        "color": "#16a34a"
+      },
+      "entries": [
+        {
+          "Name": "deck-gl.raster",
+          "Quadrant": "Visualization",
+          "Ring": "Adopt",
+          "Link": "https://github.com/developmentseed/deck.gl-raster",
+          "Moved": 0,
+          "Description": "GeoTIFF support for deck.gl",
+          "Tags": [
+            "Web-Tools"
+          ],
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
+          "Languages": {}
+        }
+      ]
+    },{
+      "quadrant": {
         "index": 2,
         "name": "Data",
         "color": "#eab308"
