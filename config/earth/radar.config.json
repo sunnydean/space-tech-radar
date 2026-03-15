@@ -344,6 +344,21 @@
           "Activity Metric": 0.0,
           "Languages": {}
         }
+        {
+          "Name": "Satpy",
+          "Quadrant": "Data",
+          "Ring": "Trial",
+          "Link": "https://github.com/pytroll/satpy/issues",
+          "Moved": 0,
+          "Description": "A python library for reading, manipulating, and writing data from remote-sensing earth-observing satellite instruments",
+          "Tags": [
+            "Data Repository"
+          ],
+          "Downloads": 0.0,
+          "Forks": 0.0,
+          "Activity Metric": 0.0,
+          "Languages": {}
+        },
       ]
     },
     {
