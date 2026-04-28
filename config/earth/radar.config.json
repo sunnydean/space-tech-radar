@@ -258,16 +258,7 @@
           "Forks": 0.0,
           "Activity Metric": 0.0,
           "Languages": {}
-        }
-      ]
-    },
-    {
-      "quadrant": {
-        "index": 1,
-        "name": "Visualization",
-        "color": "#16a34a"
-      },
-      "entries": [
+        },
         {
           "Name": "geotiff.js",
           "Quadrant": "Visualization",
@@ -282,17 +273,7 @@
           "Forks": 0.0,
           "Activity Metric": 0.0,
           "Languages": {}
-        }
-      ]
-    },
-
-     {
-      "quadrant": {
-        "index": 1,
-        "name": "Visualization",
-        "color": "#16a34a"
-      },
-      "entries": [
+        },
         {
           "Name": "deck-gl.raster",
           "Quadrant": "Visualization",
@@ -309,7 +290,8 @@
           "Languages": {}
         }
       ]
-    },{
+    },
+    {
       "quadrant": {
         "index": 2,
         "name": "Data",
@@ -391,7 +373,7 @@
           "Forks": 0.0,
           "Activity Metric": 0.0,
           "Languages": {}
-        }
+        },
         {
           "Name": "Satpy",
           "Quadrant": "Data",
@@ -406,7 +388,7 @@
           "Forks": 0.0,
           "Activity Metric": 0.0,
           "Languages": {}
-        },
+        }
       ]
     },
     {
